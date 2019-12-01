@@ -31,40 +31,40 @@ const Header = () => {
             />
             <ul id="slide-out" className="sidenav" style={menuOpen ? stylesOpen : null}>
               <li>
-                <a className="subheader">Menu</a>
+                <a className="subheader">TAKAY</a>
               </li>
               <li>
                 <div className="divider" />
               </li>
               <li>
-                <Link to="/" className="item" onClick={toggleMenu}>
+                <Link to="/familia" className="item" onClick={toggleMenu}>
                   FAMILIA
                 </Link>
               </li>
               <li>
-                <Link to="/articles/techradar" className="item" onClick={toggleMenu}>
+                <Link to="/experto" className="item" onClick={toggleMenu}>
                   EXPERTO
                 </Link>
               </li>
               <li>
-                <Link to="/articles/mashable" className="item" onClick={toggleMenu}>
+                <Link to="/nosotros" className="item" onClick={toggleMenu}>
                   NOSOTROS
                 </Link>
               </li>
             </ul>
             <ul id="nav-mobile" className="right hide-on-med-and-down">
               <li>
-                <Link to="/articles/techradar" className="item">
+                <Link to="/familia" className="item">
                   FAMILIA
                 </Link>
               </li>
               <li>
-                <Link to="/articles/mashable" className="item">
+                <Link to="/experto" className="item">
                   EXPERTO
                 </Link>
               </li>
               <li>
-                <Link to="/articles/the-verge" className="item">
+                <Link to="/nosotros" className="item">
                   NOSOTROS
                 </Link>
               </li>

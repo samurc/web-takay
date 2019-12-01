@@ -1,6 +1,8 @@
 import HomePage from './pages/HomePage';
+import AboutPage from './pages/AboutPage';
+import ExpertPage from './pages/ExpertPage';
+import FamilyPage from './pages/FamilyPage';
 import NotFoundPage from './pages/NotFoundPage';
-import ArticleListPage from './pages/ArticleListPage';
 import App from './App';
 
 export default [
@@ -13,8 +15,16 @@ export default [
         exact: true
       },
       {
-        path: '/articles/:id',
-        ...ArticleListPage
+        path: '/nosotros',
+        ...AboutPage
+      },
+      {
+        path: '/experto',
+        ...ExpertPage
+      },
+      {
+        path: '/familia',
+        ...FamilyPage
       },
       {
         ...NotFoundPage

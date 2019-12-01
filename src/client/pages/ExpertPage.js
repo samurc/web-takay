@@ -7,7 +7,7 @@ import { LazyLoadImage } from 'react-lazy-load-image-component';
 import PropTypes from 'prop-types'; // ES6
 import { fetchData } from '../actions';
 
-const HomePage = props => {
+const ExpertPage = props => {
   const renderArticles = () => {
     return props.next.map(article => (
       <div className="col s12 m6 l6 xl4" key={article.name}>
@@ -26,7 +26,7 @@ const HomePage = props => {
   const head = () => {
     return (
       <Helmet key={Math.random()}>
-        <title>TAKAY | INICIO</title>
+        <title>TAKAY | EXPERT</title>
         <meta property="og:title" content="TAKAY" />
         <meta
           name="description"
@@ -73,17 +73,17 @@ const loadData = store => {
   return store.dispatch(fetchData()); // Manually dispatch a network request
 };
 
-HomePage.propTypes = {
+ExpertPage.propTypes = {
   next: PropTypes.arrayOf(PropTypes.any),
   fetchData: PropTypes.func
 };
 
-HomePage.defaultProps = {
+ExpertPage.defaultProps = {
   next: [],
   fetchData: null
 };
 
 export default {
-  component: connect(mapStateToProps, { fetchData })(HomePage),
+  component: connect(mapStateToProps, { fetchData })(ExpertPage),
   loadData
 };
