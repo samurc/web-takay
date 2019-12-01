@@ -22,19 +22,14 @@ const HomePage = props => {
   };
 
   const renderArticles = () => {
-    return props.data.map(article => (
-      <div className="col s12 m6 l6 xl4" key={article.title}>
+    return props.next.map(article => (
+      <div className="col s12 m6 l6 xl4" key={article.name}>
         <div className="card large">
           <div className="card-image">
-            <LazyLoadImage alt={article.title} src={article.urlToImage} />
+            <LazyLoadImage alt={article.name} src={article.imageUrl} />
           </div>
           <div className="card-content">
-            <span className="card-title">{article.title}</span>
-          </div>
-          <div className="card-action">
-            <a href="javascript:void(0)" onClick={() => readArticle(article)}>
-              Read More
-            </a>
+            <span className="card-title">{article.description}</span>
           </div>
         </div>
       </div>
@@ -44,8 +39,8 @@ const HomePage = props => {
   const head = () => {
     return (
       <Helmet key={Math.random()}>
-        <title>SSR Daily News - ilker ALTIN</title>
-        <meta property="og:title" content="SSR Daily News - ilker ALTIN" />
+        <title>TAKAY</title>
+        <meta property="og:title" content="TAKAY" />
         <meta
           name="description"
           content="Breaking news,latest data, popular data from most popular news websites of the world"
@@ -71,7 +66,9 @@ const HomePage = props => {
           <h3>Popular Articles</h3>
         </div>
         <div className="divider" />
-        <div className="section"></div>
+        <div className="section">
+          <div className="row">{renderArticles()}</div>
+        </div>
       </div>
     </div>
   );
