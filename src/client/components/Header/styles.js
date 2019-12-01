@@ -42,6 +42,7 @@ export const Nav = styled.nav`
     color: #fff;
     display: inline-block;
     font-size: 2.1rem;
+    font-weight: bold;
     padding: 0;
   }
   .sidenav-trigger {
@@ -153,4 +154,11 @@ export const SideNav = styled.ul`
   }
 `;
 
-export const NavList = styled.ul``;
+export const NavList = styled.ul`
+  @media only screen and (min-width: 993px) {
+    a.item {
+      font-weight: bold;
+      padding: 0 10rem;
+    }
+  }
+`;
