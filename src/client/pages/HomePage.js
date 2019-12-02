@@ -9,6 +9,7 @@ import { fetchData } from '../actions';
 import Fullbleed from '../components/Fullbleed';
 import Info from '../components/Info';
 import Interes from '../components/Interes';
+import Iniciativa from '../components/Iniciativa';
 
 const HomePage = props => {
   const renderArticles = () => {
@@ -59,6 +60,9 @@ const HomePage = props => {
       </div>
       <div className="block">
         <Interes />
+      </div>
+      <div className="block">
+        <Iniciativa />
       </div>
     </div>
   );

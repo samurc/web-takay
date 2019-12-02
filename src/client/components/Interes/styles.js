@@ -2,6 +2,7 @@ import styled, { css } from 'styled-components';
 
 export const Grid = styled.div`
   position: relative;
+  margin-bottom: 40px;
 `;
 export const Title = styled.h1`
   color: #f15a22;
