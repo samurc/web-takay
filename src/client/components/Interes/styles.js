@@ -22,16 +22,18 @@ export const LayoutRow = styled.div`
   .card:first-child {
     background: #f15a22;
     color: #ffffff;
-    margin-right: 7.6rem;
+    margin-right: 3.8rem;
   }
   .card:last-child {
     background: #f7ce48;
     color: #6d6e71;
+    margin-left: 3.8rem;
   }
 `;
 export const Card = styled.div`
+  flex: 1;
   border-radius: 14px;
-  padding: 5.6rem;
+  padding: 3.8rem;
   display: flex;
   flex-direction: column;
   text-align: center;
