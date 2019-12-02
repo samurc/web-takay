@@ -100,12 +100,6 @@ export const GlobalStyle = createGlobalStyle`
     margin-left: auto;
     margin-right: auto;
   }
-
-  .container {
-    margin: 0 auto;
-    max-width: 1280px;
-    width: 90%;
-  }
   .right {
     float: right !important;
   }

@@ -13,7 +13,7 @@ const Header = () => {
   return (
     <NavbarFixed>
       <Nav color="orange">
-        <div className="container">
+        <div className="grid">
           <NavWrapper>
             <a href="/" className="brand-logo">
               TAKAY

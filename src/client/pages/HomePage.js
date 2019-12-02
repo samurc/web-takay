@@ -7,6 +7,8 @@ import { LazyLoadImage } from 'react-lazy-load-image-component';
 import PropTypes from 'prop-types'; // ES6
 import { fetchData } from '../actions';
 import Fullbleed from '../components/Fullbleed';
+import Info from '../components/Info';
+import Interes from '../components/Interes';
 
 const HomePage = props => {
   const renderArticles = () => {
@@ -49,8 +51,14 @@ const HomePage = props => {
   return (
     <div id="wrap">
       {head()}
-      <div className="row">
+      <div className="block">
         <Fullbleed />
+      </div>
+      <div className="block">
+        <Info />
+      </div>
+      <div className="block">
+        <Interes />
       </div>
     </div>
   );
