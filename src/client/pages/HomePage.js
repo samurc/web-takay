@@ -6,6 +6,7 @@ import { Helmet } from 'react-helmet';
 import { LazyLoadImage } from 'react-lazy-load-image-component';
 import PropTypes from 'prop-types'; // ES6
 import { fetchData } from '../actions';
+import Fullbleed from '../components/Fullbleed';
 
 const HomePage = props => {
   const renderArticles = () => {
@@ -46,16 +47,10 @@ const HomePage = props => {
   }, [loadData]);
 
   return (
-    <div>
+    <div id="wrap">
       {head()}
       <div className="row">
-        <div className="section">
-          <h3>Popular Articles</h3>
-        </div>
-        <div className="divider" />
-        <div className="section">
-          <div className="row">{renderArticles()}</div>
-        </div>
+        <Fullbleed />
       </div>
     </div>
   );

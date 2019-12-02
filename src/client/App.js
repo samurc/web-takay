@@ -12,7 +12,7 @@ const App = ({ route }) => {
     <div>
       <GlobalStyle />
       <Header />
-      <div className="container">
+      <div>
         <ErrorBoundary>{renderRoutes(route.routes)}</ErrorBoundary>
       </div>
       <Footer />

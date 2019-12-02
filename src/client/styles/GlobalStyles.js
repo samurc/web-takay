@@ -95,6 +95,12 @@ export const GlobalStyle = createGlobalStyle`
     border: 0 solid transparent;
   }
 
+  .grid{
+    max-width: 1040px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
   .container {
     margin: 0 auto;
     max-width: 1280px;
