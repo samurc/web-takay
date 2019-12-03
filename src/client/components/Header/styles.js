@@ -3,18 +3,18 @@ import { fadeIn } from '../../styles/animation';
 
 export const NavbarFixed = styled.div`
   position: relative;
-  height: 5.6rem;
+  height: 4rem;
   z-index: 997;
 
   @media only screen and (min-width: 601px) {
-    height: 6.4rem;
+    height: 5rem;
 
     nav,
     nav .nav-wrapper i,
     nav a.sidenav-trigger,
     nav a.sidenav-trigger i {
-      height: 64px;
-      line-height: 64px;
+      height: 5rem;
+      line-height: 5rem;
     }
   }
   @media only screen and (min-width: 993px) {
@@ -27,8 +27,8 @@ export const Nav = styled.nav`
   position: fixed;
   color: #fff;
   width: 100%;
-  height: 5.6rem;
-  line-height: 5.6rem;
+  height: 4rem;
+  line-height: 4rem;
   box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.12),
     0 1px 5px 0 rgba(0, 0, 0, 0.2);
   ${props =>
@@ -38,6 +38,7 @@ export const Nav = styled.nav`
     `};
 
   .brand-logo {
+    margin-left: 20rem;
     position: absolute;
     color: #fff;
     display: inline-block;
@@ -65,7 +66,7 @@ export const Nav = styled.nav`
   }
   ul a {
     transition: background-color 0.3s;
-    font-size: 1.4rem;
+    font-size: 1.5rem;
     color: #fff;
     display: block;
     padding: 0 15px;
@@ -156,9 +157,10 @@ export const SideNav = styled.ul`
 
 export const NavList = styled.ul`
   @media only screen and (min-width: 993px) {
+    margin-right: 12.5rem;
     a.item {
       font-weight: bold;
-      padding: 0 10rem;
+      padding: 0 7.5rem;
     }
   }
 `;

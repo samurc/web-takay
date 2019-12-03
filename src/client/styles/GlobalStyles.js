@@ -96,7 +96,7 @@ export const GlobalStyle = createGlobalStyle`
   }
 
   .grid{
-    max-width: 1040px;
+    max-width: 1344px;
     margin-left: auto;
     margin-right: auto;
   }
@@ -105,13 +105,9 @@ export const GlobalStyle = createGlobalStyle`
   }
   /** Header **/
   @media only screen and (min-width: 601px) {
-    .container {
-      width: 85%;
-    }
+    
   }
   @media only screen and (min-width: 993px) {
-    .container {
-      width: 70%;
-    }
+    
   }
 `;

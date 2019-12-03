@@ -12,6 +12,16 @@ module.exports = {
             ['@babel/env', { targets: { browsers: ['last 2 versions'] } }]
           ]
         }
+      },
+      {
+        test: /\.(jpg|png|gif|woff|eot|ttf|svg|mp4|webm|ico)$/,
+        use: {
+          loader: 'file-loader',
+          options: {
+            name: '[name].[ext]',
+            outputPath: 'assets'
+          }
+        }
       }
     ]
   }

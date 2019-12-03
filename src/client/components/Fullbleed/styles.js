@@ -1,7 +1,7 @@
 import styled, { css } from 'styled-components';
 
 export const FullbleedVideo = styled.div`
-  height: calc(100vh - 60px);
+  height: calc(63vh - 50px);
   background: #eee;
   background-size: cover;
   background-position: center;

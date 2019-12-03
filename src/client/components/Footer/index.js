@@ -1,5 +1,6 @@
 import React from 'react';
 import { LayoutRow, Item } from './styles';
+import imgLogo from '../../assets/img/logo.png';
 
 export default () => {
   return (
@@ -7,7 +8,7 @@ export default () => {
       <div className="grid">
         <LayoutRow>
           <Item className="about">
-            <h3>TAKAY</h3>
+            <img src={imgLogo} width={85} height={20} />
             <p>
               Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum
               has been the industry's standard dummy text ever since the 1500s.

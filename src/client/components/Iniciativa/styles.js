@@ -2,7 +2,7 @@ import styled, { css } from 'styled-components';
 
 export const Fullbleed = styled.div`
   margin-bottom: 4rem;
-  height: calc(40vh - 60px);
+  height: 26vh;
   background: #eee;
   background-size: cover;
   background-position: center;
@@ -24,26 +24,19 @@ export const Fullbleed = styled.div`
   .grid-fullbleed {
     height: 100%;
     position: relative;
-    padding: 20px;
-    z-index: 3;
+    padding: 40px 200px;
   }
   .info-article {
-    position: absolute;
-    left: 20px;
-    width: calc(100% - 40px);
-    top: 40px;
-    text-align: center;
     h2 {
       color: #fff;
-      font-size: 2.6rem;
+      font-size: 1.9rem;
       text-align: left;
       text-transform: uppercase;
+      margin-bottom: 4rem;
     }
-    p {
-      margin-top: 6rem;
-      color: #fff;
-      font-size: 3.2rem;
-      font-weight: bold;
+    img {
+      margin: 0 auto;
+      display: block;
     }
   }
 `;
