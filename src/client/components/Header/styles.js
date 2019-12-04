@@ -50,11 +50,11 @@ export const Nav = styled.nav`
     float: left;
     position: relative;
     z-index: 1;
-    height: 56px;
-    margin: 0 18px;
+    height: 40px;
+    margin: 0 20px;
     i {
-      height: 56px;
-      line-height: 56px;
+      height: 40px;
+      line-height: 40px;
       display: block;
       font-size: 2.4rem;
     }
@@ -78,9 +78,7 @@ export const Nav = styled.nav`
 
   @media only screen and (max-width: 992px) {
     .brand-logo {
-      left: 50%;
-      -webkit-transform: translateX(-50%);
-      transform: translateX(-50%);
+      margin-left: 2rem;
     }
     .hide-on-med-and-down {
       display: none !important;

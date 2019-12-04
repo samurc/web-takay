@@ -12,6 +12,11 @@ export const Grid = styled.div`
     left: 0;
     border-radius: 4px;
   }
+  @media only screen and (max-width: 992px) {
+    &:before {
+      content: none;
+    }
+  }
 `;
 
 export const Box = styled.div`
@@ -30,6 +35,13 @@ export const Box = styled.div`
       padding: 5px 60px;
       color: #ffffff;
       border-radius: 6px;
+    }
+  }
+  @media only screen and (max-width: 992px) {
+    margin: 8rem 4rem;
+    font-size: 1rem;
+    .btn-more {
+      display: none;
     }
   }
 `;

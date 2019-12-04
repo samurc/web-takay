@@ -39,4 +39,10 @@ export const Fullbleed = styled.div`
       display: block;
     }
   }
+  @media only screen and (max-width: 992px) {
+    height: 30vh;
+    .grid-fullbleed {
+      padding: 40px 20px;
+    }
+  }
 `;

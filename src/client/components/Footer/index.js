@@ -1,5 +1,5 @@
 import React from 'react';
-import { LayoutRow, Item } from './styles';
+import { LayoutRow, Item, FooterCopyright } from './styles';
 import imgLogo from '../../assets/img/logo.png';
 
 export default () => {
@@ -10,14 +10,18 @@ export default () => {
           <Item className="about">
             <img src={imgLogo} width={85} height={20} />
             <p>
-              Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum
-              has been the industry's standard dummy text ever since the 1500s.
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
+              incididunt ut labore et dolore voluptatem.
             </p>
           </Item>
           <Item className="contact">
             <h3>Contáctanos</h3>
-            <p>987648935</p>
-            <p>01 - 3590844</p>
+            <p>
+              <i className="material-icons">phone_iphone</i> 987648935
+            </p>
+            <p>
+              <i className="material-icons">phone</i> 01 - 3590844
+            </p>
             <div className="social"></div>
           </Item>
           <Item className="location">
@@ -26,9 +30,9 @@ export default () => {
           </Item>
         </LayoutRow>
       </div>
-      <div className="footer-copyright">
-        <div className="grid">© 2019 Lorem ipsum</div>
-      </div>
+      <FooterCopyright>
+        <div className="grid">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</div>
+      </FooterCopyright>
     </footer>
   );
 };

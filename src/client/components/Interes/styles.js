@@ -10,12 +10,20 @@ export const Title = styled.h1`
   text-align: center;
   margin-bottom: 2rem;
   text-transform: uppercase;
+  @media only screen and (max-width: 992px) {
+    font-size: 4rem;
+    margin-bottom: 1.5rem;
+  }
 `;
 export const Description = styled.p`
   color: #000000;
   font-size: 1.5rem;
   text-align: center;
   margin-bottom: 2.5rem;
+  @media only screen and (max-width: 992px) {
+    font-size: 1rem;
+    margin-bottom: 1.5rem;
+  }
 `;
 export const LayoutRow = styled.div`
   display: flex;
@@ -29,6 +37,12 @@ export const LayoutRow = styled.div`
     background: #f7ce48;
     color: #6d6e71;
     margin-left: 6.5rem;
+  }
+  @media only screen and (max-width: 992px) {
+    flex-direction: column;
+    .card:first-child {
+      margin-bottom: 20px;
+    }
   }
 `;
 export const Card = styled.div`
@@ -54,5 +68,11 @@ export const Card = styled.div`
     font-size: 1.5rem;
     text-align: left;
     max-width: 280px;
+  }
+  @media only screen and (max-width: 992px) {
+    flex: 1;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    border-radius: 0;
   }
 `;
