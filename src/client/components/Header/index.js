@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { NavbarFixed, Nav, NavWrapper, SidenavOverlay, SideNav, NavList } from './styles';
 
-const Header = () => {
+const Header = ({ locationName }) => {
   const [menuOpen, setMenuToggle] = useState(false);
 
   const toggleMenu = () => setMenuToggle(!menuOpen);
@@ -10,9 +10,25 @@ const Header = () => {
   const stylesOpen = {
     transform: 'translateX(0px)'
   };
+  let colorNav;
+  switch (locationName) {
+    case '/familia':
+      colorNav = 'white';
+      break;
+    case '/experto':
+      colorNav = 'yellow';
+      break;
+    case '/nosotros':
+      colorNav = 'orange';
+      break;
+    default:
+      colorNav = 'orange';
+      break;
+  }
+
   return (
     <NavbarFixed>
-      <Nav color="orange">
+      <Nav color={colorNav}>
         <div className="grid">
           <NavWrapper>
             <a href="/" className="brand-logo">

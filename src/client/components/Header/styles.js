@@ -36,6 +36,22 @@ export const Nav = styled.nav`
     css`
       background-color: #f15a22;
     `};
+  ${props =>
+    props.color == 'white' &&
+    css`
+      background-color: #ffffff;
+      a.brand-logo {
+        color: #f15a22;
+      }
+      ul a.item {
+        color: #f15a22;
+      }
+    `};
+  ${props =>
+    props.color == 'yellow' &&
+    css`
+      background-color: #f7ce48;
+    `};
 
   .brand-logo {
     margin-left: 20rem;

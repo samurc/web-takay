@@ -6,14 +6,14 @@ import ErrorBoundary from './components/ErrorBoundry';
 import Header from './components/Header';
 import Footer from './components/Footer';
 
-const App = ({ route }) => {
-  console.log(route);
+const App = props => {
+  const locationName = props.location.pathname;
   return (
     <div>
       <GlobalStyle />
-      <Header />
+      <Header locationName={locationName} />
       <div>
-        <ErrorBoundary>{renderRoutes(route.routes)}</ErrorBoundary>
+        <ErrorBoundary>{renderRoutes(props.route.routes)}</ErrorBoundary>
       </div>
       <Footer />
     </div>
