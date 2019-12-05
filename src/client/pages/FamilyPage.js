@@ -11,14 +11,15 @@ const FamilyPage = props => {
   const renderArticles = () => {
     return props.next.map(article => (
       <div className="col s12 m6 l6 xl4" key={article.name}>
-        <div className="card large">
+        <h1>Family</h1>
+        {/*<div className="card large">
           <div className="card-image">
             <LazyLoadImage alt={article.name} src={article.imageUrl} />
           </div>
           <div className="card-content">
             <span className="card-title">{article.description}</span>
           </div>
-        </div>
+        </div>*/}
       </div>
     ));
   };
