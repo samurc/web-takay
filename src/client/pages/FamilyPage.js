@@ -8,6 +8,7 @@ import PropTypes from 'prop-types'; // ES6
 import { fetchData } from '../actions';
 import Slider from '../components/Slider';
 import Steps from '../components/Steps';
+import Formulario from '../components/Formulario';
 
 const FamilyPage = props => {
   const renderArticles = () => {
@@ -59,6 +60,11 @@ const FamilyPage = props => {
       <div className="block">
         <div className="grid">
           <Steps />
+        </div>
+      </div>
+      <div className="block">
+        <div className="grid">
+          <Formulario />
         </div>
       </div>
     </div>
