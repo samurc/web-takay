@@ -62,6 +62,7 @@ export const Button = styled.div`
 export const Dots = styled.div`
   display: flex;
   justify-content: flex-end;
+  margin-bottom: 2rem;
 `;
 
 export const Dot = styled.div`

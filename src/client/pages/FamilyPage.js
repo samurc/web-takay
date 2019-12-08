@@ -6,7 +6,8 @@ import { Helmet } from 'react-helmet';
 import { LazyLoadImage } from 'react-lazy-load-image-component';
 import PropTypes from 'prop-types'; // ES6
 import { fetchData } from '../actions';
-import Familycarousel from '../components/Familycarousel';
+import Slider from '../components/Slider';
+import Steps from '../components/Steps';
 
 const FamilyPage = props => {
   const renderArticles = () => {
@@ -52,7 +53,12 @@ const FamilyPage = props => {
       {head()}
       <div className="block">
         <div className="grid">
-          <Familycarousel />
+          <Slider />
+        </div>
+      </div>
+      <div className="block">
+        <div className="grid">
+          <Steps />
         </div>
       </div>
     </div>
