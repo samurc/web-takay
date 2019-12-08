@@ -9,6 +9,7 @@ import { fetchData } from '../actions';
 import Slider from '../components/Slider';
 import Steps from '../components/Steps';
 import Formulario from '../components/Formulario';
+import Expertos from '../components/Expertos';
 
 const FamilyPage = props => {
   const renderArticles = () => {
@@ -65,6 +66,11 @@ const FamilyPage = props => {
       <div className="block">
         <div className="grid">
           <Formulario />
+        </div>
+      </div>
+      <div className="block">
+        <div className="grid">
+          <Expertos />
         </div>
       </div>
     </div>
