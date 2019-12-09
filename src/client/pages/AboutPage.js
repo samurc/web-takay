@@ -6,24 +6,12 @@ import { Helmet } from 'react-helmet';
 import { LazyLoadImage } from 'react-lazy-load-image-component';
 import PropTypes from 'prop-types'; // ES6
 import { fetchData } from '../actions';
+import Fullbleed from '../components/Fullbleed';
+import Iniciativa from '../components/Iniciativa';
+import Bloques from '../components/Bloques';
+import FormularioContactanos from '../components/FormularioContactanos';
 
 const AboutPage = props => {
-  const renderArticles = () => {
-    return props.next.map(article => (
-      <div className="col s12 m6 l6 xl4" key={article.name}>
-        <h1>About</h1>
-        {/*<div className="card large">
-          <div className="card-image">
-            <LazyLoadImage alt={article.name} src={article.imageUrl} />
-          </div>
-          <div className="card-content">
-            <span className="card-title">{article.description}</span>
-          </div>
-        </div>*/}
-      </div>
-    ));
-  };
-
   const head = () => {
     return (
       <Helmet key={Math.random()}>
@@ -49,14 +37,17 @@ const AboutPage = props => {
   return (
     <div>
       {head()}
-      <div className="row">
-        <div className="section">
-          <h3>Popular Articles</h3>
-        </div>
-        <div className="divider" />
-        <div className="section">
-          <div className="row">{renderArticles()}</div>
-        </div>
+      <div className="block">
+        <Fullbleed />
+      </div>
+      <div className="block">
+        <Bloques />
+      </div>
+      <div className="block">
+        <FormularioContactanos />
+      </div>
+      <div className="block">
+        <Iniciativa />
       </div>
     </div>
   );
