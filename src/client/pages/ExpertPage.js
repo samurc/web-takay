@@ -8,7 +8,10 @@ import PropTypes from 'prop-types'; // ES6
 import { fetchData } from '../actions';
 import Slider from '../components/Slider';
 import FormularioExperiencia from '../components/FormularioExperiencia';
+import Beneficios from '../components/Beneficios';
 import Carousel from '../components/Carousel';
+import Proveedor from '../components/Proveedor';
+import Socio from '../components/Socio';
 
 const ExpertPage = props => {
   const head = () => {
@@ -43,7 +46,22 @@ const ExpertPage = props => {
       </div>
       <div className="block">
         <div className="grid">
+          <Beneficios />
+        </div>
+      </div>
+      <div className="block">
+        <div className="grid">
+          <Proveedor />
+        </div>
+      </div>
+      <div className="block">
+        <div className="grid">
           <FormularioExperiencia />
+        </div>
+      </div>
+      <div className="block">
+        <div className="grid">
+          <Socio />
         </div>
       </div>
       <div>

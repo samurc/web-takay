@@ -70,7 +70,7 @@ export const Button = styled.div`
   margin-top: 1rem;
   > a {
     display: inline-block;
-    background: #00949e;
+    background: #6d6e71;
     color: #ffffff;
     text-transform: uppercase;
     font-size: 1.5rem;
