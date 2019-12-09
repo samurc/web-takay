@@ -11,7 +11,7 @@ import {
   Counter
 } from './styles-slide';
 
-const Slide = ({ data, arrayCount, order, goToPrevSlide, goToNextSlide }) => {
+const Slide = ({ data, arrayCount, order, goToPrevSlide, goToNextSlide, theme }) => {
   const { text, image, name } = data;
 
   return (
@@ -21,7 +21,7 @@ const Slide = ({ data, arrayCount, order, goToPrevSlide, goToNextSlide }) => {
           <Col1Inner>
             <p>{text}</p>
             <span>{name}</span>
-            <Arrows>
+            <Arrows theme={theme}>
               <Arrow onClick={goToPrevSlide}> {'<'} </Arrow>
               <Counter>
                 {order + 1}/{arrayCount}

@@ -92,6 +92,7 @@ export default class Slider extends Component {
               arrayCount={list.length}
               order={i}
               handleGoSlide={this.goSlide}
+              theme={this.props.theme}
             />
           ))}
         </SliderWrapper>

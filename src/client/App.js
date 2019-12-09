@@ -15,7 +15,7 @@ const App = props => {
       <div>
         <ErrorBoundary>{renderRoutes(props.route.routes)}</ErrorBoundary>
       </div>
-      <Footer />
+      <Footer locationName={locationName} />
     </div>
   );
 };

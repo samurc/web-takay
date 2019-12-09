@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 
 export const Title = styled.h2`
   color: #f15a22;
@@ -6,6 +6,11 @@ export const Title = styled.h2`
   padding-top: 9rem;
   text-align: center;
   margin-right: 17rem;
+  ${props =>
+    props.theme == 'yellow' &&
+    css`
+      color: #f7ce48;
+    `};
 `;
 
 export const SliderUI = styled.div`

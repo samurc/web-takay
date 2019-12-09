@@ -11,13 +11,18 @@ import {
   Dot
 } from './styles-slide';
 
-const Slide = ({ data, arrayCount, order, handleGoSlide }) => {
+const Slide = ({ data, arrayCount, order, handleGoSlide, theme }) => {
   const { text, image, button_text, button_url } = data;
 
   const arrDots = [];
   for (let i = 0; i < arrayCount; i++) {
     arrDots.push(
-      <Dot key={i} onClick={() => handleGoSlide(i)} className={i === order ? 'active' : ''}>
+      <Dot
+        key={i}
+        theme={theme}
+        onClick={() => handleGoSlide(i)}
+        className={i === order ? 'active' : ''}
+      >
         {i + 1}
       </Dot>
     );
@@ -27,9 +32,9 @@ const Slide = ({ data, arrayCount, order, handleGoSlide }) => {
     <SlideUI className="slide">
       <Article>
         <Col1>
-          <Col1Inner>
+          <Col1Inner theme={theme}>
             <h1>{text}</h1>
-            <Button>
+            <Button theme={theme}>
               <a href={button_url}>{button_text}</a>
             </Button>
             <Dots>{arrDots}</Dots>

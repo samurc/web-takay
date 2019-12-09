@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 
 export const SlideUI = styled.div`
   display: inline-block;
@@ -25,6 +25,13 @@ export const Col1Inner = styled.div`
     font-size: 3.75rem;
     color: #f15a22;
   }
+  ${props =>
+    props.theme == 'yellow' &&
+    css`
+      h1 {
+        color: #f7ce48;
+      }
+    `};
 `;
 
 export const Col2 = styled.div`
@@ -57,6 +64,13 @@ export const Button = styled.div`
       opacity: 0.9;
     }
   }
+  ${props =>
+    props.theme == 'yellow' &&
+    css`
+      > a {
+        background: #6d6e71;
+      }
+    `};
 `;
 
 export const Dots = styled.div`
@@ -97,4 +111,11 @@ export const Dot = styled.div`
       opacity: 0.75;
     }
   }
+  ${props =>
+    props.theme == 'yellow' &&
+    css`
+      &:before {
+        color: #f7ce48;
+      }
+    `};
 `;

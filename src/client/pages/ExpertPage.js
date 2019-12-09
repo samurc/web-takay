@@ -6,24 +6,10 @@ import { Helmet } from 'react-helmet';
 import { LazyLoadImage } from 'react-lazy-load-image-component';
 import PropTypes from 'prop-types'; // ES6
 import { fetchData } from '../actions';
+import Slider from '../components/Slider';
+import Carousel from '../components/Carousel';
 
 const ExpertPage = props => {
-  const renderArticles = () => {
-    return props.next.map(article => (
-      <div className="col s12 m6 l6 xl4" key={article.name}>
-        <h1>Expert</h1>
-        {/*<div className="card large">
-          <div className="card-image">
-            <LazyLoadImage alt={article.name} src={article.imageUrl} />
-          </div>
-          <div className="card-content">
-            <span className="card-title">{article.description}</span>
-          </div>
-        </div>*/}
-      </div>
-    ));
-  };
-
   const head = () => {
     return (
       <Helmet key={Math.random()}>
@@ -47,15 +33,14 @@ const ExpertPage = props => {
   }, [loadData]);
 
   return (
-    <div>
+    <div id="wrap">
       {head()}
-      <div className="row">
-        <div className="section">
-          <h3>Popular Articles</h3>
+      <div className="block">
+        <div className="grid">
+          <Slider theme="yellow" />
         </div>
-        <div className="divider" />
-        <div className="section">
-          <div className="row">{renderArticles()}</div>
+        <div className="grid">
+          <Carousel theme="yellow" />
         </div>
       </div>
     </div>

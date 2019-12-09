@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 
 export const SlideUI = styled.div`
   display: inline-block;
@@ -56,6 +56,13 @@ export const Arrows = styled.div`
   display: flex;
   justify-content: flex-end;
   align-items: center;
+  > div {
+    color: #f7ce48;
+    border-color: #f7ce48;
+  }
+  > span {
+    color: #f7ce48;
+  }
 `;
 
 export const Arrow = styled.div`

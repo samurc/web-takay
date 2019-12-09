@@ -1,7 +1,27 @@
 import styled, { css } from 'styled-components';
 
+export const FooterUI = styled.footer`
+  ${props =>
+    props.theme == 'yellow' &&
+    css`
+      background-color: #6d6e71;
+      h3 {
+        color: #f7ce48 !important;
+      }
+      .about {
+        color: #ffffff;
+      }
+      .contact {
+        color: #ffffff;
+      }
+      .location {
+        color: #ffffff;
+      }
+    `};
+`;
+
 export const LayoutRow = styled.div`
-  margin: 4rem 20rem 2rem 20rem;
+  padding: 4rem 20rem 2rem 20rem;
   display: flex;
   justify-content: space-between;
   @media only screen and (max-width: 992px) {
@@ -75,6 +95,12 @@ export const FooterCopyright = styled.div`
   border-top: 1px solid #55b8be;
   padding: 15px 0;
   text-align: right;
+  ${props =>
+    props.theme == 'yellow' &&
+    css`
+      border-color: #f7ce48;
+      color: #ffffff;
+    `};
   @media only screen and (max-width: 992px) {
     width: 80%;
     margin: 0 auto;

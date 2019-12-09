@@ -74,7 +74,7 @@ export default class Slider extends Component {
     const { list, translateValue } = this.state;
     return (
       <div>
-        <Title>EXPERIENCIAS</Title>
+        <Title theme={this.props.theme}>EXPERIENCIAS</Title>
         <SliderUI>
           <SliderWrapper
             style={{
@@ -90,6 +90,7 @@ export default class Slider extends Component {
                 order={i}
                 goToPrevSlide={this.goToPrevSlide}
                 goToNextSlide={this.goToNextSlide}
+                theme={this.props.theme}
               />
             ))}
           </SliderWrapper>

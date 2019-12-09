@@ -1,10 +1,11 @@
 import React from 'react';
-import { LayoutRow, Item, FooterCopyright } from './styles';
+import { LayoutRow, Item, FooterUI, FooterCopyright } from './styles';
 import imgLogo from '../../assets/img/logo.png';
 
-export default () => {
+export default ({ locationName }) => {
+  const theme = locationName === '/experto' ? 'yellow' : '';
   return (
-    <footer className="page-footer">
+    <FooterUI theme={theme}>
       <div className="grid">
         <LayoutRow>
           <Item className="about">
@@ -30,9 +31,9 @@ export default () => {
           </Item>
         </LayoutRow>
       </div>
-      <FooterCopyright>
+      <FooterCopyright theme={theme}>
         <div className="grid">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</div>
       </FooterCopyright>
-    </footer>
+    </FooterUI>
   );
 };

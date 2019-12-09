@@ -31,9 +31,9 @@ const Header = ({ locationName }) => {
       <Nav color={colorNav}>
         <div className="grid">
           <NavWrapper>
-            <a href="/" className="brand-logo">
+            <Link to="/" className="brand-logo">
               TAKAY
-            </a>
+            </Link>
             <a onClick={toggleMenu} className="sidenav-trigger right">
               <i className="material-icons">menu</i>
             </a>
