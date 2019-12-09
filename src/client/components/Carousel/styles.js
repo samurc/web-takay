@@ -12,7 +12,7 @@ export const SliderUI = styled.div`
   position: relative;
   width: 100%;
   max-width: 875px;
-  margin: -10rem auto 10px auto;
+  margin: -10rem auto 0 auto;
   overflow: hidden;
   white-space: nowrap;
 `;

@@ -11,6 +11,7 @@ import Steps from '../components/Steps';
 import Formulario from '../components/Formulario';
 import Expertos from '../components/Expertos';
 import Carousel from '../components/Carousel';
+import Dudas from '../components/Dudas';
 
 const FamilyPage = props => {
   const renderArticles = () => {
@@ -77,6 +78,11 @@ const FamilyPage = props => {
       <div className="block">
         <div className="grid">
           <Carousel />
+        </div>
+      </div>
+      <div className="block">
+        <div className="grid">
+          <Dudas />
         </div>
       </div>
     </div>
