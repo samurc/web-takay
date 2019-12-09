@@ -7,6 +7,7 @@ import { LazyLoadImage } from 'react-lazy-load-image-component';
 import PropTypes from 'prop-types'; // ES6
 import { fetchData } from '../actions';
 import Slider from '../components/Slider';
+import FormularioExperiencia from '../components/FormularioExperiencia';
 import Carousel from '../components/Carousel';
 
 const ExpertPage = props => {
@@ -39,6 +40,13 @@ const ExpertPage = props => {
         <div className="grid">
           <Slider theme="yellow" />
         </div>
+      </div>
+      <div className="block">
+        <div className="grid">
+          <FormularioExperiencia />
+        </div>
+      </div>
+      <div>
         <div className="grid">
           <Carousel theme="yellow" />
         </div>
