@@ -6,7 +6,7 @@ import { Helmet } from 'react-helmet';
 import { LazyLoadImage } from 'react-lazy-load-image-component';
 import PropTypes from 'prop-types'; // ES6
 import { fetchData } from '../actions';
-import Fullbleed from '../components/Fullbleed';
+import Acerca from '../components/Acerca';
 import Iniciativa from '../components/Iniciativa';
 import Bloques from '../components/Bloques';
 import FormularioContactanos from '../components/FormularioContactanos';
@@ -38,7 +38,7 @@ const AboutPage = props => {
     <div>
       {head()}
       <div className="block">
-        <Fullbleed />
+        <Acerca />
       </div>
       <div className="block">
         <Bloques />

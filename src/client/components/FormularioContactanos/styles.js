@@ -3,6 +3,7 @@ import styled from 'styled-components';
 export const Layout = styled.div`
   padding: 8rem 20rem;
   display: flex;
+  justify-content: center;
 `;
 export const Col1 = styled.div`
   display: flex;
@@ -10,7 +11,7 @@ export const Col1 = styled.div`
   margin-right: 10rem;
 `;
 export const Col1Inner = styled.div`
-  max-width: 36rem;
+  max-width: 43rem;
 `;
 export const Text = styled.p`
   font-size: 15px;
@@ -22,13 +23,15 @@ export const Col2Inner = styled.div`
 `;
 export const Title1 = styled.h3`
   font-size: 3.75rem;
-  color: #000000;
+  color: #6d6e71;
   text-transform: uppercase;
 `;
 export const Title2 = styled.h2`
   font-size: 6rem;
   color: #f15a22;
   text-transform: uppercase;
+  font-weight: bold;
+  margin-bottom: 2rem;
 `;
 
 export const LayoutRow = styled.div`
