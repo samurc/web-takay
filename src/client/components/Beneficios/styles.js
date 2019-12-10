@@ -16,6 +16,10 @@ export const Title = styled.h1`
 export const LayoutRow = styled.div`
   display: flex;
   justify-content: center;
+  @media only screen and (max-width: 992px) {
+    flex-direction: column;
+    align-items: center;
+  }
 `;
 
 export const Item = styled.div`

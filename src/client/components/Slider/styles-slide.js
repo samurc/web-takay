@@ -7,6 +7,9 @@ export const SlideUI = styled.div`
 `;
 export const Article = styled.article`
   display: flex;
+  @media only screen and (max-width: 992px) {
+    flex-direction: column;
+  }
 `;
 
 export const Col1 = styled.div`
@@ -15,6 +18,10 @@ export const Col1 = styled.div`
   flex-shrink: 0;
   display: flex;
   justify-content: center;
+  @media only screen and (max-width: 992px) {
+    padding-top: 1rem;
+    flex: none;
+  }
 `;
 
 export const Col1Inner = styled.div`
@@ -39,6 +46,10 @@ export const Col2 = styled.div`
   display: -ms-flexbox;
   display: flex;
   align-items: center;
+  @media only screen and (max-width: 992px) {
+    flex: none;
+    height: 400px;
+  }
 `;
 
 export const Col2Inner = styled.div`

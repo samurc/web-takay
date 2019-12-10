@@ -27,6 +27,7 @@ export const LayoutRow = styled.div`
   @media only screen and (max-width: 992px) {
     flex-direction: column;
     margin: 5rem 0;
+    padding: 0;
   }
 `;
 export const Item = styled.div`
@@ -73,6 +74,7 @@ export const Item = styled.div`
       max-width: 185px;
       margin-left: auto;
       margin-right: auto;
+      margin-bottom: 5rem;
       > p,
       h3 {
         text-align: center;

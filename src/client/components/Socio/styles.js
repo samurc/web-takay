@@ -21,6 +21,9 @@ export const Col1Inner = styled.div`
     font-size: 3.75rem;
     color: #ffffff;
   }
+  @media only screen and (max-width: 992px) {
+    padding: 0;
+  }
 `;
 
 export const Col2 = styled.div`

@@ -3,6 +3,9 @@ import styled from 'styled-components';
 export const Layout = styled.div`
   background: #f15a22;
   padding: 4rem 7.5rem;
+  @media only screen and (max-width: 992px) {
+    padding: 1rem;
+  }
 `;
 
 export const Title = styled.h1`
@@ -16,6 +19,10 @@ export const Title = styled.h1`
 export const LayoutRow = styled.div`
   display: flex;
   justify-content: center;
+  @media only screen and (max-width: 992px) {
+    flex-direction: column;
+    align-items: center;
+  }
 `;
 
 export const Item = styled.div`
@@ -29,6 +36,9 @@ export const Item = styled.div`
     .step {
       display: none;
     }
+  }
+  @media only screen and (max-width: 992px) {
+    flex-direction: row;
   }
 `;
 
@@ -58,6 +68,33 @@ export const Head = styled.div`
       width: 50%;
     }
   }
+  @media only screen and (max-width: 992px) {
+    &:after {
+      left: 50%;
+      display: block;
+      content: '';
+      width: 2px;
+      height: 100%;
+      background: #ffffff;
+    }
+    &.initial {
+      &:after {
+        left: 50%;
+        top: 50%;
+        height: 50%;
+        width: 2px;
+        height: 100%;
+      }
+    }
+    &.last {
+      &:after {
+        bottom: 50%;
+        height: 50%;
+        width: 2px;
+        height: 100%;
+      }
+    }
+  }
 `;
 
 export const Circle = styled.div`
@@ -79,6 +116,9 @@ export const Body = styled.div`
   min-height: 250px;
   display: flex;
   flex-direction: column;
+  @media only screen and (max-width: 992px) {
+    justify-content: center;
+  }
 `;
 
 export const Step = styled.div`

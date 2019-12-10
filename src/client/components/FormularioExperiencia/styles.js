@@ -3,14 +3,24 @@ import styled from 'styled-components';
 export const Layout = styled.div`
   padding: 8rem 20rem;
   display: flex;
+  @media only screen and (max-width: 992px) {
+    padding: 1rem;
+    flex-direction: column;
+  }
 `;
 export const Col1 = styled.div`
   display: flex;
   align-items: center;
   margin-right: 10rem;
+  @media only screen and (max-width: 992px) {
+    margin-right: 0;
+  }
 `;
 export const Col1Inner = styled.div`
   max-width: 36rem;
+  @media only screen and (max-width: 992px) {
+    max-width: 100%;
+  }
 `;
 export const Text = styled.p`
   font-size: 15px;
