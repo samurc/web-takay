@@ -18,10 +18,10 @@ export default class FormularioContactanos extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      nombre_completo: 'coconut',
+      nombre_completo: '',
       telefono: '',
       correo: '',
-      ocupacion: 'opt2',
+      ocupacion: '',
       acepto_terminos: false
     };
     this.handleInputChange = this.handleInputChange.bind(this);

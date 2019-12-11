@@ -68,6 +68,12 @@ export const LayoutRow = styled.div`
   &.flex-items > div {
     flex: 1;
   }
+  @media only screen and (max-width: 992px) {
+    flex-direction: column;
+    &.flex-items > div:nth-child(1) {
+      margin-bottom: 10px;
+    }
+  }
 `;
 
 export const LayoutColumn = styled.div`

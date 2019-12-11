@@ -18,11 +18,11 @@ export default class Formulario extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      nombre_completo: 'coconut',
+      nombre_completo: '',
       telefono: '',
       correo: '',
-      tipo_proyecto: 'opt2',
-      situacion_actual: 'opt2',
+      tipo_proyecto: '',
+      situacion_actual: '',
       acepto_terminos: false
     };
     this.handleInputChange = this.handleInputChange.bind(this);
