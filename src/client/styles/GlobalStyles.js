@@ -113,7 +113,7 @@ export const GlobalStyle = createGlobalStyle`
     top: 0;
     width: 100%;
     height: 100%;
-    z-index: 125;
+    z-index: 998;
     overflow: auto;
   }
   .x-modal-video > a.x-close {

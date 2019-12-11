@@ -9,7 +9,6 @@ export const FooterUI = styled.footer`
         color: #f7ce48 !important;
       }
       .about {
-        margin-top: 8rem;
         color: #ffffff;
       }
       .contact {
@@ -19,6 +18,15 @@ export const FooterUI = styled.footer`
         color: #ffffff;
       }
     `};
+  @media only screen and (max-width: 992px) {
+    ${props =>
+      props.theme == 'yellow' &&
+      css`
+        .about {
+          margin-top: 8rem;
+        }
+      `};
+  }
 `;
 
 export const LayoutRow = styled.div`
