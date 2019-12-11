@@ -4,7 +4,7 @@ export const Layout = styled.div`
   padding: 8rem 20rem;
   display: flex;
   @media only screen and (max-width: 992px) {
-    padding: 1rem;
+    padding: 3rem 2rem;
     flex-direction: column;
   }
 `;
@@ -26,6 +26,10 @@ export const Text = styled.p`
   font-size: 15px;
   line-height: 20px;
   font-family: 'Source Serif Pro', serif;
+  @media only screen and (max-width: 992px) {
+    font-size: 10px;
+    margin-bottom: 1rem;
+  }
 `;
 export const Col2 = styled.div``;
 export const Col2Inner = styled.div`
@@ -38,12 +42,21 @@ export const Title1 = styled.h3`
   text-transform: uppercase;
   margin-bottom: 2rem;
   font-weight: 900;
+  @media only screen and (max-width: 992px) {
+    font-size: 25px;
+    line-height: 30px;
+    color: #f7ce48;
+    margin-bottom: 1rem;
+  }
 `;
 export const Title2 = styled.h2`
   font-size: 6rem;
   color: #f7ce48;
   text-transform: uppercase;
   margin-bottom: 3rem;
+  @media only screen and (max-width: 992px) {
+    display: none;
+  }
 `;
 
 export const LayoutRow = styled.div`
@@ -79,6 +92,11 @@ export const Form = styled.form`
     border: 0;
     padding: 4px;
     background: #e4e4e4;
+  }
+  @media only screen and (max-width: 992px) {
+    label {
+      font-size: 1rem;
+    }
   }
 `;
 

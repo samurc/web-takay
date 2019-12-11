@@ -2,6 +2,9 @@ import styled from 'styled-components';
 
 export const Article = styled.article`
   display: flex;
+  @media only screen and (max-width: 992px) {
+    flex-direction: column;
+  }
 `;
 
 export const Col1 = styled.div`
@@ -10,6 +13,10 @@ export const Col1 = styled.div`
   flex-shrink: 0;
   display: flex;
   justify-content: center;
+  @media only screen and (max-width: 992px) {
+    flex: none;
+    background: #ffffff;
+  }
 `;
 
 export const Col1Inner = styled.div`
@@ -25,7 +32,13 @@ export const Col1Inner = styled.div`
     text-transform: uppercase;
   }
   @media only screen and (max-width: 992px) {
-    padding: 0;
+    padding: 2.5rem 2rem;
+    > h1 {
+      font-size: 25px;
+      line-height: 28px;
+      color: #f7ce48;
+      max-width: 275px;
+    }
   }
 `;
 
@@ -34,6 +47,9 @@ export const Col2 = styled.div`
   display: -ms-flexbox;
   display: flex;
   align-items: center;
+  @media only screen and (max-width: 992px) {
+    height: 290px;
+  }
 `;
 
 export const Col2Inner = styled.div`

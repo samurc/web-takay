@@ -9,6 +9,7 @@ export const FooterUI = styled.footer`
         color: #f7ce48 !important;
       }
       .about {
+        margin-top: 8rem;
         color: #ffffff;
       }
       .contact {
@@ -26,8 +27,13 @@ export const LayoutRow = styled.div`
   justify-content: space-between;
   @media only screen and (max-width: 992px) {
     flex-direction: column;
-    margin: 5rem 0;
+    padding: 5rem 0;
     padding: 0;
+    ${props =>
+      props.theme == 'yellow' &&
+      css`
+        background-color: #6d6e71;
+      `};
   }
 `;
 export const Item = styled.div`

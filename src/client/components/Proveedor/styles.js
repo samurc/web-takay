@@ -24,6 +24,11 @@ export const Fullbleed = styled.div`
       text-align: center;
       text-transform: uppercase;
       margin: 0px auto 4rem auto;
+      @media only screen and (max-width: 992px) {
+        font-size: 25px;
+        line-height: 30px;
+        max-width: 280px;
+      }
     }
     .item-row {
       font-family: 'Source Serif Pro', serif;
@@ -35,6 +40,10 @@ export const Fullbleed = styled.div`
       color: #ffffff;
       img {
         margin-right: 10px;
+      }
+      @media only screen and (max-width: 992px) {
+        margin-left: 1rem;
+        font-size: 10px;
       }
     }
   }

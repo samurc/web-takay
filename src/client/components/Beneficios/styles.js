@@ -3,6 +3,9 @@ import styled from 'styled-components';
 export const Layout = styled.div`
   background: #f7ce48;
   padding: 7rem 7.5rem;
+  @media only screen and (max-width: 992px) {
+    padding: 3rem;
+  }
 `;
 
 export const Title = styled.h1`
@@ -14,6 +17,11 @@ export const Title = styled.h1`
   margin: 0px auto 9rem auto;
   text-transform: uppercase;
   max-width: 950px;
+  @media only screen and (max-width: 992px) {
+    font-size: 25px;
+    line-height: 29px;
+    margin-bottom: 20px;
+  }
 `;
 
 export const LayoutRow = styled.div`
@@ -37,6 +45,9 @@ export const Body = styled.div`
   min-height: 140px;
   display: flex;
   flex-direction: column;
+  @media only screen and (max-width: 992px) {
+    min-height: auto;
+  }
 `;
 
 export const Step = styled.div`
@@ -57,4 +68,8 @@ export const Text = styled.div`
   font-size: 1.9rem;
   color: #fff;
   font-family: 'Source Serif Pro', serif;
+  @media only screen and (max-width: 992px) {
+    margin-top: 1rem;
+    font-size: 1.5rem;
+  }
 `;

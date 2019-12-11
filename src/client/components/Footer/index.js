@@ -45,7 +45,7 @@ export default ({ locationName }) => {
   return (
     <FooterUI theme={theme}>
       <div className="grid">
-        <LayoutRow>
+        <LayoutRow theme={theme}>
           <Item className="about">
             <img src={logoImg} width={85} height={20} />
             <p>
