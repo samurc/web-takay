@@ -105,6 +105,78 @@ export const GlobalStyle = createGlobalStyle`
   .right {
     float: right !important;
   }
+
+  .x-modal-video {
+    font-family: var(--fonts-base, "Lato");
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 125;
+    overflow: auto;
+  }
+  .x-modal-video > a.x-close {
+      cursor: pointer;
+      position: fixed;
+      top: 5%;
+      right: 5%;
+      z-index: 2;
+      font-size: 2.4rem;
+      color: #fff;
+      text-shadow: 0px 0px 2px rgba(0, 0, 0, 0.3);
+      text-decoration: none;
+      z-index: 2;
+  }
+  .x-modal-video .x-wrapper {
+      position: absolute;
+      left: 50%;
+      top: 50px;
+      z-index: 1;
+      transform: translateX(-50%);
+      *zoom: 1;
+      max-width: 111rem;
+      width: 100%;
+  }
+  .x-modal-video .bg-modal-video {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.91);
+    z-index: 0;
+  }
+  .x-modal-video .x-wrapper .header-video {
+      font-size: 1.8rem;
+      line-height: 1.33;
+      margin-bottom: 2rem;
+      color: #ffffff;
+  }
+  .x-modal-video .x-wrapper .x-item {
+      position: relative;
+  }
+  .cover {
+    overflow: hidden;
+    padding-top: 56.25% ;
+    position: relative;
+    display: block;
+    box-shadow: inset 0px 0px 100px 50px rgba(0, 0, 0, 0.02);
+  }
+  .x-modal-video .x-wrapper .x-item .media-player > iframe {
+      width: 100%;
+      position: absolute;
+      top: 0;
+      left: 0;
+  }
+  .x-modal-video .x-wrapper:before, .x-modal-video .x-wrapper:after {
+      content: "";
+      display: table;
+  }
+  .x-modal-video .x-wrapper:after {
+      clear: both;
+  }
+
   /** Header **/
   @media only screen and (min-width: 601px) {
     

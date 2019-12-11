@@ -10,21 +10,13 @@ import Fullbleed from '../components/Fullbleed';
 import Info from '../components/Info';
 import Interes from '../components/Interes';
 import Iniciativa from '../components/Iniciativa';
+import ArticleDetailModal from '../components/ArticleDetailModal';
 
 const HomePage = props => {
-  const renderArticles = () => {
-    return props.next.map(article => (
-      <div className="col s12 m6 l6 xl4" key={article.name}>
-        <div className="card large">
-          <div className="card-image">
-            <LazyLoadImage alt={article.name} src={article.imageUrl} />
-          </div>
-          <div className="card-content">
-            <span className="card-title">{article.description}</span>
-          </div>
-        </div>
-      </div>
-    ));
+  const [modal, setModal] = useState(false);
+
+  const closeModal = () => {
+    setModal(false);
   };
 
   const head = () => {
@@ -49,11 +41,17 @@ const HomePage = props => {
     // loadData();
   }, [loadData]);
 
+  const clickModal = () => {
+    setModal(true);
+  };
+
   return (
     <div id="wrap">
       {head()}
+      {modal ? <ArticleDetailModal handler={closeModal} /> : null}
+
       <div className="block">
-        <Fullbleed />
+        <Fullbleed clickModal={clickModal} />
       </div>
       <div className="block">
         <Info />

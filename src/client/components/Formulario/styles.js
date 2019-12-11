@@ -102,11 +102,12 @@ export const Form = styled.form`
   label {
     font-size: 1.3rem;
   }
-  input,
+  input:not([type='checkbox']),
   select {
     border: 0;
     padding: 4px;
     background: #e4e4e4;
+    height: 28px;
   }
 `;
 

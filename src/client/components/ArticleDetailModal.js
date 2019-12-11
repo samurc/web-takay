@@ -5,52 +5,29 @@ const ArticleDetailModal = props => {
   const { handler, data } = props;
   return (
     <>
-      <div
-        id="modal1"
-        className="modal"
-        style={{
-          zIndex: 1003,
-          display: 'block',
-          opacity: 1,
-          top: 10,
-          width: '95vw',
-          height: '95vh',
-          maxHeight: '95vh'
-        }}
-      >
-        <div className="modal-footer">
-          <button
-            type="button"
-            onClick={handler}
-            className="modal-close waves-effect waves-green btn red"
-          >
-            Close
-          </button>
-        </div>
-        <div className="modal-content">
-          <h4>{data.title}</h4>
-          <img className="responsive-img" src={data.urlToImage} alt={data.title} />
-          <p>{data.description}</p>
-          <p>{data.content}</p>
-          <div className="divider" />
-          <div className="section">
-            <a
-              href={data.url}
-              className="waves-effect waves-light btn"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Full Article
-            </a>
+      <div className="x-modal-video">
+        <a onClick={handler} className="x-close close">
+          X
+        </a>
+        <div className="x-wrapper">
+          <div className="header-video"></div>
+          <div className="x-container">
+            <div className="x-item">
+              <div className="cover media-player">
+                <iframe
+                  width="100%"
+                  height="100%"
+                  src="https://www.youtube.com/embed/rngtdlTOWsU?autoplay=1"
+                  frameBorder="0"
+                  allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                  allowFullScreen
+                ></iframe>
+              </div>
+            </div>
           </div>
         </div>
+        <div className="bg-modal-video x-close" onClick={handler}></div>
       </div>
-      <div
-        role="presentation"
-        onClick={handler}
-        className="modal-overlay"
-        style={{ zIndex: 1002, display: 'block', opacity: 0.5 }}
-      />
     </>
   );
 };

@@ -87,11 +87,12 @@ export const Form = styled.form`
     font-size: 1.5rem;
     font-family: 'Source Serif Pro', serif;
   }
-  input,
+  input:not([type='checkbox']),
   select {
     border: 0;
     padding: 4px;
     background: #e4e4e4;
+    height: 28px;
   }
   @media only screen and (max-width: 992px) {
     label {

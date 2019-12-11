@@ -94,9 +94,9 @@ export default class Formulario extends Component {
                   value={this.state.tipo_proyecto}
                   onChange={this.handleInputChange}
                 >
-                  <option value="opt1">Grapefruit</option>
-                  <option value="opt2">Lime</option>
-                  <option value="opt3">Coconut</option>
+                  <option value="opt1">Opción 1</option>
+                  <option value="opt2">Opción 2</option>
+                  <option value="opt3">Opción 3</option>
                 </select>
               </LayoutColumn>
               <LayoutColumn>
@@ -106,9 +106,9 @@ export default class Formulario extends Component {
                   value={this.state.situacion_actual}
                   onChange={this.handleInputChange}
                 >
-                  <option value="opt1">Grapefruit</option>
-                  <option value="opt2">Lime</option>
-                  <option value="opt3">Coconut</option>
+                  <option value="opt1">Opción 1</option>
+                  <option value="opt2">Opción 2</option>
+                  <option value="opt3">Opción 3</option>
                 </select>
               </LayoutColumn>
               <LayoutColumn className="checkboxLayout">
