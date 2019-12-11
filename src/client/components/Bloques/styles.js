@@ -23,7 +23,7 @@ export const LayoutRow = styled.div`
   }
   @media only screen and (max-width: 992px) {
     flex-direction: column;
-    .card:first-child {
+    .card {
       margin-bottom: 20px;
     }
   }

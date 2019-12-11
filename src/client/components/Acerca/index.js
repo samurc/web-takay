@@ -14,7 +14,7 @@ const Acerca = () => {
         <div className="grid-fullbleed grid">
           <Content>
             <H3>Acerca de</H3>
-            <img src={Logotakay} alt="logo" width={440} height={90} />
+            <img src={Logotakay} className="logoTakay" alt="logo" width={440} height={90} />
           </Content>
         </div>
       </div>

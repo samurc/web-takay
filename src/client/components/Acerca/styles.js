@@ -27,7 +27,14 @@ export const AcercaUI = styled.div`
     z-index: 3;
   }
   @media only screen and (max-width: 992px) {
-    height: calc(31vh - 50px);
+    height: 425px;
+    .grid-fullbleed {
+      padding: 0px;
+    }
+    .logoTakay {
+      width: 195px;
+      height: 40px;
+    }
   }
 `;
 
@@ -45,6 +52,10 @@ export const H3 = styled.h3`
   color: #ffffff;
   font-size: 23px;
   text-align: center;
+  @media only screen and (max-width: 992px) {
+    font-size: 10px;
+    margin-bottom: 10px;
+  }
 `;
 
 export const H1 = styled.h1`
