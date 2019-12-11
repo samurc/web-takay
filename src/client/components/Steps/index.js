@@ -14,6 +14,9 @@ import {
 } from './styles';
 
 import ladrillos from '../../assets/svg/ladrillos.svg';
+import foco from '../../assets/svg/focos.svg';
+import edificio from '../../assets/svg/edificio.svg';
+import terreno from '../../assets/svg/terreno.svg';
 
 const Steps = props => {
   return (
@@ -26,8 +29,8 @@ const Steps = props => {
           </Head>
           <Body>
             <Step className="step">
-              <Image src={ladrillos}></Image>
-              <Text>¡Empieza tu obra!</Text>
+              <Image src={foco}></Image>
+              <Text>Cuéntanos sobre tu proyecto</Text>
             </Step>
             <Detail className="detail">
               Júntate con nuestros asesores para entender tus necesidades y saber cómo podemos
@@ -41,12 +44,12 @@ const Steps = props => {
           </Head>
           <Body>
             <Step className="step">
-              <Image src={ladrillos}></Image>
-              <Text>¡Empieza tu obra!</Text>
+              <Image src={terreno}></Image>
+              <Text>Enseñanos tu terreno</Text>
             </Step>
             <Detail className="detail">
-              Júntate con nuestros asesores para entender tus necesidades y saber cómo podemos
-              ayudarte.
+              Te contactamos con los mejores expertos según tus necesidades y tipo de proyecto.
+              Recíbenos en tu terreno para tomar medidas y evaluar el espacio y sus condiciones.
             </Detail>
           </Body>
         </Item>
@@ -56,12 +59,12 @@ const Steps = props => {
           </Head>
           <Body>
             <Step className="step">
-              <Image src={ladrillos}></Image>
-              <Text>¡Empieza tu obra!</Text>
+              <Image src={edificio}></Image>
+              <Text>Te presentamos tu proyecto</Text>
             </Step>
             <Detail className="detail">
-              Júntate con nuestros asesores para entender tus necesidades y saber cómo podemos
-              ayudarte.
+              El equipo te presentará el diseño y proyecto que han desarrollado para ti. Una vez
+              aceptado podremos acordar la formar de pago y el cronograma de obra
             </Detail>
           </Body>
         </Item>

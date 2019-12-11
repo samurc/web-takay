@@ -57,7 +57,7 @@ export default class FormularioContactanos extends Component {
             <Title2>Contáctanos</Title2>
             <Form onSubmit={this.handleSubmit}>
               <LayoutColumn>
-                <label>Nombre completo</label>
+                <label>Nombre</label>
                 <input
                   name="nombre_completo"
                   type="text"
@@ -65,17 +65,28 @@ export default class FormularioContactanos extends Component {
                   onChange={this.handleInputChange}
                 />
               </LayoutColumn>
+              <LayoutRow className="flex-items">
+                <LayoutColumn>
+                  <label>Teléfono</label>
+                  <input
+                    name="telefono"
+                    type="text"
+                    value={this.state.telefono}
+                    onChange={this.handleInputChange}
+                  />
+                </LayoutColumn>
+                <LayoutColumn>
+                  <label>Email</label>
+                  <input
+                    name="correo"
+                    type="email"
+                    value={this.state.correo}
+                    onChange={this.handleInputChange}
+                  />
+                </LayoutColumn>
+              </LayoutRow>
               <LayoutColumn>
-                <label>Teléfono</label>
-                <input
-                  name="telefono"
-                  type="text"
-                  value={this.state.telefono}
-                  onChange={this.handleInputChange}
-                />
-              </LayoutColumn>
-              <LayoutColumn>
-                <label>Correo Eléctronico</label>
+                <label>Tipo de servicio</label>
                 <input
                   name="correo"
                   type="email"
@@ -84,27 +95,8 @@ export default class FormularioContactanos extends Component {
                 />
               </LayoutColumn>
               <LayoutColumn>
-                <label>Ocupación</label>
-                <select
-                  name="ocupacion"
-                  value={this.state.ocupacion}
-                  onChange={this.handleInputChange}
-                >
-                  <option value="opt1">Grapefruit</option>
-                  <option value="opt2">Lime</option>
-                  <option value="opt3">Coconut</option>
-                </select>
-              </LayoutColumn>
-              <LayoutColumn className="checkboxLayout">
-                <label>
-                  <input
-                    name="acepto_terminos"
-                    type="checkbox"
-                    checked={this.state.acepto_terminos}
-                    onChange={this.handleInputChange}
-                  />
-                  Acepto los <b> términos y condiciones</b>
-                </label>
+                <label>Información adicional</label>
+                <textarea rows={6} cols={6}></textarea>
               </LayoutColumn>
               <Button>
                 <a href={'#'}>Enviar</a>

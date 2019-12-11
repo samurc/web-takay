@@ -14,12 +14,15 @@ export const Col1 = styled.div`
 
 export const Col1Inner = styled.div`
   padding: 18rem 0;
-  max-width: 53rem;
+  max-width: 57rem;
   line-height: 1.15;
   white-space: normal;
   > h1 {
     font-size: 3.75rem;
+    font-weight: 900;
+    line-height: 42px;
     color: #ffffff;
+    text-transform: uppercase;
   }
   @media only screen and (max-width: 992px) {
     padding: 0;

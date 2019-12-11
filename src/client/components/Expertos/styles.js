@@ -28,10 +28,10 @@ export const Item = styled.div`
     }
   }
   &:nth-child(even) {
-    background: #40afb6;
+    background: #008a93;
   }
   &:nth-child(odd) {
-    background: #008a93;
+    background: #40afb6;
   }
 `;
 
@@ -47,7 +47,7 @@ export const Detail = styled.div`
   color: #00949e;
   flex: 1;
   border-radius: 15px;
-  padding: 3rem 2rem;
+  padding: 2rem;
 `;
 
 export const Name1 = styled.div`

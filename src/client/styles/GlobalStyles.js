@@ -1,7 +1,8 @@
 import { createGlobalStyle } from 'styled-components';
 
 export const GlobalStyle = createGlobalStyle`
-  @import url('https://fonts.googleapis.com/css?family=Open+Sans:400,800');
+  @import url('https://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800');
+  @import url('https://fonts.googleapis.com/css?family=Source+Serif+Pro:400,600,700');
   html {
     font-size: 62.5% ;
   }

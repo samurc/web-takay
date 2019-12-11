@@ -13,7 +13,10 @@ import {
   Text
 } from './styles';
 
-import ladrillos from '../../assets/svg/ladrillos.svg';
+import dinero from '../../assets/svg/dinero.svg';
+import maso from '../../assets/svg/maso.svg';
+import manos from '../../assets/svg/manos.svg';
+import tuerca from '../../assets/img/tuerca.png';
 
 const Beneficios = props => {
   return (
@@ -23,32 +26,32 @@ const Beneficios = props => {
         <Item>
           <Body>
             <Step className="step">
-              <Image src={ladrillos}></Image>
-              <Text>¡Empieza tu obra!</Text>
+              <Image src={dinero}></Image>
+              <Text>Gana más</Text>
             </Step>
           </Body>
         </Item>
         <Item>
           <Body>
             <Step className="step">
-              <Image src={ladrillos}></Image>
-              <Text>¡Empieza tu obra!</Text>
+              <Image src={maso}></Image>
+              <Text>Pago justo y completo</Text>
             </Step>
           </Body>
         </Item>
         <Item>
           <Body>
             <Step className="step">
-              <Image src={ladrillos}></Image>
-              <Text>¡Empieza tu obra!</Text>
+              <Image src={manos}></Image>
+              <Text>Comunidad experta</Text>
             </Step>
           </Body>
         </Item>
         <Item>
           <Body>
             <Step className="step">
-              <Image src={ladrillos}></Image>
-              <Text>¡Empieza tu obra!</Text>
+              <Image src={tuerca}></Image>
+              <Text>Herramientas útiles</Text>
             </Step>
           </Body>
         </Item>

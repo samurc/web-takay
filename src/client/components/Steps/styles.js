@@ -9,6 +9,7 @@ export const Layout = styled.div`
 `;
 
 export const Title = styled.h1`
+  font-weight: bold;
   text-align: center;
   color: #ffffff;
   font-size: 6rem;
@@ -135,7 +136,9 @@ export const Detail = styled.div`
   flex: 1;
   margin-right: 0.5rem;
   border-radius: 15px;
-  padding: 6rem 2rem;
+  padding: 3rem 2rem;
+  font-size: 15px;
+  line-height: 20px;
 `;
 
 export const Image = styled.img`
@@ -144,8 +147,10 @@ export const Image = styled.img`
 `;
 
 export const Text = styled.div`
+  max-width: 170px;
   margin-top: 4rem;
   text-align: center;
   font-size: 1.9rem;
+  font-weight: 900;
   color: #fff;
 `;

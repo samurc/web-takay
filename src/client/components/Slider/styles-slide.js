@@ -25,7 +25,8 @@ export const Col1 = styled.div`
 `;
 
 export const Col1Inner = styled.div`
-  max-width: 53rem;
+  position: relative;
+  max-width: 59rem;
   line-height: 1.15;
   white-space: normal;
   > h1 {
@@ -57,7 +58,7 @@ export const Col2Inner = styled.div`
   background-position: center;
   flex: none;
   width: 100%;
-  height: 100%;
+  height: 540px;
 `;
 
 export const Button = styled.div`
@@ -69,7 +70,8 @@ export const Button = styled.div`
     color: #ffffff;
     text-transform: uppercase;
     font-size: 1.9rem;
-    padding: 0.3rem 2.5rem;
+    font-weight: 900;
+    padding: 1rem 4rem;
     border-radius: 4px;
     &:hover {
       opacity: 0.9;
@@ -85,6 +87,9 @@ export const Button = styled.div`
 `;
 
 export const Dots = styled.div`
+  position: absolute;
+  right: 0;
+  bottom: 25px;
   display: flex;
   justify-content: flex-end;
   margin-bottom: 2rem;

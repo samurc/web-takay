@@ -2,15 +2,18 @@ import styled from 'styled-components';
 
 export const Layout = styled.div`
   background: #f7ce48;
-  padding: 4rem 7.5rem;
+  padding: 7rem 7.5rem;
 `;
 
 export const Title = styled.h1`
+  font-weight: 900;
   text-align: center;
   color: #6d6e71;
   font-size: 6rem;
-  margin-bottom: 7rem;
+  line-height: 65px;
+  margin: 0px auto 9rem auto;
   text-transform: uppercase;
+  max-width: 950px;
 `;
 
 export const LayoutRow = styled.div`
@@ -53,4 +56,5 @@ export const Text = styled.div`
   text-align: center;
   font-size: 1.9rem;
   color: #fff;
+  font-family: 'Source Serif Pro', serif;
 `;

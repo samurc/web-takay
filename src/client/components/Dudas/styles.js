@@ -33,13 +33,14 @@ export const Button = styled.div`
   display: flex;
   justify-content: center;
   > a {
+    font-weight: 900;
     text-align: center;
     display: inline-block;
     background: #00949e;
     color: #ffffff;
     text-transform: uppercase;
-    font-size: 1.5rem;
-    padding: 0.3rem 1.5rem;
+    font-size: 18.79px;
+    padding: 0.5rem 1.6rem;
     border-radius: 4px;
     &:hover {
       opacity: 0.9;

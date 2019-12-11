@@ -29,7 +29,8 @@ export const LayoutRow = styled.div`
   }
 `;
 export const Card = styled.div`
-  flex-basis: 400px;
+  flex-basis: 360px;
+  height: 340px;
   flex-shrink: 0;
   flex-grow: 0;
   border-radius: 14px;
@@ -38,12 +39,13 @@ export const Card = styled.div`
   flex-direction: column;
   text-align: center;
   align-items: center;
+  justify-content: center;
   img {
     margin-bottom: 4rem;
   }
   h2 {
-    font-size: 37.5px;
-    line-height: 1.3;
+    font-size: 21px;
+    line-height: 17.5px;
     margin-bottom: 2rem;
     text-transform: uppercase;
   }

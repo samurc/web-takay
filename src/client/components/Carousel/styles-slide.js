@@ -11,7 +11,7 @@ export const Article = styled.article`
 
 export const Col1 = styled.div`
   padding: 0;
-  flex-basis: 43rem;
+  flex-basis: 58rem;
   flex-shrink: 0;
   display: flex;
   justify-content: center;
@@ -25,7 +25,9 @@ export const Col1Inner = styled.div`
   > p {
     margin-top: 8rem;
     font-size: 1.9rem;
+    line-height: 25px;
     color: #000000;
+    font-weight: 600;
   }
   > span {
     display: block;
@@ -33,7 +35,21 @@ export const Col1Inner = styled.div`
     font-size: 1.9rem;
     margin-bottom: 9rem;
     text-align: right;
+    font-weight: 600;
   }
+  ${props =>
+    props.theme == 'yellow' &&
+    css`
+      > p {
+        font-family: 'Source Serif Pro', serif;
+        color: #6d6e71;
+        font-weight: bold;
+      }
+      > span {
+        font-family: 'Source Serif Pro', serif;
+        color: #6d6e71;
+      }
+    `};
 `;
 
 export const Col2 = styled.div`
@@ -56,20 +72,24 @@ export const Arrows = styled.div`
   display: flex;
   justify-content: flex-end;
   align-items: center;
-  > div {
-    color: #f7ce48;
-    border-color: #f7ce48;
-  }
-  > span {
-    color: #f7ce48;
-  }
+  ${props =>
+    props.theme == 'yellow' &&
+    css`
+      > div {
+        color: #f7ce48;
+        border-color: #f7ce48;
+      }
+      > span {
+        color: #f7ce48;
+      }
+    `};
 `;
 
 export const Arrow = styled.div`
   cursor: pointer;
   width: 38px;
   height: 38px;
-  border: 1px solid #008a93;
+  border: 2px solid #008a93;
   border-radius: 50%;
   padding: 8px;
   color: #008a93;
@@ -77,6 +97,7 @@ export const Arrow = styled.div`
   justify-content: center;
   align-items: center;
   font-size: 1.8rem;
+  font-weight: 600;
 `;
 
 export const Counter = styled.span`
@@ -84,4 +105,5 @@ export const Counter = styled.span`
   margin-right: 2rem;
   color: #008a93;
   font-size: 1.75rem;
+  font-weight: 600;
 `;

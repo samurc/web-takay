@@ -18,7 +18,7 @@ const Slide = ({ data, arrayCount, order, goToPrevSlide, goToNextSlide, theme })
     <SlideUI className="carousel">
       <Article>
         <Col1>
-          <Col1Inner>
+          <Col1Inner theme={theme}>
             <p>{text}</p>
             <span>{name}</span>
             <Arrows theme={theme}>

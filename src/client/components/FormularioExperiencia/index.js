@@ -58,7 +58,7 @@ export default class FormularioExperiencia extends Component {
             <Title2>Inicia ahora</Title2>
             <Form onSubmit={this.handleSubmit}>
               <LayoutColumn>
-                <label>Nombre completo</label>
+                <label>Nombre</label>
                 <input
                   name="nombre_completo"
                   type="text"
@@ -76,7 +76,7 @@ export default class FormularioExperiencia extends Component {
                 />
               </LayoutColumn>
               <LayoutColumn>
-                <label>Correo Eléctronico</label>
+                <label>Email</label>
                 <input
                   name="correo"
                   type="email"

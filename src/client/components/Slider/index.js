@@ -2,6 +2,9 @@ import React, { Component } from 'react';
 import Slide from './slide';
 import { SliderUI, SliderWrapper } from './styles';
 
+import SliderImg1 from '../../assets/img/slider1.png';
+import SliderImg2 from '../../assets/img/slider2.png';
+
 export default class Slider extends Component {
   constructor(props) {
     super(props);
@@ -9,25 +12,21 @@ export default class Slider extends Component {
       list: [
         {
           text:
-            '1 Asesoramos y acompañamos a las familias durante todo el proceso, desde el diseño hasta la ejecución',
-          image:
-            'https://img.freepik.com/foto-gratis/trabajador-industrial-albanil-instalando-mamposteria-ladrillo-espatula-sitio-construccion_33835-1136.jpg',
+            'Asesoramos y acompañamos a las familias durante todo el proceso, desde el diseño hasta la ejecución',
+          image: SliderImg1,
+          button_text: 'Inicia ahora',
+          button_url: 'https://www.google.com/'
+        },
+        {
+          text: 'Mantenemos un contacto constante entre el experto y la familia',
+          image: SliderImg2,
           button_text: 'Inicia ahora',
           button_url: 'https://www.google.com/'
         },
         {
           text:
-            '2 Asesoramos y acompañamos a las familias durante todo el proceso, desde el diseño hasta la ejecución',
-          image:
-            'https://img.freepik.com/foto-gratis/trabajador-industrial-albanil-instalando-mamposteria-ladrillo-espatula-sitio-construccion_33835-1136.jpg',
-          button_text: 'Inicia ahora',
-          button_url: 'https://www.google.com/'
-        },
-        {
-          text:
-            '3 Asesoramos y acompañamos a las familias durante todo el proceso, desde el diseño hasta la ejecución',
-          image:
-            'https://img.freepik.com/foto-gratis/trabajador-industrial-albanil-instalando-mamposteria-ladrillo-espatula-sitio-construccion_33835-1136.jpg',
+            'Asesoramos y acompañamos a las familias durante todo el proceso, desde el diseño hasta la ejecución',
+          image: SliderImg1,
           button_text: 'Inicia ahora',
           button_url: 'https://www.google.com/'
         }

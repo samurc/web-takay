@@ -16,7 +16,7 @@ export const Title = styled.h2`
 export const SliderUI = styled.div`
   position: relative;
   width: 100%;
-  max-width: 875px;
+  max-width: 1030px;
   margin: -10rem auto 0 auto;
   overflow: hidden;
   white-space: nowrap;

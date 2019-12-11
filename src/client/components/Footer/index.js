@@ -62,10 +62,10 @@ export default ({ locationName }) => {
               <img src={logoPhone} width={16} height={26} /> 01 - 3590844
             </p>
             <div className="social">
-              <SocialItem>
+              <SocialItem theme={theme}>
                 <img src={logoMail} width={19} height={16} />
               </SocialItem>
-              <SocialItem>
+              <SocialItem theme={theme}>
                 <img src={logoLinkedin} width={19} height={16} />
               </SocialItem>
             </div>

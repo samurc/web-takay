@@ -33,14 +33,16 @@ export const Col2Inner = styled.div`
 `;
 export const Title1 = styled.h3`
   font-size: 3.75rem;
+  line-height: 45px;
+  font-weight: 900;
   color: #6d6e71;
   text-transform: uppercase;
 `;
 export const Title2 = styled.h2`
   font-size: 6rem;
   color: #f15a22;
+  font-weight: 900;
   text-transform: uppercase;
-  font-weight: bold;
   margin-bottom: 2rem;
 `;
 
@@ -72,6 +74,7 @@ export const Form = styled.form`
     font-size: 1.3rem;
   }
   input,
+  textarea,
   select {
     border: 0;
     padding: 4px;
@@ -82,11 +85,12 @@ export const Form = styled.form`
 export const Button = styled.div`
   margin-top: 1rem;
   > a {
+    font-weight: 900;
     display: inline-block;
     background: #00949e;
     color: #ffffff;
     text-transform: uppercase;
-    font-size: 1.5rem;
+    font-size: 1.3rem;
     padding: 0.3rem 4.5rem;
     border-radius: 4px;
     &:hover {

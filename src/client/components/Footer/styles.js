@@ -141,4 +141,9 @@ export const SocialItem = styled.div`
   border-radius: 50%;
   background: #00949e;
   margin-right: 10px;
+  ${props =>
+    props.theme == 'yellow' &&
+    css`
+      background: #f7ce48;
+    `};
 `;

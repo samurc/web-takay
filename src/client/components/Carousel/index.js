@@ -10,19 +10,19 @@ export default class Slider extends Component {
       list: [
         {
           text:
-            '“1 Gracias a Takay puede encontrar al experto que necesitaba para poder desarrollar mi proyecto”',
+            '“Gracias a Takay puede encontrar al experto que necesitaba para poder desarrollar mi proyecto”',
           image: Senora,
           name: 'Micaela Viera'
         },
         {
           text:
-            '“2 Gracias a Takay puede encontrar al experto que necesitaba para poder desarrollar mi proyecto”',
+            '“Gracias a Takay puede encontrar al experto que necesitaba para poder desarrollar mi proyecto”',
           image: Senora,
           name: 'Micaela Viera'
         },
         {
           text:
-            '“3 Gracias a Takay puede encontrar al experto que necesitaba para poder desarrollar mi proyecto”',
+            '“Gracias a Takay puede encontrar al experto que necesitaba para poder desarrollar mi proyecto”',
           image: Senora,
           name: 'Micaela Viera'
         }

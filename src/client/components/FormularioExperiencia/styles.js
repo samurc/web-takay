@@ -25,6 +25,7 @@ export const Col1Inner = styled.div`
 export const Text = styled.p`
   font-size: 15px;
   line-height: 20px;
+  font-family: 'Source Serif Pro', serif;
 `;
 export const Col2 = styled.div``;
 export const Col2Inner = styled.div`
@@ -32,13 +33,17 @@ export const Col2Inner = styled.div`
 `;
 export const Title1 = styled.h3`
   font-size: 3.75rem;
-  color: #000000;
+  line-height: 45px;
+  color: #6d6e71;
   text-transform: uppercase;
+  margin-bottom: 2rem;
+  font-weight: 900;
 `;
 export const Title2 = styled.h2`
   font-size: 6rem;
   color: #f7ce48;
   text-transform: uppercase;
+  margin-bottom: 3rem;
 `;
 
 export const LayoutRow = styled.div`
@@ -66,7 +71,8 @@ export const Form = styled.form`
     margin-bottom: 10px;
   }
   label {
-    font-size: 1.3rem;
+    font-size: 1.5rem;
+    font-family: 'Source Serif Pro', serif;
   }
   input,
   select {
@@ -79,12 +85,13 @@ export const Form = styled.form`
 export const Button = styled.div`
   margin-top: 1rem;
   > a {
+    font-weight: 900;
     display: inline-block;
     background: #6d6e71;
     color: #ffffff;
     text-transform: uppercase;
     font-size: 1.5rem;
-    padding: 0.3rem 4.5rem;
+    padding: 0.5rem 4.3rem;
     border-radius: 4px;
     &:hover {
       opacity: 0.9;

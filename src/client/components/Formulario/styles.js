@@ -32,6 +32,8 @@ export const Col2Inner = styled.div`
 `;
 export const Title1 = styled.h3`
   font-size: 3.75rem;
+  line-height: 45px;
+  margin-bottom: 2rem;
   color: #000000;
   text-transform: uppercase;
 `;
@@ -39,6 +41,7 @@ export const Title2 = styled.h2`
   font-size: 6rem;
   color: #f15a22;
   text-transform: uppercase;
+  margin-bottom: 4rem;
 `;
 
 export const LayoutRow = styled.div`
@@ -79,6 +82,7 @@ export const Form = styled.form`
 export const Button = styled.div`
   margin-top: 1rem;
   > a {
+    font-weight: 900;
     display: inline-block;
     background: #00949e;
     color: #ffffff;
