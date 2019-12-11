@@ -1,20 +1,22 @@
 import React from 'react';
 import { FullbleedVideo, PlayVideo } from './styles';
 
+import VideoPNG from '../../assets/img/VIDEO-HOME.png';
+
 const Fullbleed = () => {
   return (
     <FullbleedVideo
       style={{
-        backgroundImage: `url(https://img.freepik.com/foto-gratis/trabajador-industrial-albanil-instalando-mamposteria-ladrillo-espatula-sitio-construccion_33835-1136.jpg)`
+        backgroundImage: `url(${VideoPNG})`
       }}
     >
-      <div id="full-media">
+      {/*<div id="full-media">
         <div className="grid-fullbleed grid">
           <PlayVideo href="#" className="play-video">
             <i className="material-icons">play_arrow</i>
           </PlayVideo>
         </div>
-      </div>
+    </div>*/}
     </FullbleedVideo>
   );
 };

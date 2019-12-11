@@ -41,21 +41,42 @@ export const Item = styled.div`
     font-weight: bold;
   }
   &.about {
-    max-width: 210px;
+    max-width: 200px;
     margin-right: 10px;
     img {
       margin-bottom: 4.5rem;
     }
     > p {
       word-break: break-all;
+      font-size: 15px;
+      line-height: 17.5px;
     }
   }
   &.contact {
     max-width: 200px;
     margin-right: 10px;
+    > p {
+      display: flex;
+      align-items: center;
+      margin-bottom: 10px;
+      img {
+        margin-right: 15px;
+      }
+    }
+    .social {
+      display: flex;
+    }
   }
   &.location {
     max-width: 200px;
+    > p {
+      display: flex;
+      align-items: flex-start;
+      margin-bottom: 10px;
+      img {
+        margin-right: 15px;
+      }
+    }
   }
   @media only screen and (max-width: 992px) {
     &.about {
@@ -108,4 +129,16 @@ export const FooterCopyright = styled.div`
     margin: 0 auto;
     font-size: 6px;
   }
+`;
+
+export const SocialItem = styled.div`
+  cursor: pointer;
+  width: 32px;
+  height: 32px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  background: #00949e;
+  margin-right: 10px;
 `;

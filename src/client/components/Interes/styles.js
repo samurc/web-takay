@@ -7,6 +7,7 @@ export const Grid = styled.div`
 export const Title = styled.h1`
   color: #f15a22;
   font-size: 6rem;
+  font-weight: 900;
   text-align: center;
   margin-bottom: 2rem;
   text-transform: uppercase;
@@ -18,6 +19,7 @@ export const Title = styled.h1`
 export const Description = styled.p`
   color: #000000;
   font-size: 1.5rem;
+  line-height: 33px;
   text-align: center;
   margin-bottom: 2.5rem;
   @media only screen and (max-width: 992px) {
@@ -50,18 +52,18 @@ export const Card = styled.div`
   flex-shrink: 0;
   flex-grow: 0;
   border-radius: 14px;
-  padding: 3rem 4rem;
+  padding: 3rem;
   display: flex;
   flex-direction: column;
   text-align: center;
   align-items: center;
   img {
-    margin-bottom: 4rem;
+    margin-bottom: 3rem;
   }
   h2 {
     font-size: 37.5px;
     line-height: 1.3;
-    margin-bottom: 2rem;
+    margin-bottom: 2.5rem;
     text-transform: uppercase;
   }
   p {

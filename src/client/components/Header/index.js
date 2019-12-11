@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { NavbarFixed, Nav, NavWrapper, SidenavOverlay, SideNav, NavList } from './styles';
+import LogoTakay from '../../assets/svg/takay_header.svg';
+import LogoTakayOr from '../../assets/svg/takay_header_or.svg';
 
 const Header = ({ locationName }) => {
   const [menuOpen, setMenuToggle] = useState(false);
@@ -11,18 +13,23 @@ const Header = ({ locationName }) => {
     transform: 'translateX(0px)'
   };
   let colorNav;
+  let logoTakay;
   switch (locationName) {
     case '/familia':
       colorNav = 'white';
+      logoTakay = LogoTakayOr;
       break;
     case '/experto':
       colorNav = 'yellow';
+      logoTakay = LogoTakay;
       break;
     case '/nosotros':
       colorNav = 'orange';
+      logoTakay = LogoTakay;
       break;
     default:
       colorNav = 'orange';
+      logoTakay = LogoTakay;
       break;
   }
 
@@ -32,7 +39,7 @@ const Header = ({ locationName }) => {
         <div className="grid">
           <NavWrapper>
             <Link to="/" className="brand-logo">
-              TAKAY
+              <img src={logoTakay} width={80} height={20} alt="Logo Takay" />
             </Link>
             <a onClick={toggleMenu} className="sidenav-trigger right">
               <i className="material-icons">menu</i>

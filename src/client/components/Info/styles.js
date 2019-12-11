@@ -1,5 +1,10 @@
 import styled, { css } from 'styled-components';
 
+export const SpanTakay = styled.span`
+  font-weight: bold;
+  color: #f15a22;
+`;
+
 export const Grid = styled.div`
   position: relative;
   &:before {
@@ -21,18 +26,22 @@ export const Grid = styled.div`
 
 export const Box = styled.div`
   margin: 21rem auto;
-  font-size: 1.9rem;
   display: flex;
   flex-direction: column;
   max-width: 672px;
   justify-content: center;
   justify-items: center;
   position: relative;
+  p {
+    font-size: 1.9rem;
+  }
   .btn-more {
-    margin-top: 2.5rem;
+    margin-top: 3rem;
     a {
+      font-size: 1.9rem;
+      font-weight: 900;
       background: #00949e;
-      padding: 5px 60px;
+      padding: 7px 81px;
       color: #ffffff;
       border-radius: 6px;
     }
