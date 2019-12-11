@@ -4,7 +4,7 @@ export const Layout = styled.div`
   padding: 8rem 20rem;
   display: flex;
   @media only screen and (max-width: 992px) {
-    padding: 1rem;
+    padding: 2rem;
     flex-direction: column;
   }
 `;
@@ -14,6 +14,7 @@ export const Col1 = styled.div`
   margin-right: 10rem;
   @media only screen and (max-width: 992px) {
     margin-right: 0;
+    margin-bottom: 3rem;
   }
 `;
 export const Col1Inner = styled.div`
@@ -25,6 +26,10 @@ export const Col1Inner = styled.div`
 export const Text = styled.p`
   font-size: 15px;
   line-height: 20px;
+  @media only screen and (max-width: 992px) {
+    font-size: 10px;
+    line-height: 13px;
+  }
 `;
 export const Col2 = styled.div``;
 export const Col2Inner = styled.div`
@@ -36,12 +41,26 @@ export const Title1 = styled.h3`
   margin-bottom: 2rem;
   color: #000000;
   text-transform: uppercase;
+  font-weight: 900;
+  @media only screen and (max-width: 992px) {
+    font-size: 25px;
+    line-height: 30px;
+  }
 `;
 export const Title2 = styled.h2`
   font-size: 6rem;
   color: #f15a22;
   text-transform: uppercase;
   margin-bottom: 4rem;
+  @media only screen and (max-width: 992px) {
+    font-size: 39px;
+    line-height: 41px;
+    text-align: center;
+    font-weight: 900;
+    max-width: 170px;
+    margin-left: auto;
+    margin-right: auto;
+  }
 `;
 
 export const LayoutRow = styled.div`
@@ -52,6 +71,13 @@ export const LayoutRow = styled.div`
   &.flex-items > div {
     flex: 1;
   }
+  @media only screen and (max-width: 992px) {
+    flex-direction: column;
+    &.flex-items > div:nth-child(1) {
+      margin-right: 0;
+      margin-bottom: 10px;
+    }
+  }
 `;
 
 export const LayoutColumn = styled.div`
@@ -60,6 +86,11 @@ export const LayoutColumn = styled.div`
   &.checkboxLayout {
     input {
       margin-right: 10px;
+    }
+  }
+  @media only screen and (max-width: 992px) {
+    &.checkboxLayout {
+      margin-top: 4rem;
     }
   }
 `;

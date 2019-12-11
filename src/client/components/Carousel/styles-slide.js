@@ -7,6 +7,10 @@ export const SlideUI = styled.div`
 `;
 export const Article = styled.article`
   display: flex;
+  @media only screen and (max-width: 992px) {
+    position: relative;
+    padding-top: 40px;
+  }
 `;
 
 export const Col1 = styled.div`
@@ -15,6 +19,9 @@ export const Col1 = styled.div`
   flex-shrink: 0;
   display: flex;
   justify-content: center;
+  @media only screen and (max-width: 992px) {
+    flex-basis: 13rem;
+  }
 `;
 
 export const Col1Inner = styled.div`
@@ -50,6 +57,22 @@ export const Col1Inner = styled.div`
         color: #6d6e71;
       }
     `};
+  @media only screen and (max-width: 992px) {
+    margin-top: 0;
+    margin-left: 2rem;
+    > p {
+      margin-top: 2rem;
+      font-size: 1rem;
+      line-height: 15px;
+      font-weight: bold;
+    }
+    > span {
+      display: block;
+      margin-top: 2rem;
+      font-size: 1.4rem;
+      font-weight: bold;
+    }
+  }
 `;
 
 export const Col2 = styled.div`
@@ -58,6 +81,9 @@ export const Col2 = styled.div`
   display: -ms-flexbox;
   display: flex;
   align-items: center;
+  @media only screen and (max-width: 992px) {
+    height: 250px;
+  }
 `;
 
 export const Col2Inner = styled.div`
@@ -83,6 +109,12 @@ export const Arrows = styled.div`
         color: #f7ce48;
       }
     `};
+  @media only screen and (max-width: 992px) {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+  }
 `;
 
 export const Arrow = styled.div`

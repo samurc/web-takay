@@ -4,7 +4,7 @@ export const Layout = styled.div`
   background: #f15a22;
   padding: 4rem 7.5rem;
   @media only screen and (max-width: 992px) {
-    padding: 1rem;
+    padding: 2rem;
   }
 `;
 
@@ -15,6 +15,15 @@ export const Title = styled.h1`
   font-size: 6rem;
   margin-bottom: 7rem;
   text-transform: uppercase;
+  @media only screen and (max-width: 992px) {
+    font-size: 39px;
+    line-height: 41px;
+    margin-bottom: 3.5rem;
+    margin-top: 2rem;
+    max-width: 180px;
+    margin-left: auto;
+    margin-right: auto;
+  }
 `;
 
 export const LayoutRow = styled.div`
@@ -153,4 +162,11 @@ export const Text = styled.div`
   font-size: 1.9rem;
   font-weight: 900;
   color: #fff;
+  @media only screen and (max-width: 992px) {
+    font-size: 9px;
+    line-height: 12px;
+    font-weight: bold;
+    margin-top: 1rem;
+    max-width: 90px;
+  }
 `;

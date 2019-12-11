@@ -33,6 +33,10 @@ export const Fullbleed = styled.div`
       text-align: left;
       text-transform: uppercase;
       margin-bottom: 4rem;
+      @media only screen and (max-width: 992px) {
+        font-size: 10px;
+        margin-bottom: 5rem;
+      }
     }
     img {
       margin: 0 auto;

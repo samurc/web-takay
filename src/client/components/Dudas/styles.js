@@ -23,8 +23,15 @@ export const Fullbleed = styled.div`
     }
   }
   @media only screen and (max-width: 992px) {
+    height: auto;
     .grid-fullbleed {
       padding: 40px 20px;
+    }
+    .info-article {
+      h2 {
+        font-size: 25px;
+        line-height: 30px;
+      }
     }
   }
 `;

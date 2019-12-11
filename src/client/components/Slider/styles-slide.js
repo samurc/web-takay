@@ -9,6 +9,8 @@ export const Article = styled.article`
   display: flex;
   @media only screen and (max-width: 992px) {
     flex-direction: column;
+    padding-bottom: 3.5rem;
+    position: relative;
   }
 `;
 
@@ -19,7 +21,7 @@ export const Col1 = styled.div`
   display: flex;
   justify-content: center;
   @media only screen and (max-width: 992px) {
-    padding-top: 1rem;
+    padding: 3rem;
     flex: none;
   }
 `;
@@ -40,6 +42,14 @@ export const Col1Inner = styled.div`
         color: #f7ce48;
       }
     `};
+  @media only screen and (max-width: 992px) {
+    position: initial;
+    > h1 {
+      font-size: 15px;
+      line-height: 20px;
+      font-weight: 900;
+    }
+  }
 `;
 
 export const Col2 = styled.div`
@@ -50,6 +60,9 @@ export const Col2 = styled.div`
   @media only screen and (max-width: 992px) {
     flex: none;
     height: 400px;
+    > div {
+      height: 100%;
+    }
   }
 `;
 
@@ -84,6 +97,12 @@ export const Button = styled.div`
         background: #6d6e71;
       }
     `};
+  @media only screen and (max-width: 992px) {
+    margin-bottom: 2rem;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+  }
 `;
 
 export const Dots = styled.div`
@@ -93,6 +112,11 @@ export const Dots = styled.div`
   display: flex;
   justify-content: flex-end;
   margin-bottom: 2rem;
+  @media only screen and (max-width: 992px) {
+    justify-content: center;
+    bottom: -10px;
+    width: 100%;
+  }
 `;
 
 export const Dot = styled.div`

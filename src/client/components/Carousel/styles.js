@@ -11,6 +11,12 @@ export const Title = styled.h2`
     css`
       color: #f7ce48;
     `};
+  @media only screen and (max-width: 992px) {
+    font-size: 35px;
+    font-weight: 900;
+    margin-right: 0;
+    padding-top: 3rem;
+  }
 `;
 
 export const SliderUI = styled.div`
@@ -20,6 +26,9 @@ export const SliderUI = styled.div`
   margin: -10rem auto 0 auto;
   overflow: hidden;
   white-space: nowrap;
+  @media only screen and (max-width: 992px) {
+    margin-top: 2rem;
+  }
 `;
 
 export const SliderWrapper = styled.div`

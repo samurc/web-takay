@@ -13,7 +13,8 @@ export const Title = styled.h1`
   text-transform: uppercase;
   @media only screen and (max-width: 992px) {
     font-size: 4rem;
-    margin-bottom: 1.5rem;
+    line-height: 43px;
+    margin-bottom: 2rem;
   }
 `;
 export const Description = styled.p`
@@ -24,7 +25,8 @@ export const Description = styled.p`
   margin-bottom: 2.5rem;
   @media only screen and (max-width: 992px) {
     font-size: 1rem;
-    margin-bottom: 1.5rem;
+    line-heiht: 18px;
+    margin-bottom: 2rem;
   }
 `;
 export const LayoutRow = styled.div`
@@ -65,16 +67,25 @@ export const Card = styled.div`
     line-height: 1.3;
     margin-bottom: 2.5rem;
     text-transform: uppercase;
+    @media only screen and (max-width: 992px) {
+      font-size: 25px;
+      line-heiht: 18px;
+      margin-bottom: 2rem;
+    }
   }
   p {
     font-size: 1.5rem;
     text-align: left;
     max-width: 280px;
+    @media only screen and (max-width: 992px) {
+      font-size: 10px;
+    }
   }
   @media only screen and (max-width: 992px) {
     flex: 1;
     margin-left: 0 !important;
     margin-right: 0 !important;
     border-radius: 0;
+    padding: 5rem;
   }
 `;

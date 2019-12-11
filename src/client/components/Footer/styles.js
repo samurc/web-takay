@@ -85,9 +85,13 @@ export const Item = styled.div`
       max-width: 230px;
       margin-left: auto;
       margin-right: auto;
-      margin-bottom: 5rem;
+      margin-bottom: 6rem;
       img {
-        margin-bottom: 0.5rem;
+        margin-bottom: 1rem;
+      }
+      > p {
+        font-size: 8px;
+        line-height: 12px;
       }
     }
     &.contact {
@@ -96,9 +100,21 @@ export const Item = styled.div`
       margin-left: auto;
       margin-right: auto;
       margin-bottom: 5rem;
+      h3 {
+        font-weight: 900;
+      }
       > p,
       h3 {
         text-align: center;
+        margin-left: 0;
+        font-size: 14px;
+      }
+      > p img {
+        margin-right: 10px;
+      }
+      .social {
+        margin-top: 4rem;
+        justify-content: center;
       }
     }
     &.location {
@@ -107,9 +123,17 @@ export const Item = styled.div`
       margin-left: auto;
       margin-right: auto;
       margin-bottom: 4.5rem;
+      h3 {
+        font-weight: 900;
+      }
       > p,
       h3 {
         text-align: center;
+        margin-left: 0;
+        font-size: 14px;
+      }
+      > p img {
+        margin-right: 10px;
       }
     }
   }

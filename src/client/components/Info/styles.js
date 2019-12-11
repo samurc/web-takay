@@ -47,8 +47,11 @@ export const Box = styled.div`
     }
   }
   @media only screen and (max-width: 992px) {
-    margin: 8rem 4rem;
-    font-size: 1rem;
+    margin: 9rem 4rem;
+    > p {
+      font-size: 1rem;
+      line-height: 14px;
+    }
     .btn-more {
       display: none;
     }

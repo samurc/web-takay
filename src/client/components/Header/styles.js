@@ -47,7 +47,7 @@ export const Nav = styled.nav`
         color: #f15a22;
       }
       .sidenav-trigger {
-        color: #000000;
+        color: #f15a22;
       }
     `};
   ${props =>
