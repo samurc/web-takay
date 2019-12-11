@@ -5,7 +5,7 @@ export const Layout = styled.div`
   display: flex;
   justify-content: center;
   @media only screen and (max-width: 992px) {
-    padding: 1rem;
+    padding: 2rem;
     flex-direction: column;
   }
 `;
@@ -26,6 +26,10 @@ export const Col1Inner = styled.div`
 export const Text = styled.p`
   font-size: 15px;
   line-height: 20px;
+  @media only screen and (max-width: 992px) {
+    font-size: 14px;
+    line-height: 19px;
+  }
 `;
 export const Col2 = styled.div``;
 export const Col2Inner = styled.div`
@@ -37,6 +41,11 @@ export const Title1 = styled.h3`
   font-weight: 900;
   color: #6d6e71;
   text-transform: uppercase;
+  @media only screen and (max-width: 992px) {
+    font-size: 14px;
+    line-height: 19px;
+    margin-bottom: 1rem;
+  }
 `;
 export const Title2 = styled.h2`
   font-size: 6rem;
@@ -44,6 +53,11 @@ export const Title2 = styled.h2`
   font-weight: 900;
   text-transform: uppercase;
   margin-bottom: 2rem;
+  @media only screen and (max-width: 992px) {
+    font-size: 25px;
+    line-height: 29px;
+    text-align: center;
+  }
 `;
 
 export const LayoutRow = styled.div`
