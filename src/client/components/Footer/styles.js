@@ -92,6 +92,9 @@ export const Item = styled.div`
       }
     }
   }
+  &.textfila2 {
+    font-size: 11px;
+  }
   @media only screen and (max-width: 992px) {
     &.about {
       order: 1;

@@ -80,7 +80,7 @@ export default ({ locationName }) => {
         </LayoutRow>
       </div>
       <FooterCopyright theme={theme}>
-        <div className="grid">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</div>
+        <div className="grid "> © 2019 Takay - Todos los derechos reservados.</div>
       </FooterCopyright>
     </FooterUI>
   );
