@@ -1,10 +1,12 @@
 import styled from 'styled-components';
 
 export const Layout = styled.div`
-  padding: 8rem 20rem;
+  padding: 8rem 1rem;
   display: flex;
-  @media only screen and (max-width: 992px) {
-    padding: 3rem 2rem;
+  max-width: 902px
+  margin: 0px auto;
+  @media only screen and (max-width: 902px) {
+    padding: 3rem 1rem;
     flex-direction: column;
   }
 `;

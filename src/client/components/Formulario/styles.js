@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 export const Layout = styled.div`
-  padding: 8rem 20rem;
+  padding: 8rem 1rem;
   display: flex;
   @media only screen and (max-width: 992px) {
     padding: 2rem;
