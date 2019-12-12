@@ -92,9 +92,6 @@ export const Item = styled.div`
       }
     }
   }
-  &.textfila2 {
-    font-size: 11px;
-  }
   @media only screen and (max-width: 992px) {
     &.about {
       order: 1;
@@ -157,8 +154,9 @@ export const Item = styled.div`
 `;
 export const FooterCopyright = styled.div`
   border-top: 1px solid #55b8be;
-  padding: 15px 0;
+  padding: 15px 10px;
   text-align: right;
+  font-size: 11px;
   ${props =>
     props.theme == 'yellow' &&
     css`

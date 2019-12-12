@@ -80,7 +80,7 @@ export default ({ locationName }) => {
         </LayoutRow>
       </div>
       <FooterCopyright theme={theme}>
-        <div className="grid "> © 2019 Takay - Todos los derechos reservados.</div>
+        <div className="grid textfila2"> © 2019 Takay - Todos los derechos reservados.</div>
       </FooterCopyright>
     </FooterUI>
   );
