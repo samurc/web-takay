@@ -34,15 +34,17 @@ export const LayoutRow = styled.div`
 `;
 
 export const Item = styled.div`
-  max-width: 250px;
+  width: 290px;
+  height: 250px;
+  background: #5b5e59;
+  border-radius: 14px;
+  margin-right: 5px;
   display: flex;
-  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 `;
 
 export const Body = styled.div`
-  margin-top: 3rem;
-  min-width: 250px;
-  min-height: 140px;
   display: flex;
   flex-direction: column;
   @media only screen and (max-width: 992px) {
@@ -72,4 +74,16 @@ export const Text = styled.div`
     margin-top: 1rem;
     font-size: 1.5rem;
   }
+`;
+
+export const Detail = styled.div`
+  display: none;
+  background: #ffffff;
+  color: #00949e;
+  flex: 1;
+  margin-right: 0.5rem;
+  border-radius: 15px;
+  padding: 3rem 2rem;
+  font-size: 15px;
+  line-height: 20px;
 `;
