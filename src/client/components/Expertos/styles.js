@@ -3,6 +3,8 @@ import styled from 'styled-components';
 export const Layout = styled.div`
   background: #00949e;
   padding: 1rem;
+  max-width: 1344px;
+  margin: 0px auto;
 `;
 
 export const LayoutRow = styled.div`

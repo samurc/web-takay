@@ -54,7 +54,7 @@ export const Col2 = styled.div`
 
 export const Col2Inner = styled.div`
   background-size: cover;
-  background-position: center;
+  background-position: center top;
   flex: none;
   width: 100%;
   height: 100%;

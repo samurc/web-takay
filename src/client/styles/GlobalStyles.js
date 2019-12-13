@@ -107,6 +107,9 @@ export const GlobalStyle = createGlobalStyle`
     margin-left: auto;
     margin-right: auto;
   }
+  .fondocolorceleste{
+    background: #00949e;
+  }
   .right {
     float: right !important;
   }

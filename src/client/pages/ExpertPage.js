@@ -66,7 +66,7 @@ const ExpertPage = props => {
       </div>
       <div>
         <div className="grid">
-          <Carousel theme="yellow" />
+          <CarouselExpertos theme="yellow" />
         </div>
       </div>
     </div>

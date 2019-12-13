@@ -55,7 +55,7 @@ const FamilyPage = props => {
         </div>
       </div>
       <div className="block">
-        <div className="grid gridfull">
+        <div className="grid gridfull fondocolorceleste">
           <Expertos />
         </div>
       </div>
