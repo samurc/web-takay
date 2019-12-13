@@ -7,6 +7,7 @@ export const FooterUI = styled.footer`
       background-color: #6d6e71;
       h3 {
         color: #f7ce48 !important;
+        font-weight: 900;
       }
       .about {
         color: #ffffff;
