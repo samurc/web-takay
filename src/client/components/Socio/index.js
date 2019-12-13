@@ -12,7 +12,7 @@ const Socio = () => {
       <Col2>
         <Col2Inner
           style={{
-            backgroundImage: `url({obreros1})`
+            backgroundImage: `url(${obreros1})`
           }}
         />
       </Col2>
