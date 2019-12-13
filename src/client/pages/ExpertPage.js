@@ -45,12 +45,12 @@ const ExpertPage = props => {
         </div>
       </div>
       <div className="block">
-        <div className="grid">
+        <div className="grid gridfull">
           <Beneficios />
         </div>
       </div>
       <div className="block">
-        <div className="grid">
+        <div className="grid gridfull">
           <Proveedor />
         </div>
       </div>
@@ -60,7 +60,7 @@ const ExpertPage = props => {
         </div>
       </div>
       <div className="block">
-        <div className="grid">
+        <div className="grid gridfull">
           <Socio />
         </div>
       </div>

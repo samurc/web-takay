@@ -45,7 +45,7 @@ const FamilyPage = props => {
         </div>
       </div>
       <div className="block">
-        <div className="grid">
+        <div className="grid gridfull">
           <Steps />
         </div>
       </div>
@@ -55,7 +55,7 @@ const FamilyPage = props => {
         </div>
       </div>
       <div className="block">
-        <div className="grid">
+        <div className="grid gridfull">
           <Expertos />
         </div>
       </div>
@@ -65,7 +65,7 @@ const FamilyPage = props => {
         </div>
       </div>
       <div className="block">
-        <div className="grid">
+        <div className="grid gridfull">
           <Dudas />
         </div>
       </div>

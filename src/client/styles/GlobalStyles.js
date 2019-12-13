@@ -102,6 +102,11 @@ export const GlobalStyle = createGlobalStyle`
     margin-left: auto;
     margin-right: auto;
   }
+  .gridfull{
+    max-width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+  }
   .right {
     float: right !important;
   }
