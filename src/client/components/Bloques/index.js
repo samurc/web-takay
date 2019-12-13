@@ -17,7 +17,7 @@ const Bloques = () => {
           <h2>¿Por qué lo hacemos?</h2>
         </Card>
         <Card className="card">
-          <img src={imgFamily3} width={60} height={84} />
+          <img src={imgFamily3} width={84} height={84} />
           <h2>¿Quiénes somos?</h2>
         </Card>
       </LayoutRow>

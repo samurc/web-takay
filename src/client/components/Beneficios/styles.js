@@ -36,12 +36,20 @@ export const LayoutRow = styled.div`
 export const Item = styled.div`
   width: 290px;
   height: 250px;
-  background: #5b5e59;
-  border-radius: 14px;
   margin-right: 5px;
   display: flex;
   align-items: center;
   justify-content: center;
+  &:hover {
+    background: #5b5e59;
+    border-radius: 14px;
+    .detail {
+      display: flex;
+    }
+    .step {
+      display: none;
+    }
+  }
 `;
 
 export const Body = styled.div`
@@ -78,12 +86,11 @@ export const Text = styled.div`
 
 export const Detail = styled.div`
   display: none;
-  background: #ffffff;
-  color: #00949e;
-  flex: 1;
-  margin-right: 0.5rem;
-  border-radius: 15px;
-  padding: 3rem 2rem;
+  color: #ffffff;
   font-size: 15px;
-  line-height: 20px;
+  line-height: 24.5px;
+  align-self: flex-start;
+  padding: 25px 15px;
+  font-family: 'Source Serif Pro', serif;
+  text-align: justify;
 `;
