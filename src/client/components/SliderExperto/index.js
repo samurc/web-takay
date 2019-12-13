@@ -15,20 +15,20 @@ export default class SliderExperto extends Component {
           text: 'TU EXPERIENCIA Y TRABAJO SERÁN MEJOR VALORES',
           image: SliderImg,
           button_text: 'Inicia ahora',
-          button_url: 'https://www.google.com/'
+          button_url: '#verformulario'
         },
         {
           text: 'Mantenemos un contacto constante entre el experto y la familia',
           image: SliderImg2,
           button_text: 'Inicia ahora',
-          button_url: 'https://www.google.com/'
+          button_url: '#verformulario'
         },
         {
           text:
             'Asesoramos y acompañamos a las familias durante todo el proceso, desde el diseño hasta la ejecución',
           image: SliderImg1,
           button_text: 'Inicia ahora',
-          button_url: 'https://www.google.com/'
+          button_url: '#verformulario'
         }
       ],
       currentIndex: 0,

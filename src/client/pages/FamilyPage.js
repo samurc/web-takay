@@ -49,7 +49,7 @@ const FamilyPage = props => {
           <Steps />
         </div>
       </div>
-      <div className="block">
+      <div id="verformulario" className="block">
         <div className="grid">
           <Formulario />
         </div>
