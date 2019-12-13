@@ -1,4 +1,5 @@
 import styled, { css } from 'styled-components';
+import { Link } from 'react-router-dom';
 
 export const Grid = styled.div`
   position: relative;
@@ -49,7 +50,7 @@ export const LayoutRow = styled.div`
     }
   }
 `;
-export const Card = styled.div`
+export const Card = styled(Link)`
   flex-basis: 400px;
   flex-shrink: 0;
   flex-grow: 0;

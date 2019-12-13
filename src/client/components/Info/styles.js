@@ -1,7 +1,7 @@
 import styled, { css } from 'styled-components';
 
 export const SpanTakay = styled.span`
-  font-weight: bold;
+  font-weight: 900;
   color: #f15a22;
 `;
 

@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { Grid, Box, SpanTakay } from './styles';
 
 const Info = () => {
@@ -10,7 +11,7 @@ const Info = () => {
           de construcción para las familias que quieren hacer las cosas bien.
         </p>
         <div className="btn-more">
-          <a href="#">VER MÁS</a>
+          <Link to="/nosotros">Ver más</Link>
         </div>
       </Box>
     </Grid>
