@@ -49,10 +49,25 @@ export const Card = styled.div`
     margin-bottom: 2rem;
     text-transform: uppercase;
   }
+  &:hover {
+    background: #5b5e59 !important;
+    .detail {
+      display: flex;
+    }
+    .step {
+      display: none;
+    }
+  }
   @media only screen and (max-width: 992px) {
     flex: 1;
     margin-left: 0 !important;
     margin-right: 0 !important;
     border-radius: 0;
   }
+`;
+export const Detail = styled.div`
+  display: none;
+  text-align: justify;
+  font-size: 15px;
+  line-height: 25px;
 `;
