@@ -9,7 +9,7 @@ import { fetchData } from '../actions';
 import SliderExperto from '../components/SliderExperto';
 import FormularioExperiencia from '../components/FormularioExperiencia';
 import Beneficios from '../components/Beneficios';
-import Carousel from '../components/Carousel';
+import CarouselExpertos from '../components/CarouselExpertos';
 import Proveedor from '../components/Proveedor';
 import Socio from '../components/Socio';
 
