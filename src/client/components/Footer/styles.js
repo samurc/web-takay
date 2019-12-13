@@ -59,7 +59,7 @@ export const Item = styled.div`
     max-width: 200px;
     margin-right: 10px;
     img {
-      margin-bottom: 4.5rem;
+      margin-bottom: 4rem;
     }
     > p {
       word-break: break-all;

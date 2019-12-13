@@ -55,7 +55,7 @@ export const Card = styled(Link)`
   flex-shrink: 0;
   flex-grow: 0;
   border-radius: 14px;
-  padding: 3rem;
+  padding: 4.8rem 3rem 3rem 3rem;
   display: flex;
   flex-direction: column;
   text-align: center;
@@ -68,6 +68,7 @@ export const Card = styled(Link)`
     line-height: 1.3;
     margin-bottom: 2.5rem;
     text-transform: uppercase;
+    font-weight: 900;
     @media only screen and (max-width: 992px) {
       font-size: 25px;
       line-heiht: 18px;
