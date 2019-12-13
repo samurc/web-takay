@@ -90,11 +90,7 @@ export default class FormularioExperiencia extends Component {
                   name="ocupacion"
                   value={this.state.ocupacion}
                   onChange={this.handleInputChange}
-                >
-                  <option value="opt1">Grapefruit</option>
-                  <option value="opt2">Lime</option>
-                  <option value="opt3">Coconut</option>
-                </select>
+                ></select>
               </LayoutColumn>
               <LayoutColumn className="checkboxLayout">
                 <label>

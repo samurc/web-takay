@@ -35,6 +35,7 @@ export const Fullbleed = styled.div`
       margin-left: 6rem;
       margin-bottom: 18px;
       font-size: 15px;
+      line-height: 24px;
       display: flex;
       align-items: center;
       color: #ffffff;

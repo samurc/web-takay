@@ -33,7 +33,9 @@ export const Text = styled.p`
     margin-bottom: 1rem;
   }
 `;
-export const Col2 = styled.div``;
+export const Col2 = styled.div`
+  flex-shrink: 0;
+`;
 export const Col2Inner = styled.div`
   max-width: 43.5rem;
 `;
@@ -53,6 +55,7 @@ export const Title1 = styled.h3`
 `;
 export const Title2 = styled.h2`
   font-size: 6rem;
+  font-weight: 900;
   color: #f7ce48;
   text-transform: uppercase;
   margin-bottom: 3rem;
