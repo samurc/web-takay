@@ -53,7 +53,7 @@ export const Item = styled.div`
     margin-left: 10px;
     margin-bottom: 10px;
     text-transform: uppercase;
-    font-weight: bold;
+    font-weight: 900;
   }
   &.about {
     max-width: 200px;
