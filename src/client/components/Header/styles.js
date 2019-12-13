@@ -93,6 +93,9 @@ export const Nav = styled.nav`
     &:hover {
       background-color: rgba(0, 0, 0, 0.1);
     }
+    &.active {
+      background-color: rgba(0, 0, 0, 0.1);
+    }
   }
 
   @media only screen and (max-width: 992px) {

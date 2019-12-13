@@ -73,17 +73,26 @@ const Header = ({ locationName }) => {
             </SideNav>
             <NavList id="nav" className="right hide-on-med-and-down">
               <li>
-                <Link to="/familia" className="item">
+                <Link
+                  to="/familia"
+                  className={`item ${locationName == '/familia' ? 'active' : ''}`}
+                >
                   FAMILIA
                 </Link>
               </li>
               <li>
-                <Link to="/experto" className="item">
+                <Link
+                  to="/experto"
+                  className={`item ${locationName == '/experto' ? 'active' : ''}`}
+                >
                   EXPERTO
                 </Link>
               </li>
               <li>
-                <Link to="/nosotros" className="item">
+                <Link
+                  to="/nosotros"
+                  className={`item ${locationName == '/nosotros' ? 'active' : ''}`}
+                >
                   NOSOTROS
                 </Link>
               </li>
