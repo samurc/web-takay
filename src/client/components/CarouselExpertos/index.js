@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import Slide from './slide';
 import { Title, SliderUI, SliderWrapper } from './styles';
-import Senora from '../../assets/img/senora.png';
+import Senora from '../../assets/img/experiencias21.png';
 
 export default class Slider extends Component {
   constructor(props) {
@@ -9,22 +9,19 @@ export default class Slider extends Component {
     this.state = {
       list: [
         {
-          text:
-            '“Gracias a Takay puede encontrar al experto que necesitaba para poder desarrollar mi proyecto”',
+          text: '“Desde que soy un experto TAKAY, estoy buscadito y mis ingresos han mejorado”',
           image: Senora,
-          name: 'Micaela Viera'
+          name: 'Carlos Perleche'
         },
         {
-          text:
-            '“Gracias a Takay puede encontrar al experto que necesitaba para poder desarrollar mi proyecto”',
+          text: '“Desde que soy un experto TAKAY, estoy buscadito y mis ingresos han mejorado”',
           image: Senora,
-          name: 'Micaela Viera'
+          name: 'Carlos Perleche'
         },
         {
-          text:
-            '“Gracias a Takay puede encontrar al experto que necesitaba para poder desarrollar mi proyecto”',
+          text: '“Desde que soy un experto TAKAY, estoy buscadito y mis ingresos han mejorado”',
           image: Senora,
-          name: 'Micaela Viera'
+          name: 'Carlos Perleche'
         }
       ],
       currentIndex: 0,
