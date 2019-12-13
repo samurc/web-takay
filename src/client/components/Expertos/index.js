@@ -40,13 +40,13 @@ const Expertos = props => {
         </Item>
         <Item>
           <Expert className="expert">
-            <Name1>Elena García</Name1>
-            <Cargo1>Maestra de obra</Cargo1>
+            <Name1>Pablo alvarado</Name1>
+            <Cargo1>Arquitecto</Cargo1>
             <Image src={experto}></Image>
           </Expert>
           <Detail className="detail">
-            <Name2>Elena García</Name2>
-            <Cargo2>Maestra de obra</Cargo2>
+            <Name2>Pablo alvarado</Name2>
+            <Cargo2>Arquitecto</Cargo2>
             <Text>
               Arquitecto colegiado. Ubicado en Trujillo con 5 años de experiencia profesional, ha
               trabajado en múltiples proyectos en la ciudad con reconocidas empresas del sector de
@@ -64,13 +64,13 @@ const Expertos = props => {
         </Item>
         <Item>
           <Expert className="expert">
-            <Name1>Elena García</Name1>
-            <Cargo1>Maestra de obra</Cargo1>
+            <Name1>Francisco Cisneros</Name1>
+            <Cargo1>Arquitecto</Cargo1>
             <Image src={experto}></Image>
           </Expert>
           <Detail className="detail">
-            <Name2>Elena García</Name2>
-            <Cargo2>Maestra de obra</Cargo2>
+            <Name2>Francisco Cisneros</Name2>
+            <Cargo2>Arquitecto</Cargo2>
             <Text>
               Arquitecto colegiado. Ubicado en Trujillo con 5 años de experiencia profesional, ha
               trabajado en múltiples proyectos en la ciudad con reconocidas empresas del sector de
@@ -80,13 +80,13 @@ const Expertos = props => {
         </Item>
         <Item>
           <Expert className="expert">
-            <Name1>Elena García</Name1>
-            <Cargo1>Maestra de obra</Cargo1>
+            <Name1>Raúl Cisneros</Name1>
+            <Cargo1>Maestro de obra</Cargo1>
             <Image src={experto}></Image>
           </Expert>
           <Detail className="detail">
-            <Name2>Elena García</Name2>
-            <Cargo2>Maestra de obra</Cargo2>
+            <Name2>Raúl Cisneros</Name2>
+            <Cargo2>Maestro de obra</Cargo2>
             <Text>
               Arquitecto colegiado. Ubicado en Trujillo con 5 años de experiencia profesional, ha
               trabajado en múltiples proyectos en la ciudad con reconocidas empresas del sector de
@@ -96,13 +96,13 @@ const Expertos = props => {
         </Item>
         <Item>
           <Expert className="expert">
-            <Name1>Elena García</Name1>
-            <Cargo1>Maestra de obra</Cargo1>
+            <Name1>Jamlec Castro</Name1>
+            <Cargo1>Maestro de obra</Cargo1>
             <Image src={experto}></Image>
           </Expert>
           <Detail className="detail">
-            <Name2>Elena García</Name2>
-            <Cargo2>Maestra de obra</Cargo2>
+            <Name2>Jamlec Castro</Name2>
+            <Cargo2>Maestro de obra</Cargo2>
             <Text>
               Arquitecto colegiado. Ubicado en Trujillo con 5 años de experiencia profesional, ha
               trabajado en múltiples proyectos en la ciudad con reconocidas empresas del sector de
@@ -112,13 +112,13 @@ const Expertos = props => {
         </Item>
         <Item>
           <Expert className="expert">
-            <Name1>Elena García</Name1>
-            <Cargo1>Maestra de obra</Cargo1>
+            <Name1>Carlos Castro</Name1>
+            <Cargo1>Maestro de obra</Cargo1>
             <Image src={experto}></Image>
           </Expert>
           <Detail className="detail">
-            <Name2>Elena García</Name2>
-            <Cargo2>Maestra de obra</Cargo2>
+            <Name2>Carlos Castro</Name2>
+            <Cargo2>Maestro de obra</Cargo2>
             <Text>
               Arquitecto colegiado. Ubicado en Trujillo con 5 años de experiencia profesional, ha
               trabajado en múltiples proyectos en la ciudad con reconocidas empresas del sector de
@@ -128,13 +128,13 @@ const Expertos = props => {
         </Item>
         <Item>
           <Expert className="expert">
-            <Name1>Elena García</Name1>
-            <Cargo1>Maestra de obra</Cargo1>
+            <Name1>Fernando Ramirez</Name1>
+            <Cargo1>Maestro de obra</Cargo1>
             <Image src={experto}></Image>
           </Expert>
           <Detail className="detail">
-            <Name2>Elena García</Name2>
-            <Cargo2>Maestra de obra</Cargo2>
+            <Name2>Fernando Ramirez</Name2>
+            <Cargo2>Maestro de obra</Cargo2>
             <Text>
               Arquitecto colegiado. Ubicado en Trujillo con 5 años de experiencia profesional, ha
               trabajado en múltiples proyectos en la ciudad con reconocidas empresas del sector de
@@ -144,13 +144,13 @@ const Expertos = props => {
         </Item>
         <Item>
           <Expert className="expert">
-            <Name1>Elena García</Name1>
-            <Cargo1>Maestra de obra</Cargo1>
+            <Name1>Mariella Ventocilla</Name1>
+            <Cargo1>Arquitecta</Cargo1>
             <Image src={experto}></Image>
           </Expert>
           <Detail className="detail">
-            <Name2>Elena García</Name2>
-            <Cargo2>Maestra de obra</Cargo2>
+            <Name2>Mariella Ventocilla</Name2>
+            <Cargo2>Arquitecta</Cargo2>
             <Text>
               Arquitecto colegiado. Ubicado en Trujillo con 5 años de experiencia profesional, ha
               trabajado en múltiples proyectos en la ciudad con reconocidas empresas del sector de
@@ -160,13 +160,13 @@ const Expertos = props => {
         </Item>
         <Item>
           <Expert className="expert">
-            <Name1>Elena García</Name1>
-            <Cargo1>Maestra de obra</Cargo1>
+            <Name1>Andrea Gonzalez</Name1>
+            <Cargo1>Diseñadora de Interiores</Cargo1>
             <Image src={experto}></Image>
           </Expert>
           <Detail className="detail">
-            <Name2>Elena García</Name2>
-            <Cargo2>Maestra de obra</Cargo2>
+            <Name2>Andrea Gonzalez</Name2>
+            <Cargo2>Diseñadora de Interiores</Cargo2>
             <Text>
               Arquitecto colegiado. Ubicado en Trujillo con 5 años de experiencia profesional, ha
               trabajado en múltiples proyectos en la ciudad con reconocidas empresas del sector de

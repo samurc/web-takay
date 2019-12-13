@@ -20,6 +20,7 @@ export const Fullbleed = styled.div`
       text-align: center;
       text-transform: uppercase;
       margin-bottom: 4rem;
+      font-weight: 900;
     }
   }
   @media only screen and (max-width: 992px) {

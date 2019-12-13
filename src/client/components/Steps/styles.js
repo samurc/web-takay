@@ -9,7 +9,7 @@ export const Layout = styled.div`
 `;
 
 export const Title = styled.h1`
-  font-weight: bold;
+  font-weight: 900;
   text-align: center;
   color: #ffffff;
   font-size: 6rem;

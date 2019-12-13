@@ -18,23 +18,27 @@ export const Col1 = styled.div`
   flex-basis: 58rem;
   flex-shrink: 0;
   display: flex;
-  justify-content: center;
+  margin-right: 5rem;
+  justify-content: flex-end;
   @media only screen and (max-width: 992px) {
-    flex-basis: 13rem;
+    flex-basis: 15rem;
+    margin-right: 0;
   }
 `;
 
 export const Col1Inner = styled.div`
   margin-top: 10rem;
-  max-width: 36rem;
+  margin-bottom: 4rem;
+  max-width: 47rem;
   line-height: 1.15;
   white-space: normal;
   > p {
     margin-top: 8rem;
+    margin-right: 11rem;
     font-size: 1.9rem;
     line-height: 25px;
     color: #000000;
-    font-weight: 600;
+    font-weight: bold;
   }
   > span {
     display: block;
@@ -42,7 +46,7 @@ export const Col1Inner = styled.div`
     font-size: 1.9rem;
     margin-bottom: 9rem;
     text-align: right;
-    font-weight: 600;
+    font-weight: bold;
   }
   ${props =>
     props.theme == 'yellow' &&
@@ -65,6 +69,7 @@ export const Col1Inner = styled.div`
       font-size: 1rem;
       line-height: 15px;
       font-weight: bold;
+      margin-right: 0;
     }
     > span {
       display: block;
@@ -76,7 +81,7 @@ export const Col1Inner = styled.div`
 `;
 
 export const Col2 = styled.div`
-  height: 48rem;
+  height: 47rem;
   flex: 1;
   display: -ms-flexbox;
   display: flex;

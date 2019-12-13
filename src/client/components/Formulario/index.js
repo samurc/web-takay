@@ -93,11 +93,7 @@ export default class Formulario extends Component {
                   name="tipo_proyecto"
                   value={this.state.tipo_proyecto}
                   onChange={this.handleInputChange}
-                >
-                  <option value="opt1">Opción 1</option>
-                  <option value="opt2">Opción 2</option>
-                  <option value="opt3">Opción 3</option>
-                </select>
+                ></select>
               </LayoutColumn>
               <LayoutColumn>
                 <label>Selecciona la opción que mejora se adapte a tu situación actual</label>
@@ -105,11 +101,7 @@ export default class Formulario extends Component {
                   name="situacion_actual"
                   value={this.state.situacion_actual}
                   onChange={this.handleInputChange}
-                >
-                  <option value="opt1">Opción 1</option>
-                  <option value="opt2">Opción 2</option>
-                  <option value="opt3">Opción 3</option>
-                </select>
+                ></select>
               </LayoutColumn>
               <LayoutColumn className="checkboxLayout">
                 <label>

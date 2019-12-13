@@ -5,7 +5,7 @@ export const Title = styled.h2`
   font-size: 6rem;
   padding-top: 9rem;
   text-align: center;
-  margin-right: 17rem;
+  font-weight: 900;
   ${props =>
     props.theme == 'yellow' &&
     css`

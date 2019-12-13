@@ -3,6 +3,7 @@ import styled from 'styled-components';
 export const Layout = styled.div`
   padding: 8rem 1rem;
   display: flex;
+  justify-content: center;
   @media only screen and (max-width: 992px) {
     padding: 2rem;
     flex-direction: column;
@@ -52,11 +53,11 @@ export const Title2 = styled.h2`
   color: #f15a22;
   text-transform: uppercase;
   margin-bottom: 4rem;
+  font-weight: 900;
   @media only screen and (max-width: 992px) {
     font-size: 39px;
     line-height: 41px;
     text-align: center;
-    font-weight: 900;
     max-width: 170px;
     margin-left: auto;
     margin-right: auto;
@@ -120,7 +121,7 @@ export const Button = styled.div`
     color: #ffffff;
     text-transform: uppercase;
     font-size: 1.5rem;
-    padding: 0.3rem 4.5rem;
+    padding: 0.5rem 4.5rem;
     border-radius: 4px;
     &:hover {
       opacity: 0.9;

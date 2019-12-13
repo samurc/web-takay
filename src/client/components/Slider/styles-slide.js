@@ -33,7 +33,9 @@ export const Col1Inner = styled.div`
   white-space: normal;
   > h1 {
     font-size: 3.75rem;
+    line-height: 45px;
     color: #f15a22;
+    font-weight: 900;
   }
   ${props =>
     props.theme == 'yellow' &&

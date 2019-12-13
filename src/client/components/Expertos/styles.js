@@ -53,6 +53,7 @@ export const Detail = styled.div`
 export const Name1 = styled.div`
   max-width: 10rem;
   font-size: 1.9rem;
+  line-height: 22.7px;
   color: #ffffff;
   margin-bottom: 5px;
   font-weight: bold;
@@ -62,7 +63,7 @@ export const Cargo1 = styled.div`
   color: #000000;
   font-size: 1.3rem;
   margin-bottom: 5px;
-  font-weight: bold;
+  font-weight: 900;
 `;
 
 export const Image = styled.img`
@@ -74,13 +75,16 @@ export const Image = styled.img`
 
 export const Name2 = styled.div`
   font-size: 3rem;
+  line-height: 31.5px;
   color: #f15a22;
   max-width: 18rem;
   font-weight: bold;
 `;
 
 export const Cargo2 = styled.div`
+  margin-top: 10px;
   font-size: 1.6rem;
+  line-height: 18px;
   font-weight: bold;
   max-width: 18rem;
   color: #000000;
@@ -91,11 +95,14 @@ export const Text = styled.p`
   margin-top: 1rem;
   font-size: 1.2rem;
   color: #000000;
+  text-align: justify;
 `;
 
 export const Title = styled.h2`
   color: #ffffff;
   font-size: 4.5rem;
+  line-height: 49px;
+  font-weight: 900;
   text-transform: uppercase;
   text-align: center;
 `;
