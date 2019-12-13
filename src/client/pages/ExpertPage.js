@@ -6,7 +6,7 @@ import { Helmet } from 'react-helmet';
 import { LazyLoadImage } from 'react-lazy-load-image-component';
 import PropTypes from 'prop-types'; // ES6
 import { fetchData } from '../actions';
-import Slider from '../components/Slider';
+import SliderExperto from '../components/SliderExperto';
 import FormularioExperiencia from '../components/FormularioExperiencia';
 import Beneficios from '../components/Beneficios';
 import Carousel from '../components/Carousel';
@@ -41,7 +41,7 @@ const ExpertPage = props => {
       {head()}
       <div className="block">
         <div className="grid">
-          <Slider theme="yellow" />
+          <SliderExperto theme="yellow" />
         </div>
       </div>
       <div className="block">
