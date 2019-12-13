@@ -7,6 +7,7 @@ export const FooterUI = styled.footer`
       background-color: #6d6e71;
       h3 {
         color: #f7ce48 !important;
+        font-weight: 900;
       }
       .about {
         color: #ffffff;
@@ -52,13 +53,13 @@ export const Item = styled.div`
     margin-left: 10px;
     margin-bottom: 10px;
     text-transform: uppercase;
-    font-weight: bold;
+    font-weight: 900;
   }
   &.about {
     max-width: 200px;
     margin-right: 10px;
     img {
-      margin-bottom: 4.5rem;
+      margin-bottom: 4rem;
     }
     > p {
       word-break: break-all;
