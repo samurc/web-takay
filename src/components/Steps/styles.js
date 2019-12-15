@@ -163,8 +163,8 @@ export const Text = styled.div`
   font-weight: 900;
   color: #fff;
   @media only screen and (max-width: 992px) {
-    font-size: 9px;
-    line-height: 12px;
+    font-size: 12px;
+    line-height: 15px;
     font-weight: bold;
     margin-top: 1rem;
     max-width: 90px;

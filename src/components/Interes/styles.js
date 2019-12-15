@@ -25,8 +25,8 @@ export const Description = styled.p`
   text-align: center;
   margin-bottom: 2.5rem;
   @media only screen and (max-width: 992px) {
-    font-size: 1rem;
-    line-heiht: 18px;
+    font-size: 1.2rem;
+    line-height: 18px;
     margin-bottom: 2rem;
   }
 `;
@@ -80,7 +80,8 @@ export const Card = styled(Link)`
     text-align: left;
     max-width: 280px;
     @media only screen and (max-width: 992px) {
-      font-size: 10px;
+      font-size: 12px;
+      text-align: center;
     }
   }
   @media only screen and (max-width: 992px) {

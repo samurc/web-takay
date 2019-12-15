@@ -1,9 +1,11 @@
 import styled, { css } from 'styled-components';
 
 export const SlideUI = styled.div`
-  display: inline-block;
-  height: 100%;
+  height: 540px;
   width: 100%;
+  @media only screen and (max-width: 992px) {
+    height: 650px;
+  }
 `;
 export const Article = styled.article`
   display: flex;
@@ -50,6 +52,7 @@ export const Col1Inner = styled.div`
       font-size: 15px;
       line-height: 20px;
       font-weight: 900;
+      min-height: 60px;
     }
   }
 `;

@@ -28,8 +28,8 @@ export const Text = styled.p`
   font-size: 15px;
   line-height: 20px;
   @media only screen and (max-width: 992px) {
-    font-size: 10px;
-    line-height: 13px;
+    font-size: 12px;
+    line-height: 15px;
   }
 `;
 export const Col2 = styled.div``;

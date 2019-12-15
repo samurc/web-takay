@@ -105,8 +105,8 @@ export const Item = styled.div`
         margin-bottom: 1rem;
       }
       > p {
-        font-size: 8px;
-        line-height: 12px;
+        font-size: 12px;
+        line-height: 16px;
       }
     }
     &.contact {

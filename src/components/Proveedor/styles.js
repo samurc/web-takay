@@ -44,7 +44,11 @@ export const Fullbleed = styled.div`
       }
       @media only screen and (max-width: 992px) {
         margin-left: 1rem;
-        font-size: 10px;
+        font-size: 12px;
+        align-items: flex-start;
+        > img {
+          margin-top: 4px;
+        }
       }
     }
   }

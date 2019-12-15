@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import Flickity from '../Flickity';
 import Slide from './slide';
 import { SliderUI, SliderWrapper } from './styles';
 
@@ -70,18 +71,24 @@ export default class SliderExperto extends Component {
   goSlide(index) {
     this.setState({
       currentIndex: index,
-      translateValue: -(this.slideWidth() * index)
+      // translateValue: -(this.slideWidth() * index)
     });
   }
 
   render() {
     const { list, translateValue } = this.state;
     return (
-      <SliderUI>
-        <SliderWrapper
-          style={{
-            transform: `translateX(${translateValue}px)`,
-            transition: 'transform ease-out 0.45s'
+      <div>
+        <Flickity
+          className='flickity-slider'
+          currentIndex={this.state.currentIndex}
+          options={{
+            autoPlay: 4000,
+            pauseAutoPlayOnHover: true,
+            wrapAround: true,
+            fullscreen: true,
+            pageDots: false,
+            prevNextButtons: false,
           }}
         >
           {list.map((data, i) => (
@@ -94,8 +101,8 @@ export default class SliderExperto extends Component {
               theme={this.props.theme}
             />
           ))}
-        </SliderWrapper>
-      </SliderUI>
+        </Flickity>
+      </div>
     );
   }
 }

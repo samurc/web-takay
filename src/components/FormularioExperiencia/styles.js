@@ -29,7 +29,7 @@ export const Text = styled.p`
   line-height: 20px;
   font-family: 'Source Serif Pro', serif;
   @media only screen and (max-width: 992px) {
-    font-size: 10px;
+    font-size: 12px;
     margin-bottom: 1rem;
   }
 `;
@@ -101,7 +101,7 @@ export const Form = styled.form`
   }
   @media only screen and (max-width: 992px) {
     label {
-      font-size: 1rem;
+      font-size: 1.2rem;
     }
   }
 `;

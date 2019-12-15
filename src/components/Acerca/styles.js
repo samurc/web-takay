@@ -53,7 +53,7 @@ export const H3 = styled.h3`
   font-size: 23px;
   text-align: center;
   @media only screen and (max-width: 992px) {
-    font-size: 10px;
+    font-size: 12px;
     margin-bottom: 10px;
   }
 `;

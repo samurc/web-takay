@@ -1,4 +1,5 @@
 const path = require('path')
+const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 const TerserJSPlugin = require('terser-webpack-plugin')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const { CleanWebpackPlugin } = require('clean-webpack-plugin')
@@ -23,6 +24,17 @@ module.exports = {
         test: /\.(js|jsx)$/,
         use: 'babel-loader',
         exclude: /(node_modules|bower_components)/
+      },
+      {
+        test: /\.css$/,
+        use: [
+          {
+            loader: MiniCssExtractPlugin.loader
+          },
+          {
+            loader: 'css-loader'
+          }
+        ]
       },
       {
         // configuracion de imagenes, videos y fuentes

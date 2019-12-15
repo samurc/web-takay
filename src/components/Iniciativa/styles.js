@@ -35,7 +35,7 @@ export const Fullbleed = styled.div`
       margin-bottom: 4rem;
       font-weight: 900;
       @media only screen and (max-width: 992px) {
-        font-size: 10px;
+        font-size: 1.2rem;
         margin-bottom: 5rem;
       }
     }
