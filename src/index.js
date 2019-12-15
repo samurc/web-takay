@@ -1,70 +1,28 @@
-/* eslint-disable no-unused-vars */
+/* eslint-disable no-underscore-dangle */
+// Startup point for client-side application
+
 import '@babel/polyfill';
-import express from 'express';
 import React from 'react';
-import { matchRoutes } from 'react-router-config';
-import compression from 'compression';
-import renderer from './helpers/renderer';
-import createStore from './store/createStore';
-import Routes from './client/Routes';
+import ReactDOM from 'react-dom';
+import { BrowserRouter } from 'react-router-dom';
 
-const app = express();
+import { createStore, applyMiddleware } from 'redux';
+import thunk from 'redux-thunk';
+import { Provider } from 'react-redux';
+import { renderRoutes } from 'react-router-config';
+import reducers from './reducers';
+import Routes from './Routes';
 
-function shouldCompress(req, res) {
-  if (req.headers['x-no-compression']) return false;
-  return compression.filter(req, res);
-}
+const state = window.__PRELOADED_STATE__;
+delete window.__PRELOADED_STATE__;
 
-app.use(
-  compression({
-    level: 2, // set compression level from 1 to 9 (6 by default)
-    filter: shouldCompress // set predicate to determine whether to compress
-  })
+const store = createStore(reducers, state, applyMiddleware(thunk));
+
+ReactDOM.render(
+  <Provider store={store}>
+    <BrowserRouter>
+      <div>{renderRoutes(Routes)}</div>
+    </BrowserRouter>
+  </Provider>,
+  document.getElementById('root')
 );
-
-const port = process.env.PORT || 3000;
-
-// To be able to serve static files
-app.use(express.static('public'));
-
-app.get('*', (req, res) => {
-  const params = req.params[0].split('/');
-  const id = params[2];
-  // We create store before rendering html
-  const store = createStore();
-  // We pass store to renderer
-
-  // Checks the given path, matches with component and returns array of items about to be rendered
-  const routes = matchRoutes(Routes, req.path);
-
-  // Execute all loadData functions inside given urls and wrap promises with new promises to be able to render pages all the time
-  // Even if we get an error while loading data, we will still attempt to render page.
-  const promises = routes
-    .map(({ route }) => {
-      return route.loadData ? route.loadData(store, id) : null;
-    })
-    .map(promise => {
-      if (promise) {
-        return new Promise((resolve, reject) => {
-          promise.then(resolve).catch(resolve);
-        });
-      }
-      return null;
-    });
-
-  // Wait for all the loadData functions, if they are resolved, send the rendered html to browser.
-  Promise.all(promises).then(() => {
-    const context = {};
-    const content = renderer(req, store, context);
-
-    if (context.notFound) {
-      res.status(404);
-    }
-
-    res.send(content);
-  });
-});
-
-app.listen(port, () => {
-  console.log(`Listening on port: ${port}`);
-});
