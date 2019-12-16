@@ -4,25 +4,22 @@
 import '@babel/polyfill';
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { BrowserRouter } from 'react-router-dom';
+import { Provider } from 'react-redux'
+import { ConnectedRouter } from 'connected-react-router/immutable'
+import { Router } from 'react-router-dom'
+import configureStore, { history } from './store/configureStore'
+import Routes from './routes'
+import intialState from './reducers/initialState'
 
-import { createStore, applyMiddleware } from 'redux';
-import thunk from 'redux-thunk';
-import { Provider } from 'react-redux';
-import { renderRoutes } from 'react-router-config';
-import reducers from './reducers';
-import Routes from './Routes';
-
-const state = window.__PRELOADED_STATE__;
-delete window.__PRELOADED_STATE__;
-
-const store = createStore(reducers, state, applyMiddleware(thunk));
+const store = configureStore(intialState)
 
 ReactDOM.render(
   <Provider store={store}>
-    <BrowserRouter>
-      <div>{renderRoutes(Routes)}</div>
-    </BrowserRouter>
+    <ConnectedRouter history={history}>
+      <Router history={history}>
+        <Routes />
+      </Router>
+    </ConnectedRouter>
   </Provider>,
   document.getElementById('root')
 );
