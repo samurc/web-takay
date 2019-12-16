@@ -83,6 +83,7 @@ typings/
 .vscode/
 node_modules/
 build
+dist
 bundle.js
 build/bundle.js
 .DS_Store
