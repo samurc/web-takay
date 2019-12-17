@@ -93,4 +93,5 @@ export const Detail = styled.div`
   padding: 25px 15px;
   font-family: 'Source Serif Pro', serif;
   text-align: justify;
+  text-align-last: center;
 `;

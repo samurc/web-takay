@@ -68,6 +68,7 @@ export const Card = styled.div`
 export const Detail = styled.div`
   display: none;
   text-align: justify;
+  text-align-last: center;
   font-size: 15px;
   line-height: 25px;
 `;

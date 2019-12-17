@@ -77,7 +77,8 @@ export const Card = styled(Link)`
   }
   p {
     font-size: 1.5rem;
-    text-align: left;
+    text-align: justify;
+    text-align-last: center;
     max-width: 280px;
     @media only screen and (max-width: 992px) {
       font-size: 12px;

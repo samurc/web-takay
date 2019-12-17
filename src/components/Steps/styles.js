@@ -148,6 +148,8 @@ export const Detail = styled.div`
   padding: 3rem 2rem;
   font-size: 15px;
   line-height: 20px;
+  text-align: justify;
+  text-align-last: center;
 `;
 
 export const Image = styled.img`
