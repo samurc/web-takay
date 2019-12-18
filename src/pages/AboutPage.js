@@ -30,7 +30,7 @@ const AboutPage = props => {
           ]
         }
       >
-        <title>{nosotros.titulo}</title>
+        <title>{nosotros.meta_titulo}</title>
       </Helmet>
     );
   };

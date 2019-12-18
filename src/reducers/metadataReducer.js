@@ -17,13 +17,14 @@ export default function metadataReducer(state = initialState.metadata, action) {
         nosotros: null
       }
     case FETCH_DATA_SUCCESS:
+      console.log(action.payload)
       return {
         ...state,
         loadStatus: 2,
-        inicio: action.payload[3],
+        inicio: action.payload[1],
         familia: action.payload[2],
-        experto: action.payload[1],
-        nosotros: action.payload[0]
+        experto: action.payload[3],
+        nosotros: action.payload[4]
       }
 
     case FETCH_DATA_FAILURE:

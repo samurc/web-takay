@@ -33,7 +33,7 @@ const ExpertPage = props => {
           ]
         }
       >
-        <title>{experto.titulo}</title>
+        <title>{experto.meta_titulo}</title>
       </Helmet>
     );
   };

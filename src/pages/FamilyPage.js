@@ -33,7 +33,7 @@ const FamilyPage = props => {
           ]
         }
       >
-        <title>{familia.titulo}</title>
+        <title>{familia.meta_titulo}</title>
       </Helmet>
     );
   };

@@ -45,7 +45,7 @@ class HomePage extends Component {
           ]
         }
       >
-        <title>{inicio.titulo}</title>
+        <title>{inicio.meta_titulo}</title>
       </Helmet>
     );
   };
