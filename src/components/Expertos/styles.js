@@ -14,7 +14,7 @@ export const LayoutRow = styled.div`
 `;
 
 export const Item = styled.div`
-  width: 253px;
+  width: 19%;
   height: 253px;
   overflow: hidden;
   display: flex;
@@ -102,11 +102,12 @@ export const Text = styled.p`
 
 export const Title = styled.h2`
   color: #ffffff;
-  font-size: 4.5rem;
+  font-size: 4rem;
   line-height: 49px;
   font-weight: 900;
   text-transform: uppercase;
   text-align: center;
+  padding: 1rem;
 `;
 
 export const Dots = styled.div`
