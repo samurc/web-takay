@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 
 export const Layout = styled.div`
   background: #00949e;
@@ -11,6 +11,15 @@ export const LayoutRow = styled.div`
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
+  ${props => props.mode == 'mobile' && css`display: none;`};
+  @media only screen and (max-width: 992px) {
+    flex-direction: column;
+    align-content: center;
+    ${props => props.mode == 'mobile' && css`display: block;`};
+    ${props => props.mode == 'desktop' && css`
+      > div:not(.titleExperto) { display: none; }
+    `};
+  }
 `;
 
 export const Item = styled.div`
@@ -34,6 +43,14 @@ export const Item = styled.div`
   }
   &:nth-child(odd) {
     background: #40afb6;
+  }
+  @media only screen and (max-width: 992px) {
+    width: 258px;
+    &.titleExperto {
+      background: none;
+      flex-direction: column-reverse;
+      height: auto;
+    }
   }
 `;
 
