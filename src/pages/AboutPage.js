@@ -12,27 +12,30 @@ import FormularioContactanos from '../components/FormularioContactanos';
 const AboutPage = props => {
   const head = () => {
     const { nosotros } = props
-    return (
-      <Helmet key={Math.random()}
-        meta={
-          [
-            {
-              "property": "description",
-              "content": `${nosotros.meta_descrip}`
-            },
-            {
-              "property": "og:title",
-              "content": `${nosotros.meta_titulo}`
-            }, {
-              "property": "og:description",
-              "content": `${nosotros.meta_descrip}`
-            }
-          ]
-        }
-      >
-        <title>{nosotros.meta_titulo}</title>
-      </Helmet>
-    );
+    if ( nosotros ){
+      return (
+        <Helmet key={Math.random()}
+          meta={
+            [
+              {
+                "property": "description",
+                "content": `${nosotros.meta_descrip}`
+              },
+              {
+                "property": "og:title",
+                "content": `${nosotros.meta_titulo}`
+              }, {
+                "property": "og:description",
+                "content": `${nosotros.meta_descrip}`
+              }
+            ]
+          }
+        >
+          <title>{nosotros.meta_titulo}</title>
+        </Helmet>
+      );
+    }
+    
   };
 
   useEffect(() => {

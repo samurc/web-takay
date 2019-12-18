@@ -11,27 +11,7 @@ export default class SliderExperto extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      list: [
-        {
-          text: 'TU EXPERIENCIA Y TRABAJO SERÁN MEJOR VALORES',
-          image: SliderImg,
-          button_text: 'Inicia ahora',
-          button_url: '#verformulario'
-        },
-        {
-          text: 'Mantenemos un contacto constante entre el experto y la familia',
-          image: SliderImg2,
-          button_text: 'Inicia ahora',
-          button_url: '#verformulario'
-        },
-        {
-          text:
-            'Asesoramos y acompañamos a las familias durante todo el proceso, desde el diseño hasta la ejecución',
-          image: SliderImg1,
-          button_text: 'Inicia ahora',
-          button_url: '#verformulario'
-        }
-      ],
+      list: props.lista,
       currentIndex: 0,
       translateValue: 0
     };

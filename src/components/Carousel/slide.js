@@ -12,15 +12,15 @@ import {
 } from './styles-slide';
 
 const Slide = ({ data, arrayCount, order, goToPrevSlide, goToNextSlide, theme }) => {
-  const { text, image, name } = data;
+  const { descripcion, imagen, titulo } = data;
 
   return (
     <SlideUI className="carousel">
       <Article>
         <Col1>
           <Col1Inner theme={theme}>
-            <p>{text}</p>
-            <span>{name}</span>
+            <p>{descripcion}</p>
+            <span>{titulo}</span>
             <Arrows theme={theme}>
               <Arrow onClick={goToPrevSlide}> {'<'} </Arrow>
               <Counter>
@@ -33,7 +33,7 @@ const Slide = ({ data, arrayCount, order, goToPrevSlide, goToNextSlide, theme })
         <Col2>
           <Col2Inner
             style={{
-              backgroundImage: `url(${image})`
+              backgroundImage: `url(${imagen})`
             }}
           />
         </Col2>

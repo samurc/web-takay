@@ -15,27 +15,29 @@ import Dudas from '../components/Dudas';
 const FamilyPage = props => {
   const head = () => {
     const { familia } = props
-    return (
-      <Helmet key={Math.random()}
-        meta={
-          [
-            {
-              "property": "description",
-              "content": `${familia.meta_descrip}`
-            },
-            {
-              "property": "og:title",
-              "content": `${familia.meta_titulo}`
-            }, {
-              "property": "og:description",
-              "content": `${familia.meta_descrip}`
-            }
-          ]
-        }
-      >
-        <title>{familia.meta_titulo}</title>
-      </Helmet>
-    );
+    if (familia){
+      return (
+        <Helmet key={Math.random()}
+          meta={
+            [
+              {
+                "property": "description",
+                "content": `${familia.meta_descrip}`
+              },
+              {
+                "property": "og:title",
+                "content": `${familia.meta_titulo}`
+              }, {
+                "property": "og:description",
+                "content": `${familia.meta_descrip}`
+              }
+            ]
+          }
+        >
+          <title>{familia.meta_titulo}</title>
+        </Helmet>
+      );
+    }
   };
 
   useEffect(() => {
@@ -47,7 +49,7 @@ const FamilyPage = props => {
       {head()}
       <div className="block">
         <div className="grid">
-          <Slider />
+          <Slider lista={props.sliderFamilia}/>
         </div>
       </div>
       <div className="block">
@@ -67,7 +69,7 @@ const FamilyPage = props => {
       </div>
       <div className="block">
         <div className="grid">
-          <Carousel />
+          <Carousel lista={props.experienciaFamilia}/>
         </div>
       </div>
       <div className="block">
@@ -81,7 +83,9 @@ const FamilyPage = props => {
 
 const mapStateToProps = state => {
   return {
-    familia: state.metadata.familia
+    familia: state.metadata.familia,
+    experienciaFamilia: state.metadata.experienciaFamilia,
+    sliderFamilia: state.metadata.sliderFamilia
   };
 };
 

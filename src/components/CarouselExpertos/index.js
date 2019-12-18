@@ -7,23 +7,7 @@ export default class Slider extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      list: [
-        {
-          text: '“Desde que soy un experto TAKAY, estoy buscadito y mis ingresos han mejorado”',
-          image: Senora,
-          name: 'Carlos Perleche'
-        },
-        {
-          text: '“Desde que soy un experto TAKAY, estoy buscadito y mis ingresos han mejorado”',
-          image: Senora,
-          name: 'Carlos Perleche'
-        },
-        {
-          text: '“Desde que soy un experto TAKAY, estoy buscadito y mis ingresos han mejorado”',
-          image: Senora,
-          name: 'Carlos Perleche'
-        }
-      ],
+      list: props.lista,
       currentIndex: 0,
       translateValue: 0
     };

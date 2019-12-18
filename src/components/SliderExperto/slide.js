@@ -12,7 +12,7 @@ import {
 } from './styles-slide';
 
 const Slide = ({ data, arrayCount, order, handleGoSlide, theme }) => {
-  const { text, image, button_text, button_url } = data;
+  const { titulo, imagen } = data;
 
   const arrDots = [];
   for (let i = 0; i < arrayCount; i++) {
@@ -33,9 +33,9 @@ const Slide = ({ data, arrayCount, order, handleGoSlide, theme }) => {
       <Article>
         <Col1>
           <Col1Inner theme={theme}>
-            <h1>{text}</h1>
+            <h1>{titulo}</h1>
             <Button theme={theme}>
-              <a href={button_url}>{button_text}</a>
+              <a href={'#verformulario'}>{'Inicia ahora'}</a>
             </Button>
             <Dots>{arrDots}</Dots>
           </Col1Inner>
@@ -43,7 +43,7 @@ const Slide = ({ data, arrayCount, order, handleGoSlide, theme }) => {
         <Col2>
           <Col2Inner
             style={{
-              backgroundImage: `url(${image})`
+              backgroundImage: `url(${imagen})`
             }}
           />
         </Col2>

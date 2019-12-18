@@ -14,17 +14,29 @@ export default function metadataReducer(state = initialState.metadata, action) {
         inicio: null,
         familia: null,
         experto: null,
-        nosotros: null
+        nosotros: null,
+        experienciaFamilia: [],
+        experienciaExperto: [],
+        sliderFamilia: [],
+        sliderExperto: []
       }
     case FETCH_DATA_SUCCESS:
-      console.log(action.payload)
+      const seccion = action.payload.seccion
+      const experienciaFamilia = action.payload.sliderpie.filter(function (item) { return item.pagina == "familia"; });
+      const experienciaExperto = action.payload.sliderpie.filter(function (item) { return item.pagina == "experto"; });
+      const sliderFamilia = action.payload.slidercabecera.filter(function (item) { return item.pagina == "familia"; });
+      const sliderExperto = action.payload.slidercabecera.filter(function (item) { return item.pagina == "experto"; });
       return {
         ...state,
         loadStatus: 2,
-        inicio: action.payload[1],
-        familia: action.payload[2],
-        experto: action.payload[3],
-        nosotros: action.payload[4]
+        inicio: seccion[1],
+        familia: seccion[2],
+        experto: seccion[3],
+        nosotros: seccion[4],
+        experienciaFamilia: experienciaFamilia,
+        experienciaExperto: experienciaExperto,
+        sliderFamilia: sliderFamilia,
+        sliderExperto: sliderExperto
       }
 
     case FETCH_DATA_FAILURE:
@@ -34,7 +46,11 @@ export default function metadataReducer(state = initialState.metadata, action) {
         inicio: null,
         familia: null,
         experto: null,
-        nosotros: null
+        nosotros: null,
+        experienciaFamilia: [],
+        experienciaExperto: [],
+        sliderFamilia: [],
+        sliderExperto: []
       }
 
     default:

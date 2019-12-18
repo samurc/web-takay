@@ -4,7 +4,11 @@ const initialState = {
     inicio: null,
     familia: null,
     experto: null,
-    nosotros: null
+    nosotros: null,
+    experienciaFamilia: [],
+    experienciaExperto: [],
+    sliderFamilia: [],
+    sliderExperto: []
   }
 };
 

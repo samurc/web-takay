@@ -27,27 +27,30 @@ class HomePage extends Component {
 
   head () {
     const { inicio } = this.props
-    return (
-      <Helmet key={Math.random()}
-        meta={
-          [
-            {
-              "property": "description",
-              "content": `${inicio.meta_descrip}`
-            },
-            {
-              "property": "og:title",
-              "content": `${inicio.meta_titulo}`
-            }, {
-              "property": "og:description",
-              "content": `${inicio.meta_descrip}`
-            }
-          ]
-        }
-      >
-        <title>{inicio.meta_titulo}</title>
-      </Helmet>
-    );
+    if ( inicio ){
+      return (
+        <Helmet key={Math.random()}
+          meta={
+            [
+              {
+                "property": "description",
+                "content": `${inicio.meta_descrip}`
+              },
+              {
+                "property": "og:title",
+                "content": `${inicio.meta_titulo}`
+              }, {
+                "property": "og:description",
+                "content": `${inicio.meta_descrip}`
+              }
+            ]
+          }
+        >
+          <title>{inicio.meta_titulo}</title>
+        </Helmet>
+      );
+    }
+    
   };
 
   clickModal() {

@@ -30,7 +30,7 @@ export function fetchData () {
   return async (dispatch) => {
     dispatch(fetchDataInit())
     try {
-      const url = `//takaycms.wordlatin.com/json/seccion/lista.json`;
+      const url = `//takaycms.wordlatin.com/general.json`;
       const data = await axios.get(url, {
         method: 'HEAD',
         mode: 'no-cors',

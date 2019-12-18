@@ -15,27 +15,29 @@ import Socio from '../components/Socio';
 const ExpertPage = props => {
   const head = () => {
     const { experto } = props
-    return (
-      <Helmet key={Math.random()}
-        meta={
-          [
-            {
-              "property": "description",
-              "content": `${experto.meta_descrip}`
-            },
-            {
-              "property": "og:title",
-              "content": `${experto.meta_titulo}`
-            }, {
-              "property": "og:description",
-              "content": `${experto.meta_descrip}`
-            }
-          ]
-        }
-      >
-        <title>{experto.meta_titulo}</title>
-      </Helmet>
-    );
+    if (experto) {
+      return (
+        <Helmet key={Math.random()}
+          meta={
+            [
+              {
+                "property": "description",
+                "content": `${experto.meta_descrip}`
+              },
+              {
+                "property": "og:title",
+                "content": `${experto.meta_titulo}`
+              }, {
+                "property": "og:description",
+                "content": `${experto.meta_descrip}`
+              }
+            ]
+          }
+        >
+          <title>{experto.meta_titulo}</title>
+        </Helmet>
+      );
+    }
   };
 
   useEffect(() => {
@@ -47,7 +49,7 @@ const ExpertPage = props => {
       {head()}
       <div className="block">
         <div className="grid">
-          <SliderExperto theme="yellow" />
+          <SliderExperto theme="yellow" lista={props.sliderExperto}/>
         </div>
       </div>
       <div className="block">
@@ -72,7 +74,7 @@ const ExpertPage = props => {
       </div>
       <div>
         <div className="grid">
-          <CarouselExpertos theme="yellow" />
+          <CarouselExpertos theme="yellow" lista={props.experienciaExperto}/>
         </div>
       </div>
     </div>
@@ -81,7 +83,9 @@ const ExpertPage = props => {
 
 const mapStateToProps = state => {
   return {
-    experto: state.metadata.experto
+    experto: state.metadata.experto,
+    experienciaExperto: state.metadata.experienciaExperto,
+    sliderExperto: state.metadata.sliderExperto
   };
 };
 
