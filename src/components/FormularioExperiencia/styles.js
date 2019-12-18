@@ -6,7 +6,7 @@ export const Layout = styled.div`
   max-width: 902px
   margin: 0px auto;
   @media only screen and (max-width: 902px) {
-    padding: 3rem 1rem;
+    padding: 0rem 1rem;
     flex-direction: column;
   }
 `;

@@ -24,7 +24,7 @@ const Steps = props => {
       <Title>Pasos a seguir</Title>
       <LayoutRow>
         <Item>
-          <Head className="initial">
+          <Head className="initial head">
             <Circle>1</Circle>
           </Head>
           <Body>
@@ -39,7 +39,7 @@ const Steps = props => {
           </Body>
         </Item>
         <Item>
-          <Head>
+          <Head className="head">
             <Circle>2</Circle>
           </Head>
           <Body>
@@ -54,7 +54,7 @@ const Steps = props => {
           </Body>
         </Item>
         <Item>
-          <Head>
+          <Head className="head">
             <Circle>3</Circle>
           </Head>
           <Body>
@@ -69,7 +69,7 @@ const Steps = props => {
           </Body>
         </Item>
         <Item>
-          <Head className="last">
+          <Head className="last head">
             <Circle>4</Circle>
           </Head>
           <Body>

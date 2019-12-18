@@ -28,7 +28,7 @@ export const FullbleedVideo = styled.div`
     z-index: 3;
   }
   @media only screen and (max-width: 992px) {
-    height: calc(31vh - 50px);
+    height: calc(44vh - 50px);
   }
 `;
 

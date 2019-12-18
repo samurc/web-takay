@@ -4,7 +4,7 @@ export const SlideUI = styled.div`
   height: 540px;
   width: 100%;
   @media only screen and (max-width: 992px) {
-    height: 650px;
+    height: 670px;
   }
 `;
 export const Article = styled.article`
@@ -52,7 +52,13 @@ export const Col1Inner = styled.div`
       font-size: 15px;
       line-height: 20px;
       font-weight: 900;
-      min-height: 60px;
+      min-height: 80px;
+      text-align: justify;
+      display: -webkit-box
+      -webkit-line-clamp: 4;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+      text-overflow: ellipsis;
     }
   }
 `;

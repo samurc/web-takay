@@ -5,6 +5,7 @@ export const Layout = styled.div`
   padding: 4rem 7.5rem;
   @media only screen and (max-width: 992px) {
     padding: 2rem;
+    overflow: hidden;
   }
 `;
 
@@ -49,6 +50,14 @@ export const Item = styled.div`
   }
   @media only screen and (max-width: 992px) {
     flex-direction: row;
+    &:hover {
+      .detail {
+        z-index: 1;
+      }
+      .head {
+        display: none;
+      }
+    }
   }
 `;
 
@@ -128,6 +137,7 @@ export const Body = styled.div`
   flex-direction: column;
   @media only screen and (max-width: 992px) {
     justify-content: center;
+    margin-top: 0;
   }
 `;
 

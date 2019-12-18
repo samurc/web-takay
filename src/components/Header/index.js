@@ -50,7 +50,9 @@ const Header = ({ locationName }) => {
             />
             <SideNav id="slide-out" className="sidenav" style={menuOpen ? stylesOpen : null}>
               <li>
-                <a className="subheader">TAKAY</a>
+                <Link to="/" className="subheader">
+                  TAKAY
+                </Link>
               </li>
               <li>
                 <div className="divider" />

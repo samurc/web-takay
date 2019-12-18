@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 
 export const Layout = styled.div`
   padding: 8rem 20rem;
@@ -44,7 +44,7 @@ export const Title1 = styled.h3`
   @media only screen and (max-width: 992px) {
     font-size: 14px;
     line-height: 19px;
-    margin-bottom: 1rem;
+    margin-bottom: 2rem;
   }
 `;
 export const Title2 = styled.h2`
@@ -53,10 +53,17 @@ export const Title2 = styled.h2`
   font-weight: 900;
   text-transform: uppercase;
   margin-bottom: 2rem;
+  ${props =>
+    props.mode == 'mobile' &&
+    css`
+      display: none;
+    `};
   @media only screen and (max-width: 992px) {
     font-size: 25px;
     line-height: 29px;
     text-align: center;
+    ${props => props.mode == 'desktop' && css`display: none;`};
+    ${props => props.mode == 'mobile' && css`display: block;`};
   }
 `;
 

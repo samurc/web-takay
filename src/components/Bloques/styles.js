@@ -4,6 +4,9 @@ export const Grid = styled.div`
   position: relative;
   margin-top: 40px;
   margin-bottom: 40px;
+  @media only screen and (max-width: 992px) {
+    margin-bottom: 0px;
+  }
 `;
 export const LayoutRow = styled.div`
   display: flex;

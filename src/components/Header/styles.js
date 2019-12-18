@@ -101,6 +101,7 @@ export const Nav = styled.nav`
   @media only screen and (max-width: 992px) {
     .brand-logo {
       margin-left: 2rem;
+      margin-top: 4px;
     }
     .hide-on-med-and-down {
       display: none !important;
@@ -166,11 +167,9 @@ export const SideNav = styled.ul`
     background-color: #e0e0e0;
   }
   .subheader {
-    cursor: initial;
-    pointer-events: none;
     color: rgba(0, 0, 0, 0.54);
     font-size: 14px;
-    font-weight: 500;
+    font-weight: bold;
     line-height: 48px;
   }
 `;

@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 
 export const Layout = styled.div`
   padding: 8rem 1rem;
@@ -54,6 +54,11 @@ export const Title2 = styled.h2`
   text-transform: uppercase;
   margin-bottom: 4rem;
   font-weight: 900;
+  ${props =>
+    props.mode == 'mobile' &&
+    css`
+      display: none;
+    `};
   @media only screen and (max-width: 992px) {
     font-size: 39px;
     line-height: 41px;
@@ -61,6 +66,8 @@ export const Title2 = styled.h2`
     max-width: 170px;
     margin-left: auto;
     margin-right: auto;
+    ${props => props.mode == 'desktop' && css`display: none;`};
+    ${props => props.mode == 'mobile' && css`display: block;`};
   }
 `;
 

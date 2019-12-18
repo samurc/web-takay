@@ -50,13 +50,14 @@ export default class Formulario extends Component {
       <Layout>
         <Col1>
           <Col1Inner>
+            <Title2 mode="mobile">Inicia ahora</Title2>
             <Title1>Hablemos sobre tu proyecto:</Title1>
             <Text>Déjanos tus datos y un asesor te contactará para saber más de tu proyecto.</Text>
           </Col1Inner>
         </Col1>
         <Col2>
           <Col2Inner>
-            <Title2>Inicia ahora</Title2>
+            <Title2 mode="desktop">Inicia ahora</Title2>
             <Form onSubmit={this.handleSubmit}>
               <LayoutColumn>
                 <label>Nombre completo</label>
