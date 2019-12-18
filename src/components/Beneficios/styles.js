@@ -45,6 +45,7 @@ export const Item = styled.div`
     border-radius: 14px;
     .detail {
       display: flex;
+      align-self: center;
     }
     .step {
       display: none;

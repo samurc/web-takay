@@ -42,7 +42,9 @@ export const Item = styled.div`
   flex-direction: column;
   &:hover {
     .detail {
-      display: block;
+      display: flex;
+      align-content: center;
+      align-items: center;
     }
     .step {
       display: none;
