@@ -8,7 +8,8 @@ const initialState = {
     experienciaFamilia: [],
     experienciaExperto: [],
     sliderFamilia: [],
-    sliderExperto: []
+    sliderExperto: [],
+    listaExperto: []
   }
 };
 

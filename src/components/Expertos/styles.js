@@ -81,8 +81,8 @@ export const Name1 = styled.div`
 export const Cargo1 = styled.div`
   color: #000000;
   font-size: 1.3rem;
-  margin-bottom: 5px;
   font-weight: 900;
+  visibility: hidden;
 `;
 
 export const Image = styled.img`
@@ -101,13 +101,13 @@ export const Name2 = styled.div`
 `;
 
 export const Cargo2 = styled.div`
-  margin-top: 10px;
   font-size: 1.6rem;
   line-height: 18px;
   font-weight: bold;
   max-width: 18rem;
   color: #000000;
   text-align: right;
+  visibility: hidden;
 `;
 
 export const Text = styled.p`
