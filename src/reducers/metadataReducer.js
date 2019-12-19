@@ -19,7 +19,11 @@ export default function metadataReducer(state = initialState.metadata, action) {
         experienciaExperto: [],
         sliderFamilia: [],
         sliderExperto: [],
-        listaExperto: []
+        listaExperto: [],
+        textosHome: [],
+        textosFamilia: [],
+        textosExperto: [],
+        textosNosotros: []
       }
     case FETCH_DATA_SUCCESS:
       const seccion = action.payload.seccion
@@ -28,6 +32,11 @@ export default function metadataReducer(state = initialState.metadata, action) {
       const sliderFamilia = action.payload.slidercabecera.filter(function (item) { return item.pagina == "familia"; });
       const sliderExperto = action.payload.slidercabecera.filter(function (item) { return item.pagina == "experto"; });
       const listaExperto = action.payload.nuestrosexpertos;
+      const textosNosotros = action.payload.textos_img.filter(function (item) { return item.pagina == "nosotros"; });
+      const textosHome = action.payload.textos_img.filter(function (item) { return item.pagina == "home"; });
+      const textosExperto = action.payload.textos_img.filter(function (item) { return item.pagina == "experto"; });
+      const textosFamilia = action.payload.textos_img.filter(function (item) { return item.pagina == "familia"; });
+
       return {
         ...state,
         loadStatus: 2,
@@ -39,7 +48,11 @@ export default function metadataReducer(state = initialState.metadata, action) {
         experienciaExperto: experienciaExperto,
         sliderFamilia: sliderFamilia,
         sliderExperto: sliderExperto,
-        listaExperto: listaExperto
+        listaExperto: listaExperto,
+        textosHome: textosHome,
+        textosFamilia: textosFamilia,
+        textosExperto: textosExperto,
+        textosNosotros: textosNosotros
       }
 
     case FETCH_DATA_FAILURE:
@@ -54,7 +67,11 @@ export default function metadataReducer(state = initialState.metadata, action) {
         experienciaExperto: [],
         sliderFamilia: [],
         sliderExperto: [],
-        listaExperto: []
+        listaExperto: [],
+        textosHome: [],
+        textosFamilia: [],
+        textosExperto: [],
+        textosNosotros: []
       }
 
     default:

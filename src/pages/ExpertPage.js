@@ -54,7 +54,7 @@ const ExpertPage = props => {
       </div>
       <div className="block">
         <div className="grid gridfull">
-          <Beneficios />
+          <Beneficios textos={props.textosExperto}/>
         </div>
       </div>
       <div className="block">
@@ -85,7 +85,8 @@ const mapStateToProps = state => {
   return {
     experto: state.metadata.experto,
     experienciaExperto: state.metadata.experienciaExperto,
-    sliderExperto: state.metadata.sliderExperto
+    sliderExperto: state.metadata.sliderExperto,
+    textosExperto: state.metadata.textosExperto
   };
 };
 

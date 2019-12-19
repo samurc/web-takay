@@ -54,7 +54,7 @@ const FamilyPage = props => {
       </div>
       <div className="block">
         <div className="grid gridfull">
-          <Steps />
+          <Steps textos={props.textosFamilia}/>
         </div>
       </div>
       <div id="verformulario" className="block">
@@ -86,7 +86,8 @@ const mapStateToProps = state => {
     familia: state.metadata.familia,
     experienciaFamilia: state.metadata.experienciaFamilia,
     sliderFamilia: state.metadata.sliderFamilia,
-    listaExperto: state.metadata.listaExperto
+    listaExperto: state.metadata.listaExperto,
+    textosFamilia: state.metadata.textosFamilia
   };
 };
 

@@ -6,56 +6,58 @@ import maso from '../../assets/svg/maso.svg';
 import manos from '../../assets/svg/manos.svg';
 import tuerca from '../../assets/img/tuerca.png';
 
-const Beneficios = props => {
+const Beneficios = ({textos}) => {
+  console.log(textos);
+  const texto1 = textos[0] || {};
+  const texto2 = textos[1] || {};
+  const texto3 = textos[2] || {};
+  const texto4 = textos[3] || {};
+
   return (
     <Layout>
       <Title>¿QUÉ BENEFICIOS OBTIENES AL SER PARTE DE TAKAY PRO?</Title>
       <LayoutRow>
         <Item>
           <Detail className="detail">
-            Accede a nuestra red de confianza, conoce nuevos clientes que están en búsqueda de
-            expertos como tú y obtén proyectos de construcción confiables.
+            {texto1.descripcion}
           </Detail>
           <Body className="step">
             <Step>
-              <Image src={dinero}></Image>
-              <Text>Gana más</Text>
+              <Image src={texto1.imagen}></Image>
+              <Text>{texto1.titulo}</Text>
             </Step>
           </Body>
         </Item>
         <Item>
           <Detail className="detail">
-            Recibe un pago de acuerdo al trabajo de calidad que realizas y recibe la totalidad del
-            mismo. En Takay nos encargaremos de gestionar los pagos y cobranzas por ti.
+            {texto2.descripcion}
           </Detail>
           <Body className="step">
             <Step>
-              <Image src={maso}></Image>
-              <Text>Pago justo y completo</Text>
+              <Image src={texto2.imagen}></Image>
+              <Text>{texto2.titulo}</Text>
             </Step>
           </Body>
         </Item>
         <Item>
           <Detail className="detail">
-            Serás parte de una comunidad experta dispuesta a apoyarte y resolver cualquier duda que
-            tengas. Además podrás disfrutar de los eventos exclusivos para nuestros expertos.
+            {texto3.descripcion}
           </Detail>
           <Body className="step">
             <Step>
-              <Image src={manos}></Image>
-              <Text>Comunidad experta</Text>
+              <Image src={texto3.imagen}></Image>
+              <Text>{texto3.titulo}</Text>
             </Step>
           </Body>
         </Item>
         <Item>
           <Detail className="detail">
-            Dedícate a hacer lo que mejor sabes. Te damos herramientas para ayudarte a gestionar las
-            diferentes etapas del proyecto.
+            {texto4.descripcion}
           </Detail>
           <Body className="step">
             <Step>
-              <Image src={tuerca}></Image>
-              <Text>Herramientas útiles</Text>
+              <Image src={texto4.imagen}></Image>
+              <Text>{texto4.titulo}</Text>
             </Step>
           </Body>
         </Item>

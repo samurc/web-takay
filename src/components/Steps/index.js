@@ -18,7 +18,12 @@ import foco from '../../assets/svg/focos.svg';
 import edificio from '../../assets/svg/edificio.svg';
 import terreno from '../../assets/svg/terreno.svg';
 
-const Steps = props => {
+const Steps = ({textos}) => {
+  console.log(textos);
+  const texto1 = textos[3] || {};
+  const texto2 = textos[2] || {};
+  const texto3 = textos[1] || {};
+  const texto4 = textos[0] || {};
   return (
     <Layout>
       <Title>Pasos a seguir</Title>
@@ -29,12 +34,11 @@ const Steps = props => {
           </Head>
           <Body>
             <Step className="step">
-              <Image src={foco}></Image>
-              <Text>Cuéntanos sobre tu proyecto</Text>
+              <Image src={texto1.imagen}></Image>
+              <Text>{texto1.titulo}</Text>
             </Step>
             <Detail className="detail">
-              Júntate con nuestros asesores para entender tus necesidades y saber cómo podemos
-              ayudarte.
+              {texto1.descripcion}
             </Detail>
           </Body>
         </Item>
@@ -44,12 +48,11 @@ const Steps = props => {
           </Head>
           <Body>
             <Step className="step">
-              <Image src={terreno}></Image>
-              <Text>Enseñanos tu terreno</Text>
+              <Image src={texto2.imagen}></Image>
+              <Text>{texto2.titulo}</Text>
             </Step>
             <Detail className="detail">
-              Te contactamos con los mejores expertos según tus necesidades y tipo de proyecto.
-              Recíbenos en tu terreno para tomar medidas y evaluar el espacio y sus condiciones.
+              {texto2.descripcion}
             </Detail>
           </Body>
         </Item>
@@ -59,12 +62,11 @@ const Steps = props => {
           </Head>
           <Body>
             <Step className="step">
-              <Image src={edificio}></Image>
-              <Text>Te presentamos tu proyecto</Text>
+              <Image src={texto3.imagen}></Image>
+              <Text>{texto3.titulo}</Text>
             </Step>
             <Detail className="detail">
-              El equipo te presentará el diseño y proyecto que han desarrollado para ti. Una vez
-              aceptado podremos acordar la formar de pago y el cronograma de obra
+              {texto3.descripcion}
             </Detail>
           </Body>
         </Item>
@@ -74,12 +76,11 @@ const Steps = props => {
           </Head>
           <Body>
             <Step className="step">
-              <Image src={ladrillos}></Image>
-              <Text>¡Empieza tu obra!</Text>
+              <Image src={texto4.imagen}></Image>
+              <Text>{texto4.titulo}</Text>
             </Step>
             <Detail className="detail">
-              Júntate con nuestros asesores para entender tus necesidades y saber cómo podemos
-              ayudarte.
+              {texto4.descripcion}
             </Detail>
           </Body>
         </Item>

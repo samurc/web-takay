@@ -70,7 +70,7 @@ class HomePage extends Component {
           <Info />
         </div>
         <div className="block">
-          <Interes />
+          <Interes textos={this.props.textosHome}/>
         </div>
         <div className="block">
           <Iniciativa />
@@ -83,6 +83,7 @@ class HomePage extends Component {
 const mapStateToProps = state => {
   return {
     inicio: state.metadata.inicio,
+    textosHome: state.metadata.textosHome
   }
 }
 
