@@ -10,6 +10,7 @@ import Info from '../components/Info';
 import Interes from '../components/Interes';
 import Iniciativa from '../components/Iniciativa';
 import ArticleDetailModal from '../components/ArticleDetailModal';
+import Flotante from '../components/Flotante';
 
 class HomePage extends Component {
   constructor (props) {
@@ -62,7 +63,7 @@ class HomePage extends Component {
       <div id="wrap">
         {this.head()}
         {this.state.modal ? <ArticleDetailModal handler={this.closeModal} /> : null}
-
+        <Flotante/>
         <div className="block">
           <Fullbleed clickModal={this.clickModal} />
         </div>

@@ -25,7 +25,7 @@ export const Grid = styled.div`
 `;
 
 export const Box = styled.div`
-  margin: 21rem auto;
+  margin: 19rem auto;
   display: flex;
   flex-direction: column;
   max-width: 672px;

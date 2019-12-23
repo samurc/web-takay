@@ -1,5 +1,19 @@
 import styled, { css } from 'styled-components';
 
+export const Text = styled.p`
+  position: absolute;
+  bottom: 25%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #ffffff;
+  font-size: 1.9rem;
+  cursor: pointer;
+  @media only screen and (max-width: 992px) {
+    font-size: 1.2rem;
+    bottom: 20%;
+  }
+`
+
 export const FullbleedVideo = styled.div`
   height: calc(63vh - 50px);
   background: #eee;
@@ -15,7 +29,7 @@ export const FullbleedVideo = styled.div`
     top: 0;
     width: 100%;
     height: 100%;
-    //background: rgba(0, 0, 0, 0.52);
+    background: rgba(0, 0, 0, 0.52);
     z-index: 2;
   }
   #full-media {
@@ -30,6 +44,14 @@ export const FullbleedVideo = styled.div`
   @media only screen and (max-width: 992px) {
     height: calc(44vh - 50px);
   }
+  /* Landscape */
+  @media only screen 
+    and (min-device-width: 320px) 
+    and (max-device-width: 992px)
+    and (-webkit-min-device-pixel-ratio: 2)
+    and (orientation: landscape) {
+    height: calc(92vh - 50px);
+  }
 `;
 
 export const PlayVideo = styled.a`
@@ -39,7 +61,7 @@ export const PlayVideo = styled.a`
   transform: translate(-50%, -50%);
   -moz-transform: translate(-50%, -50%);
   -webkit-transform: translate(-50%, -50%);
-  background-color: rgba(255, 255, 255, 0.6);
+  background-color: rgba(255, 255, 255, 1);
   border-radius: 50%;
   height: 82px;
   width: 82px;

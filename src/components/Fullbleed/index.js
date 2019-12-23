@@ -1,5 +1,5 @@
 import React from 'react';
-import { FullbleedVideo, PlayVideo } from './styles';
+import { FullbleedVideo, PlayVideo, Text } from './styles';
 
 import VideoPNG from '../../assets/img/VIDEO-HOME.png';
 
@@ -11,13 +11,14 @@ const Fullbleed = ({ clickModal }) => {
         backgroundImage: `url(${VideoPNG})`
       }}
     >
-      {/*<div id="full-media">
+      <div id="full-media">
         <div className="grid-fullbleed grid">
           <PlayVideo href="#" className="play-video">
             <i className="material-icons">play_arrow</i>
           </PlayVideo>
+          <Text>Conoce de Takay aquí</Text>
         </div>
-    </div>*/}
+    </div>
     </FullbleedVideo>
   );
 };

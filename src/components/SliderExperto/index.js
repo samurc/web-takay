@@ -63,8 +63,8 @@ export default class SliderExperto extends Component {
           className='flickity-slider'
           currentIndex={this.state.currentIndex}
           options={{
-            autoPlay: 4000,
-            pauseAutoPlayOnHover: true,
+            autoPlay: 3000,
+            pauseAutoPlayOnHover: false,
             wrapAround: true,
             fullscreen: true,
             pageDots: false,
