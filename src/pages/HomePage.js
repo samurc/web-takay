@@ -64,6 +64,7 @@ class HomePage extends Component {
         {this.head()}
         {this.state.modal ? <ArticleDetailModal handler={this.closeModal} /> : null}
         <Flotante/>
+        
         <div className="block">
           <Fullbleed clickModal={this.clickModal} />
         </div>
