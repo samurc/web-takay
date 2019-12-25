@@ -8,6 +8,7 @@ import Acerca from '../components/Acerca';
 import Iniciativa from '../components/Iniciativa';
 import Bloques from '../components/Bloques';
 import FormularioContactanos from '../components/FormularioContactanos';
+import Flotante from '../components/Flotante';
 
 const AboutPage = props => {
   const head = () => {
@@ -45,13 +46,14 @@ const AboutPage = props => {
   return (
     <div>
       {head()}
+      <Flotante pagina="nosotros"/>
       <div className="block">
         <Acerca />
       </div>
       <div className="block">
         <Bloques textos={props.textosNosotros}/>
       </div>
-      <div className="block">
+      <div id="verformulario" className="block">
         <FormularioContactanos />
       </div>
       <div className="block">

@@ -11,6 +11,7 @@ import Beneficios from '../components/Beneficios';
 import CarouselExpertos from '../components/CarouselExpertos';
 import Proveedor from '../components/Proveedor';
 import Socio from '../components/Socio';
+import Flotante from '../components/Flotante';
 
 const ExpertPage = props => {
   const head = () => {
@@ -47,6 +48,9 @@ const ExpertPage = props => {
   return (
     <div id="wrap">
       {head()}
+
+      <Flotante pagina="experto"/>
+
       <div className="block">
         <div className="grid">
           <SliderExperto theme="yellow" lista={props.sliderExperto}/>

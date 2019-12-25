@@ -22,6 +22,10 @@ class HomePage extends Component {
     this.clickModal = this.clickModal.bind(this)
   }
 
+  componentDidMount() {
+    window.scrollTo(0, 0)
+  }
+
   closeModal () {
     this.setState({ modal: false })
   };
@@ -63,7 +67,7 @@ class HomePage extends Component {
       <div id="wrap">
         {this.head()}
         {this.state.modal ? <ArticleDetailModal handler={this.closeModal} /> : null}
-        <Flotante/>
+        <Flotante pagina="nosotros"/>
         
         <div className="block">
           <Fullbleed clickModal={this.clickModal} />

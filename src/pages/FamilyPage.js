@@ -11,6 +11,7 @@ import Formulario from '../components/Formulario';
 import Expertos from '../components/Expertos';
 import Carousel from '../components/Carousel';
 import Dudas from '../components/Dudas';
+import Flotante from '../components/Flotante';
 
 const FamilyPage = props => {
   const head = () => {
@@ -47,6 +48,9 @@ const FamilyPage = props => {
   return (
     <div id="wrap">
       {head()}
+
+      <Flotante pagina="familia"/>
+
       <div className="block">
         <div className="grid">
           <Slider lista={props.sliderFamilia}/>
