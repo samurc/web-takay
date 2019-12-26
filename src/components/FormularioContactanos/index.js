@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import axios from 'axios';
+
 import {
   Layout,
   Col1,
@@ -21,8 +23,8 @@ export default class FormularioContactanos extends Component {
       nombre_completo: '',
       telefono: '',
       correo: '',
-      ocupacion: '',
-      acepto_terminos: false
+      tipo_servicio: '',
+      informacion_adicional: ''
     };
     this.handleInputChange = this.handleInputChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -38,9 +40,24 @@ export default class FormularioContactanos extends Component {
     });
   }
 
-  handleSubmit(event) {
-    console.log(this.state.nombre_completo);
+  async handleSubmit(event) {
     event.preventDefault();
+    const { nombre_completo, telefono, correo, tipo_servicio, informacion_adicional } = this.state;
+    const dataRequest = {
+      nombre_completo,
+      telefono,
+      correo,
+      tipo_servicio,
+      informacion_adicional
+    }
+    console.log(dataRequest)
+    try {
+      const baseURL = '//takaycms.wordlatin.com/form/nosotros';
+      const data = await axios.post(`${baseURL}`, dataRequest);
+      console.log(data);
+    } catch (error) {
+      console.log(error)
+    }
   }
 
   render() {
@@ -88,15 +105,15 @@ export default class FormularioContactanos extends Component {
               <LayoutColumn>
                 <label>Tipo de servicio</label>
                 <input
-                  name="correo"
-                  type="email"
-                  value={this.state.correo}
+                  name="tipo_servicio"
+                  type="text"
+                  value={this.state.tipo_servicio}
                   onChange={this.handleInputChange}
                 />
               </LayoutColumn>
               <LayoutColumn>
                 <label>Información adicional</label>
-                <textarea rows={6} cols={6}></textarea>
+                <textarea rows={6} cols={6} name="informacion_adicional" value={this.state.informacion_adicional} onChange={this.handleInputChange}></textarea>
               </LayoutColumn>
               <Button type="submit">Enviar</Button>
             </Form>

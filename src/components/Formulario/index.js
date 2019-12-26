@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import axios from 'axios';
+
 import {
   Layout,
   Col1,
@@ -39,9 +41,24 @@ export default class Formulario extends Component {
     });
   }
 
-  handleSubmit(event) {
+  async handleSubmit(event) {
     event.preventDefault();
-    console.log(this.state);
+    const { nombre_completo, telefono, correo, tipo_proyecto, situacion_actual } = this.state;
+    const dataRequest = {
+      nombre_completo,
+      telefono,
+      correo,
+      tipo_proyecto,
+      situacion_actual
+    }
+    console.log(dataRequest)
+    try {
+      const baseURL = '//takaycms.wordlatin.com/form/familia';
+      const data = await axios.post(`${baseURL}`, dataRequest);
+      console.log(data);
+    } catch (error) {
+      console.log(error)
+    }
   }
 
   render() {

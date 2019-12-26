@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import axios from 'axios';
 import {
   Layout,
   Col1,
@@ -38,9 +39,23 @@ export default class FormularioExperiencia extends Component {
     });
   }
 
-  handleSubmit(event) {
-    console.log(this.state.nombre_completo);
+  async handleSubmit(event) {
     event.preventDefault();
+    const { nombre_completo, telefono, correo, ocupacion } = this.state;
+    const dataRequest = {
+      nombre_completo,
+      telefono,
+      correo,
+      ocupacion
+    }
+    console.log(dataRequest)
+    try {
+      const baseURL = '//takaycms.wordlatin.com/form/experto';
+      const data = await axios.post(`${baseURL}`, dataRequest);
+      console.log(data);
+    } catch (error) {
+      console.log(error)
+    }
   }
 
   render() {

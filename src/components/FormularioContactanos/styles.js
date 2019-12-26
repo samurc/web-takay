@@ -110,7 +110,7 @@ export const Form = styled.form`
   }
 `;
 
-export const Button = styled.div`
+export const Button = styled.button`
   cursor: pointer;
   margin-top: 1rem;
   font-weight: 900;
