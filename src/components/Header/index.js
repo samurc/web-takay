@@ -10,7 +10,9 @@ const Header = ({ locationName }) => {
   const toggleMenu = () => setMenuToggle(!menuOpen);
 
   const stylesOpen = {
-    transform: 'translateX(0px)'
+    transform: 'translateX(0px)',
+    left: 'inherit',
+    right: 0
   };
   let colorNav;
   let logoTakay;
@@ -48,27 +50,24 @@ const Header = ({ locationName }) => {
               style={menuOpen ? { display: 'block', opacity: 1 } : null}
               onClick={toggleMenu}
             />
-            <SideNav id="slide-out" className="sidenav" style={menuOpen ? stylesOpen : null}>
+            <SideNav id="slide-out" className="sidenav" style={menuOpen ? stylesOpen : null} color={colorNav}>
               <li>
-                <Link to="/" className="subheader">
-                  TAKAY
+                <Link to="/" onClick={toggleMenu} className={`item ${locationName == '/' ? 'active' : ''}`}>
+                  HOME
                 </Link>
               </li>
               <li>
-                <div className="divider" />
-              </li>
-              <li>
-                <Link to="/familia" className="item" onClick={toggleMenu}>
+                <Link to="/familia" onClick={toggleMenu} className={`item ${locationName == '/familia' ? 'active' : ''}`}>
                   FAMILIA
                 </Link>
               </li>
               <li>
-                <Link to="/experto" className="item" onClick={toggleMenu}>
+                <Link to="/experto" onClick={toggleMenu} className={`item ${locationName == '/experto' ? 'active' : ''}`}>
                   EXPERTO
                 </Link>
               </li>
               <li>
-                <Link to="/nosotros" className="item" onClick={toggleMenu}>
+                <Link to="/nosotros" onClick={toggleMenu} className={`item ${locationName == '/nosotros' ? 'active' : ''}`}>
                   NOSOTROS
                 </Link>
               </li>

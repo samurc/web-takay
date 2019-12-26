@@ -95,6 +95,9 @@ export const Nav = styled.nav`
     }
     &.active {
       background-color: rgba(0, 0, 0, 0.1);
+      @media only screen and (max-width: 992px) {
+        background-color: rgba(0, 0, 0, 0.2);
+      }
     }
   }
 
@@ -115,7 +118,7 @@ export const NavWrapper = styled.div`
 
 export const SidenavOverlay = styled.div`
   position: fixed;
-  top: 0;
+  top: 40px;
   left: 0;
   right: 0;
   opacity: 0;
@@ -127,16 +130,12 @@ export const SidenavOverlay = styled.div`
 
 export const SideNav = styled.ul`
   position: fixed;
-  width: 300px;
+  width: 170px;
   left: 0;
-  top: 0;
+  top: 40px;
   margin: 0;
   -webkit-transform: translateX(-100%);
   transform: translateX(-100%);
-  height: 100%;
-  height: calc(100% + 60px);
-  height: -moz-calc(100%);
-  padding-bottom: 60px;
   background-color: #fff;
   z-index: 999;
   overflow-y: auto;
@@ -145,8 +144,7 @@ export const SideNav = styled.ul`
   backface-visibility: hidden;
   -webkit-transform: translateX(-105%);
   transform: translateX(-105%);
-  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.12),
-    0 1px 5px 0 rgba(0, 0, 0, 0.2);
+  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.12), 0 1px 5px 0 rgba(0, 0, 0, 0.2);
   li {
     float: none !important;
     line-height: 48px;
@@ -154,9 +152,9 @@ export const SideNav = styled.ul`
       color: rgba(0, 0, 0, 0.87);
       display: block;
       font-size: 14px;
-      font-weight: 500;
-      height: 48px;
-      line-height: 48px;
+      font-weight: 900;
+      height: 40px;
+      line-height: 40px;
       padding: 0 32px;
     }
   }
@@ -172,6 +170,45 @@ export const SideNav = styled.ul`
     font-weight: bold;
     line-height: 48px;
   }
+  ${props =>
+    props.color == 'orange' &&
+    css`
+      background-color: #f15a22;
+      li {
+        border-bottom: 1px solid #ffffff;
+      }
+      li + li + li ~ li {
+        border-bottom: 0;
+      }
+      li > a {
+        color: #ffffff;
+      }
+    `};
+  ${props =>
+    props.color == 'white' &&
+    css`
+      background-color: #ffffff;
+      li {
+        border-bottom: 1px solid #f15a22;
+      }
+      li + li + li ~ li {
+        border-bottom: 0;
+      }
+    `};
+  ${props =>
+    props.color == 'yellow' &&
+    css`
+      background-color: #f7ce48;
+      li {
+        border-bottom: 1px solid #ffffff;
+      }
+      li + li + li ~ li {
+        border-bottom: 0;
+      }
+      li > a {
+        color: #ffffff;
+      }
+    `};
 `;
 
 export const NavList = styled.ul`
