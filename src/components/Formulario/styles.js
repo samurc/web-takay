@@ -96,6 +96,15 @@ export const LayoutColumn = styled.div`
       margin-right: 10px;
     }
   }
+  &.has-error {
+    label {
+      color: #ff0000;
+    }
+    input, select {
+      border: 1px solid #ff0000 !important;
+      background: rgba(255, 0, 0, 0.22) !important;
+    }
+  }
   @media only screen and (max-width: 992px) {
     &.checkboxLayout {
       margin-top: 4rem;
@@ -131,6 +140,10 @@ export const Button = styled.button`
   padding: 0.5rem 4.5rem;
   border-radius: 4px;
   cursor: pointer;
+  &:disabled {
+    background: #dddddd;
+    cursor: default;
+  }
   &:hover {
     opacity: 0.9;
   }

@@ -25,7 +25,18 @@ export default class Formulario extends Component {
       correo: '',
       tipo_proyecto: '',
       situacion_actual: '',
-      acepto_terminos: false
+      acepto_terminos: false,
+      formErrors: {
+        nombre_completo: '',
+        telefono: '',
+        correo: '',
+        tipo_proyecto: '',
+        situacion_actual: '',
+        acepto_terminos: ''
+      },
+      emailValid: false,
+      checkValid: false,
+      formValid: false
     };
     this.handleInputChange = this.handleInputChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -38,7 +49,39 @@ export default class Formulario extends Component {
 
     this.setState({
       [name]: value
-    });
+    }, () => { this.validateField(name, value) });
+  }
+
+  validateField(fieldName, value) {
+    let fieldValidationErrors = this.state.formErrors;
+    let emailValid = this.state.emailValid;
+    let checkValid = this.state.checkValid;
+
+    switch(fieldName) {
+      case 'correo':
+        emailValid = value.match(/^([\w.%+-]+)@([\w-]+\.)+([\w]{2,})$/i);
+        fieldValidationErrors.correo = emailValid ? '' : ' is invalid';
+        break;
+      case 'acepto_terminos':
+        checkValid = value === true;
+        fieldValidationErrors.acepto_terminos = checkValid ? '': ' is invalid';
+        break;
+      default:
+        break;
+    }
+    this.setState({
+      formErrors: fieldValidationErrors,
+      emailValid: emailValid,
+      checkValid: checkValid
+    }, this.validateForm);
+  }
+
+  validateForm() {
+    this.setState({formValid: this.state.emailValid && this.state.checkValid});
+  }
+
+  errorClass(error) {
+    return (error.length === 0 ? '' : 'has-error');
   }
 
   async handleSubmit(event) {
@@ -76,7 +119,7 @@ export default class Formulario extends Component {
           <Col2Inner>
             <Title2 mode="desktop">Inicia ahora</Title2>
             <Form onSubmit={this.handleSubmit}>
-              <LayoutColumn>
+              <LayoutColumn className={this.errorClass(this.state.formErrors.nombre_completo)}>
                 <label>Nombre completo</label>
                 <input
                   name="nombre_completo"
@@ -86,7 +129,7 @@ export default class Formulario extends Component {
                 />
               </LayoutColumn>
               <LayoutRow className="flex-items">
-                <LayoutColumn>
+                <LayoutColumn className={this.errorClass(this.state.formErrors.telefono)}>
                   <label>Teléfono</label>
                   <input
                     name="telefono"
@@ -95,7 +138,7 @@ export default class Formulario extends Component {
                     onChange={this.handleInputChange}
                   />
                 </LayoutColumn>
-                <LayoutColumn>
+                <LayoutColumn className={this.errorClass(this.state.formErrors.correo)}>
                   <label>Correo Eléctronico</label>
                   <input
                     name="correo"
@@ -105,7 +148,7 @@ export default class Formulario extends Component {
                   />
                 </LayoutColumn>
               </LayoutRow>
-              <LayoutColumn>
+              <LayoutColumn className={this.errorClass(this.state.formErrors.tipo_proyecto)}>
                 <label>Tipo de proyecto</label>
                 <select
                   name="tipo_proyecto"
@@ -122,7 +165,7 @@ export default class Formulario extends Component {
                   }
                 </select>
               </LayoutColumn>
-              <LayoutColumn>
+              <LayoutColumn className={this.errorClass(this.state.formErrors.situacion_actual)}>
                 <label>Selecciona la opción que mejora se adapte a tu situación actual</label>
                 <select
                   name="situacion_actual"
@@ -139,7 +182,7 @@ export default class Formulario extends Component {
                   }
                 </select>
               </LayoutColumn>
-              <LayoutColumn className="checkboxLayout">
+              <LayoutColumn className={`checkboxLayout ${this.errorClass(this.state.formErrors.acepto_terminos)}`}>
                 <label>
                   <input
                     name="acepto_terminos"
@@ -150,7 +193,7 @@ export default class Formulario extends Component {
                   Acepto los <b> términos y condiciones</b>
                 </label>
               </LayoutColumn>
-              <Button type="submit">Enviar</Button>
+              <Button type="submit" disabled={!this.state.formValid}>Enviar</Button>
             </Form>
           </Col2Inner>
         </Col2>
