@@ -46,6 +46,7 @@ export default class Formulario extends Component {
   }
 
   render() {
+    const { comboProyecto, comboSituacion } = this.props
     return (
       <Layout>
         <Col1>
@@ -94,7 +95,16 @@ export default class Formulario extends Component {
                   name="tipo_proyecto"
                   value={this.state.tipo_proyecto}
                   onChange={this.handleInputChange}
-                ></select>
+                >
+                  <option value={''}>{''}</option>
+                  {
+                    comboProyecto.map(function (v, idx) {
+                      return (
+                      <option key={v.keyunico} value={v.textos}>{v.textos}</option>  
+                      )
+                    })
+                  }
+                </select>
               </LayoutColumn>
               <LayoutColumn>
                 <label>Selecciona la opción que mejora se adapte a tu situación actual</label>
@@ -102,7 +112,16 @@ export default class Formulario extends Component {
                   name="situacion_actual"
                   value={this.state.situacion_actual}
                   onChange={this.handleInputChange}
-                ></select>
+                >
+                  <option value={''}>{''}</option>
+                  {
+                    comboSituacion.map(function (v, idx) {
+                      return (
+                      <option key={v.keyunico} value={v.textos}>{v.textos}</option>  
+                      )
+                    })
+                  }
+                </select>
               </LayoutColumn>
               <LayoutColumn className="checkboxLayout">
                 <label>

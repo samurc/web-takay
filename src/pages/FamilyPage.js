@@ -63,7 +63,7 @@ const FamilyPage = props => {
       </div>
       <div id="verformulario" className="block">
         <div className="grid">
-          <Formulario />
+          <Formulario comboProyecto={props.comboProyecto} comboSituacion={props.comboSituacion} />
         </div>
       </div>
       <div className="block">
@@ -91,7 +91,9 @@ const mapStateToProps = state => {
     experienciaFamilia: state.metadata.experienciaFamilia,
     sliderFamilia: state.metadata.sliderFamilia,
     listaExperto: state.metadata.listaExperto,
-    textosFamilia: state.metadata.textosFamilia
+    textosFamilia: state.metadata.textosFamilia,
+    comboProyecto: state.metadata.comboProyecto,
+    comboSituacion: state.metadata.comboSituacion
   };
 };
 

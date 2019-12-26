@@ -44,6 +44,9 @@ export default function metadataReducer(state = initialState.metadata, action) {
       const textosFamilia = action.payload.textos_img.filter(function (item) { return item.pagina == "familia"; });
       const link = Object.values(action.payload.link);
       const textosPie = Object.values(action.payload.textos).filter(function (item) { return item.sec_referencia == "pie"; });
+      const comboProyecto = Object.values(action.payload.textos).filter(function (item) { return item.sec_referencia == "combo tipo de proyecto"; });
+      const comboSituacion = Object.values(action.payload.textos).filter(function (item) { return item.sec_referencia == "combo situacion actual"; });
+      const comboOcupacion = Object.values(action.payload.textos).filter(function (item) { return item.sec_referencia == "combo ocupacion"; });
 
       return {
         ...state,
@@ -62,7 +65,10 @@ export default function metadataReducer(state = initialState.metadata, action) {
         textosExperto: textosExperto,
         textosNosotros: textosNosotros,
         link: link,
-        textosPie: textosPie
+        textosPie: textosPie,
+        comboProyecto: comboProyecto,
+        comboSituacion: comboSituacion,
+        comboOcupacion: comboOcupacion
       }
 
     case FETCH_DATA_FAILURE:

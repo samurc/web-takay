@@ -45,6 +45,7 @@ export default class FormularioExperiencia extends Component {
   }
 
   render() {
+    const { comboOcupacion } = this.props
     return (
       <Layout>
         <Col1>
@@ -90,7 +91,16 @@ export default class FormularioExperiencia extends Component {
                   name="ocupacion"
                   value={this.state.ocupacion}
                   onChange={this.handleInputChange}
-                ></select>
+                >
+                  <option value={''}>{''}</option>
+                  {
+                    comboOcupacion.map(function (v, idx) {
+                      return (
+                      <option key={v.keyunico} value={v.textos}>{v.textos}</option>  
+                      )
+                    })
+                  }
+                </select>
               </LayoutColumn>
               <LayoutColumn className="checkboxLayout">
                 <label>

@@ -116,6 +116,7 @@ export const Form = styled.form`
     padding: 4px;
     background: #e4e4e4;
     height: 28px;
+    outline: none;
   }
 `;
 
