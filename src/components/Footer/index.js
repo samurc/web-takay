@@ -13,7 +13,7 @@ import LogoLocationB from '../../assets/svg/locationb.svg';
 import LogoLinkedinB from '../../assets/svg/inb.svg';
 import LogoMailB from '../../assets/svg/mailb.svg';
 
-export default ({ locationName }) => {
+export default ({ locationName, link }) => {
   let theme;
   let logoImg;
   let logoMobile;
@@ -21,6 +21,12 @@ export default ({ locationName }) => {
   let logoMail;
   let logoLinkedin;
   let logoLocation;
+
+  const link1 = link[0] || {};
+  const link2 = link[1] || {};
+  const link3 = link[2] || {};
+  const link4 = link[3] || {};
+
   switch (locationName) {
     case '/experto':
       theme = 'yellow';
@@ -55,17 +61,17 @@ export default ({ locationName }) => {
           </Item>
           <Item className="contact">
             <h3>Contáctanos</h3>
-            <p>
-              <img src={logoMobile} width={16} height={26} /> 987648935
-            </p>
-            <p>
-              <img src={logoPhone} width={16} height={26} /> 01 - 3590844
-            </p>
+            <a href={link1.link}>
+              <img src={logoMobile} width={16} height={26} className="iconimage"/> {link1.titulo}
+            </a>
+            <a href={link3.link}>
+              <img src={logoPhone} width={16} height={26} className="iconimage"/> {link3.titulo}
+            </a>
             <div className="social">
-              <SocialItem theme={theme}>
+              <SocialItem theme={theme} href={link2.link}>
                 <img src={logoMail} width={19} height={16} />
               </SocialItem>
-              <SocialItem theme={theme}>
+              <SocialItem theme={theme} href={link4.link}>
                 <img src={logoLinkedin} width={19} height={16} />
               </SocialItem>
             </div>

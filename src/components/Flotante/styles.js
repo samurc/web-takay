@@ -33,6 +33,14 @@ export const ButtonOpen = styled(Link)`
       transform: scale(1);
     }
   }
+  @media only screen and (max-width: 992px) {
+    font-size: 1.2rem;
+    line-height: 14px;
+    right: -20px;
+    > div {
+      width: 12px;
+    }
+  }
 `;
 
 export const TextoVertical = styled.div`

@@ -70,11 +70,12 @@ export const Item = styled.div`
   &.contact {
     max-width: 200px;
     margin-right: 10px;
-    > p {
+    > p, a {
+      color: #000000;
       display: flex;
       align-items: center;
       margin-bottom: 10px;
-      img {
+      img.iconimage {
         margin-right: 15px;
       }
     }
@@ -171,7 +172,7 @@ export const FooterCopyright = styled.div`
   }
 `;
 
-export const SocialItem = styled.div`
+export const SocialItem = styled.a`
   cursor: pointer;
   width: 32px;
   height: 32px;

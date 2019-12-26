@@ -9,7 +9,8 @@ const initialState = {
     experienciaExperto: [],
     sliderFamilia: [],
     sliderExperto: [],
-    listaExperto: []
+    listaExperto: [],
+    link: []
   }
 };
 

@@ -42,7 +42,6 @@ export const Item = styled.div`
   justify-content: center;
   &:hover {
     background: #5b5e59;
-    border-radius: 14px;
     .detail {
       display: flex;
       align-self: center;

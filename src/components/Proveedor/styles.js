@@ -33,9 +33,9 @@ export const Fullbleed = styled.div`
     .item-row {
       font-family: 'Source Serif Pro', serif;
       margin-left: 6rem;
-      margin-bottom: 18px;
-      font-size: 14px;
-      line-height: 24px;
+      margin-bottom: 20px;
+      font-size: 16px;
+      line-height: 26px;
       display: flex;
       align-items: center;
       color: #ffffff;

@@ -52,8 +52,9 @@ export const Box = styled.div`
       font-size: 1.2rem;
       line-height: 16px;
     }
-    .btn-more {
-      display: none;
+    .btn-more a {
+      padding: 0.3rem 4.5rem;
+      font-size: 1.3rem;
     }
   }
 `;

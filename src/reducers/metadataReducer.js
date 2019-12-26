@@ -6,6 +6,7 @@ import {
 import initialState from './initialState';
 
 export default function metadataReducer(state = initialState.metadata, action) {
+
   switch (action.type) {
     case FETCH_DATA_INIT:
       return {
@@ -23,7 +24,8 @@ export default function metadataReducer(state = initialState.metadata, action) {
         textosHome: [],
         textosFamilia: [],
         textosExperto: [],
-        textosNosotros: []
+        textosNosotros: [],
+        link: []
       }
     case FETCH_DATA_SUCCESS:
       const seccion = action.payload.seccion
@@ -36,6 +38,7 @@ export default function metadataReducer(state = initialState.metadata, action) {
       const textosHome = action.payload.textos_img.filter(function (item) { return item.pagina == "home"; });
       const textosExperto = action.payload.textos_img.filter(function (item) { return item.pagina == "experto"; });
       const textosFamilia = action.payload.textos_img.filter(function (item) { return item.pagina == "familia"; });
+      const link = Object.values(action.payload.link);
 
       return {
         ...state,
@@ -52,7 +55,8 @@ export default function metadataReducer(state = initialState.metadata, action) {
         textosHome: textosHome,
         textosFamilia: textosFamilia,
         textosExperto: textosExperto,
-        textosNosotros: textosNosotros
+        textosNosotros: textosNosotros,
+        link: link
       }
 
     case FETCH_DATA_FAILURE:
@@ -71,7 +75,8 @@ export default function metadataReducer(state = initialState.metadata, action) {
         textosHome: [],
         textosFamilia: [],
         textosExperto: [],
-        textosNosotros: []
+        textosNosotros: [],
+        link: []
       }
 
     default:
