@@ -98,9 +98,7 @@ export default class FormularioContactanos extends Component {
                 <label>Información adicional</label>
                 <textarea rows={6} cols={6}></textarea>
               </LayoutColumn>
-              <Button>
-                <a href={'#'}>Enviar</a>
-              </Button>
+              <Button type="submit">Enviar</Button>
             </Form>
           </Col2Inner>
         </Col2>

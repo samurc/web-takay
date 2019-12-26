@@ -111,18 +111,17 @@ export const Form = styled.form`
 `;
 
 export const Button = styled.div`
+  cursor: pointer;
   margin-top: 1rem;
-  > a {
-    font-weight: 900;
-    display: inline-block;
-    background: #00949e;
-    color: #ffffff;
-    text-transform: uppercase;
-    font-size: 1.3rem;
-    padding: 0.3rem 4.5rem;
-    border-radius: 4px;
-    &:hover {
-      opacity: 0.9;
-    }
+  font-weight: 900;
+  display: inline-block;
+  background: #00949e;
+  color: #ffffff;
+  text-transform: uppercase;
+  font-size: 1.3rem;
+  padding: 0.3rem 4.5rem;
+  border-radius: 4px;
+  &:hover {
+    opacity: 0.9;
   }
 `;

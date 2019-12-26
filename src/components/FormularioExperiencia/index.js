@@ -112,9 +112,7 @@ export default class FormularioExperiencia extends Component {
                   Acepto los <b> términos y condiciones</b>
                 </label>
               </LayoutColumn>
-              <Button>
-                <a href={'#'}>Enviar</a>
-              </Button>
+              <Button type="submit">Enviar</Button>
             </Form>
           </Col2Inner>
         </Col2>

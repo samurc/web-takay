@@ -40,8 +40,8 @@ export default class Formulario extends Component {
   }
 
   handleSubmit(event) {
-    console.log(this.state.nombre_completo);
     event.preventDefault();
+    console.log(this.state);
   }
 
   render() {
@@ -133,9 +133,7 @@ export default class Formulario extends Component {
                   Acepto los <b> términos y condiciones</b>
                 </label>
               </LayoutColumn>
-              <Button>
-                <a href={'#'}>Enviar</a>
-              </Button>
+              <Button type="submit">Enviar</Button>
             </Form>
           </Col2Inner>
         </Col2>
