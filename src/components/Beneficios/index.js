@@ -7,7 +7,6 @@ import manos from '../../assets/svg/manos.svg';
 import tuerca from '../../assets/img/tuerca.png';
 
 const Beneficios = ({textos}) => {
-  console.log(textos);
   const texto1 = textos[0] || {};
   const texto2 = textos[1] || {};
   const texto3 = textos[2] || {};

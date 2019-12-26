@@ -31,7 +31,6 @@ export default class FormularioExperiencia extends Component {
   handleInputChange(event) {
     const target = event.target;
     const value = target.type === 'checkbox' ? target.checked : target.value;
-    console.log(value, target.name);
     const name = target.name;
 
     this.setState({

@@ -5,7 +5,6 @@ import imgExperto from '../../assets/img/experto.png';
 import { Link } from 'react-router-dom';
 
 const Info = ({textos}) => {
-  console.log(textos);
   const texto1 = textos[1] || {};
   const texto2 = textos[0] || {};
   return (

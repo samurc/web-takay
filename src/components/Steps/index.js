@@ -19,7 +19,6 @@ import edificio from '../../assets/svg/edificio.svg';
 import terreno from '../../assets/svg/terreno.svg';
 
 const Steps = ({textos}) => {
-  console.log(textos);
   const texto1 = textos[3] || {};
   const texto2 = textos[2] || {};
   const texto3 = textos[1] || {};
