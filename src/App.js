@@ -34,7 +34,7 @@ class App extends Component {
   render() {
     const { pathname: locationName } = this.props.location
     const { loadingData } = this.state;
-    const { link } = this.props;
+    const { link, textosPie } = this.props;
     return (
       <Fragment>
         { loadingData && (
@@ -47,7 +47,7 @@ class App extends Component {
               <Route exact path='/experto' component={ExpertPage} />
               <Route exact path='/nosotros' component={AboutPage} />
             </div>
-            <Footer locationName={locationName} link={link} />
+            <Footer locationName={locationName} link={link} textosPie={textosPie} />
           </div>
         ) }
         {
@@ -67,7 +67,8 @@ class App extends Component {
 function mapStateToProps(state) {
   return {
     location: state.router.location,
-    link: state.metadata.link
+    link: state.metadata.link,
+    textosPie: state.metadata.textosPie
   }
 }
 

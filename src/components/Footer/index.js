@@ -13,7 +13,7 @@ import LogoLocationB from '../../assets/svg/locationb.svg';
 import LogoLinkedinB from '../../assets/svg/inb.svg';
 import LogoMailB from '../../assets/svg/mailb.svg';
 
-export default ({ locationName, link }) => {
+export default ({ locationName, link, textosPie }) => {
   let theme;
   let logoImg;
   let logoMobile;
@@ -26,6 +26,9 @@ export default ({ locationName, link }) => {
   const link2 = link[1] || {};
   const link3 = link[2] || {};
   const link4 = link[3] || {};
+
+  const textosPie1 = textosPie[0] || {};
+  const textosPie2 = textosPie[1] || {};
 
   switch (locationName) {
     case '/experto':
@@ -55,8 +58,7 @@ export default ({ locationName, link }) => {
           <Item className="about">
             <img src={logoImg} width={85} height={20} />
             <p>
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
-              incididunt ut labore et dolore voluptatem.
+              {textosPie1.textos}
             </p>
           </Item>
           <Item className="contact">
@@ -79,8 +81,7 @@ export default ({ locationName, link }) => {
           <Item className="location">
             <h3>¿Dónde estamos?</h3>
             <p>
-              <img src={logoLocation} width={16} height={26} /> Av. Miguel grau 1227 - Trujillo -
-              Trujillo
+              <img src={logoLocation} width={16} height={26} /> {textosPie2.textos}
             </p>
           </Item>
         </LayoutRow>

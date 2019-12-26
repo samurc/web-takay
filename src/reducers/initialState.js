@@ -10,7 +10,11 @@ const initialState = {
     sliderFamilia: [],
     sliderExperto: [],
     listaExperto: [],
-    link: []
+    link: [],
+    textosPie: [],
+    comboProyecto: [],
+    comboSituacion: [],
+    comboOcupacion: []
   }
 };
 

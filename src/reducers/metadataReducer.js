@@ -25,7 +25,11 @@ export default function metadataReducer(state = initialState.metadata, action) {
         textosFamilia: [],
         textosExperto: [],
         textosNosotros: [],
-        link: []
+        link: [],
+        textosPie: [],
+        comboProyecto: [],
+        comboSituacion: [],
+        comboOcupacion: []
       }
     case FETCH_DATA_SUCCESS:
       const seccion = action.payload.seccion
@@ -39,6 +43,7 @@ export default function metadataReducer(state = initialState.metadata, action) {
       const textosExperto = action.payload.textos_img.filter(function (item) { return item.pagina == "experto"; });
       const textosFamilia = action.payload.textos_img.filter(function (item) { return item.pagina == "familia"; });
       const link = Object.values(action.payload.link);
+      const textosPie = Object.values(action.payload.textos).filter(function (item) { return item.sec_referencia == "pie"; });
 
       return {
         ...state,
@@ -56,7 +61,8 @@ export default function metadataReducer(state = initialState.metadata, action) {
         textosFamilia: textosFamilia,
         textosExperto: textosExperto,
         textosNosotros: textosNosotros,
-        link: link
+        link: link,
+        textosPie: textosPie
       }
 
     case FETCH_DATA_FAILURE:
@@ -76,7 +82,11 @@ export default function metadataReducer(state = initialState.metadata, action) {
         textosFamilia: [],
         textosExperto: [],
         textosNosotros: [],
-        link: []
+        link: [],
+        textosPie: [],
+        comboProyecto: [],
+        comboSituacion: [],
+        comboOcupacion: []
       }
 
     default:
