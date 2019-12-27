@@ -29,7 +29,10 @@ export default function metadataReducer(state = initialState.metadata, action) {
         textosPie: [],
         comboProyecto: [],
         comboSituacion: [],
-        comboOcupacion: []
+        comboOcupacion: [],
+        rutaFormFamilia: null,
+        rutaFormExperto: null,
+        rutaFormNosotros: null
       }
     case FETCH_DATA_SUCCESS:
       const seccion = action.payload.seccion
@@ -68,7 +71,10 @@ export default function metadataReducer(state = initialState.metadata, action) {
         textosPie: textosPie,
         comboProyecto: comboProyecto,
         comboSituacion: comboSituacion,
-        comboOcupacion: comboOcupacion
+        comboOcupacion: comboOcupacion,
+        rutaFormFamilia: action.payload.ruta_form_familia,
+        rutaFormExperto: action.payload.ruta_form_experto,
+        rutaFormNosotros: action.payload.ruta_form_nosotros
       }
 
     case FETCH_DATA_FAILURE:
@@ -92,7 +98,10 @@ export default function metadataReducer(state = initialState.metadata, action) {
         textosPie: [],
         comboProyecto: [],
         comboSituacion: [],
-        comboOcupacion: []
+        comboOcupacion: [],
+        rutaFormFamilia: null,
+        rutaFormExperto: null,
+        rutaFormNosotros: null
       }
 
     default:

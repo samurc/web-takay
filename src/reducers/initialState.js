@@ -14,7 +14,10 @@ const initialState = {
     textosPie: [],
     comboProyecto: [],
     comboSituacion: [],
-    comboOcupacion: []
+    comboOcupacion: [],
+    rutaFormFamilia: null,
+    rutaFormExperto: null,
+    rutaFormNosotros: null
   }
 };
 

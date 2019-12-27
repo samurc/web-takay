@@ -87,6 +87,7 @@ export default class Formulario extends Component {
   async handleSubmit(event) {
     event.preventDefault();
     const { nombre_completo, telefono, correo, tipo_proyecto, situacion_actual } = this.state;
+    const { rutaFormFamilia } = this.props;
     const dataRequest = {
       nombre_completo,
       telefono,
@@ -96,8 +97,7 @@ export default class Formulario extends Component {
     }
     console.log(dataRequest)
     try {
-      const baseURL = 'https://takaydev.wordlatin.com/post_familia.php';
-      const data = await axios.post(`${baseURL}`, dataRequest);
+      const data = await axios.post(rutaFormFamilia, dataRequest);
       console.log(data);
     } catch (error) {
       console.log(error)
@@ -155,7 +155,7 @@ export default class Formulario extends Component {
                   value={this.state.tipo_proyecto}
                   onChange={this.handleInputChange}
                 >
-                  <option value={''}>{''}</option>
+                  <option value={''}>Seleccione una opción</option>
                   {
                     comboProyecto.map(function (v, idx) {
                       return (
@@ -172,7 +172,7 @@ export default class Formulario extends Component {
                   value={this.state.situacion_actual}
                   onChange={this.handleInputChange}
                 >
-                  <option value={''}>{''}</option>
+                  <option value={''}>Seleccione una opción</option>
                   {
                     comboSituacion.map(function (v, idx) {
                       return (

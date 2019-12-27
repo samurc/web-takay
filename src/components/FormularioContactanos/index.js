@@ -43,6 +43,7 @@ export default class FormularioContactanos extends Component {
   async handleSubmit(event) {
     event.preventDefault();
     const { nombre_completo, telefono, correo, tipo_servicio, informacion_adicional } = this.state;
+    const { rutaFormNosotros } = this.props;
     const dataRequest = {
       nombre_completo,
       telefono,
@@ -52,8 +53,7 @@ export default class FormularioContactanos extends Component {
     }
     console.log(dataRequest)
     try {
-      const baseURL = '//takaycms.wordlatin.com/form/nosotros';
-      const data = await axios.post(`${baseURL}`, dataRequest);
+      const data = await axios.post(rutaFormNosotros, dataRequest);
       console.log(data);
     } catch (error) {
       console.log(error)

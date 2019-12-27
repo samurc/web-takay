@@ -42,6 +42,7 @@ export default class FormularioExperiencia extends Component {
   async handleSubmit(event) {
     event.preventDefault();
     const { nombre_completo, telefono, correo, ocupacion } = this.state;
+    const { rutaFormExperto } = this.props;
     const dataRequest = {
       nombre_completo,
       telefono,
@@ -50,8 +51,7 @@ export default class FormularioExperiencia extends Component {
     }
     console.log(dataRequest)
     try {
-      const baseURL = '//takaycms.wordlatin.com/form/experto';
-      const data = await axios.post(`${baseURL}`, dataRequest);
+      const data = await axios.post(rutaFormExperto, dataRequest);
       console.log(data);
     } catch (error) {
       console.log(error)
@@ -106,7 +106,7 @@ export default class FormularioExperiencia extends Component {
                   value={this.state.ocupacion}
                   onChange={this.handleInputChange}
                 >
-                  <option value={''}>{''}</option>
+                  <option value={''}>Seleccione una opción</option>
                   {
                     comboOcupacion.map(function (v, idx) {
                       return (
