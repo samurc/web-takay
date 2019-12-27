@@ -60,13 +60,14 @@ export default class Formulario extends Component {
     switch(fieldName) {
       case 'correo':
         emailValid = value.match(/^([\w.%+-]+)@([\w-]+\.)+([\w]{2,})$/i);
-        fieldValidationErrors.correo = emailValid ? '' : ' is invalid';
+        fieldValidationErrors.correo = emailValid ? '' : ' Incorrecto';
         break;
       case 'acepto_terminos':
         checkValid = value === true;
-        fieldValidationErrors.acepto_terminos = checkValid ? '': ' is invalid';
+        fieldValidationErrors.acepto_terminos = checkValid ? '': ' Incorrecto';
         break;
       default:
+        fieldValidationErrors[fieldName] = value.length > 0 ? '' : ' Requerido'
         break;
     }
     this.setState({
