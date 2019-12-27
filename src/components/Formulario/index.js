@@ -96,7 +96,7 @@ export default class Formulario extends Component {
     }
     console.log(dataRequest)
     try {
-      const baseURL = '//takaycms.wordlatin.com/form/familia';
+      const baseURL = 'https://takaydev.wordlatin.com/post_familia.php';
       const data = await axios.post(`${baseURL}`, dataRequest);
       console.log(data);
     } catch (error) {

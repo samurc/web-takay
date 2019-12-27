@@ -40,6 +40,7 @@ export const Item = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
+  border-radius: 15px;
   &:hover {
     background: #5b5e59;
     .detail {

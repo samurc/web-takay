@@ -45,6 +45,10 @@ export const Box = styled.div`
       color: #ffffff;
       border-radius: 6px;
     }
+    @media only screen and (max-width: 992px) {
+      margin-left: auto;
+      margin-right: auto;
+    }
   }
   @media only screen and (max-width: 992px) {
     margin: 9rem 4rem;

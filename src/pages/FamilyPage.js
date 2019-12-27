@@ -71,11 +71,11 @@ const FamilyPage = props => {
           <Expertos lista={props.listaExperto}/>
         </div>
       </div>
-      <div className="block">
+      {/*<div className="block">
         <div className="grid">
           <Carousel lista={props.experienciaFamilia}/>
         </div>
-      </div>
+      </div>*/}
       <div className="block">
         <div className="grid gridfull">
           <Dudas />

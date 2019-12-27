@@ -76,11 +76,11 @@ const ExpertPage = props => {
           <Socio />
         </div>
       </div>
-      <div>
+      {/*<div>
         <div className="grid">
           <CarouselExpertos theme="yellow" lista={props.experienciaExperto}/>
         </div>
-      </div>
+      </div>*/}
     </div>
   );
 };

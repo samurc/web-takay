@@ -28,7 +28,7 @@ export const Item = styled.div`
   overflow: hidden;
   display: flex;
   flex-direction: column;
-  border-radius: 15px;
+  border-radius: 0;
   margin: 5px;
   &:hover {
     .detail {
@@ -65,7 +65,7 @@ export const Detail = styled.div`
   background: #ffffff;
   color: #00949e;
   flex: 1;
-  border-radius: 15px;
+  border-radius: 0;
   padding: 2rem;
 `;
 
