@@ -199,7 +199,7 @@ export default class FormularioExperiencia extends Component {
                 </label>
               </LayoutColumn>
 
-              { formError === false && (<Parraph success>Su proyecto se registró correctamente.</Parraph>) }
+              { formError === false && (<Parraph success>Tus datos se registraron correctamente.</Parraph>) }
 
               { formError === true && (<Parraph error>Se detectó un error al recibir los datos. Inténtelo de nuevo.</Parraph>) }
 
