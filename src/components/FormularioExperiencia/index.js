@@ -12,7 +12,9 @@ import {
   Form,
   LayoutRow,
   LayoutColumn,
-  Button
+  Button,
+  Parraph,
+  LdsRing
 } from './styles';
 
 export default class FormularioExperiencia extends Component {
@@ -23,7 +25,16 @@ export default class FormularioExperiencia extends Component {
       telefono: '',
       correo: '',
       ocupacion: '',
-      acepto_terminos: false
+      acepto_terminos: false,
+      formErrors: {
+        nombre_completo: '',
+        telefono: '',
+        correo: '',
+        ocupacion: '',
+        acepto_terminos: ''
+      },
+      formError: null,
+      formLoading: false
     };
     this.handleInputChange = this.handleInputChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -36,29 +47,89 @@ export default class FormularioExperiencia extends Component {
 
     this.setState({
       [name]: value
+    }, () => {
+      const fieldValidationErrors = this.validateField(name, value)
+      this.setState({
+        formErrors: fieldValidationErrors
+      });
     });
+  }
+
+  validateField(fieldName, value) {
+    let fieldValidationErrors = this.state.formErrors;
+    let emailValid = false;
+    let checkValid = false;
+
+    switch(fieldName) {
+      case 'correo':
+        emailValid = value.match(/^([\w.%+-]+)@([\w-]+\.)+([\w]{2,})$/i);
+        fieldValidationErrors.correo = emailValid ? false : true;
+        break;
+      case 'acepto_terminos':
+        checkValid = value === true;
+        fieldValidationErrors.acepto_terminos = checkValid ? false: true;
+        break;
+      default:
+        fieldValidationErrors[fieldName] = value.length > 0 ? false : true;
+        break;
+    }
+    return fieldValidationErrors
+  }
+
+  validateForm(nombre_completo, telefono, correo, ocupacion, acepto_terminos) {
+    let fieldValidationErrors = this.state.formErrors;
+    fieldValidationErrors.nombre_completo = this.validateField('nombre_completo', nombre_completo).nombre_completo
+    fieldValidationErrors.telefono = this.validateField('telefono', telefono).telefono
+    fieldValidationErrors.correo = this.validateField('correo', correo).correo
+    fieldValidationErrors.ocupacion = this.validateField('ocupacion', ocupacion).ocupacion
+    fieldValidationErrors.acepto_terminos = this.validateField('acepto_terminos', acepto_terminos).acepto_terminos
+    this.setState({ fieldValidationErrors: fieldValidationErrors })
+    return Object.values(fieldValidationErrors).indexOf(true) === -1
+  }
+
+  errorClass(error) {
+    return (!error ? '' : 'has-error');
   }
 
   async handleSubmit(event) {
     event.preventDefault();
-    const { nombre_completo, telefono, correo, ocupacion } = this.state;
-    const { rutaFormExperto } = this.props;
-    const dataRequest = {
-      nombre_completo,
-      telefono,
-      correo,
-      ocupacion
-    }
-    console.log(dataRequest)
-    try {
-      const data = await axios.post(rutaFormExperto, dataRequest);
-      console.log(data);
-    } catch (error) {
-      console.log(error)
+    const { nombre_completo, telefono, correo, ocupacion, acepto_terminos } = this.state;
+    const statusForm = this.validateForm(nombre_completo, telefono, correo, ocupacion, acepto_terminos);
+    if (statusForm) {
+      const { rutaFormExperto } = this.props;
+      const dataRequest = {
+        nombre_completo,
+        telefono,
+        correo,
+        ocupacion
+      }
+      console.log(dataRequest)
+      try {
+        this.setState({formLoading: true, formError: null})
+        const data = await axios.post(rutaFormExperto, dataRequest);
+        console.log(data);
+        if (data.status === 200) {
+          this.setState({
+            formLoading: false,
+            formError: false,
+            nombre_completo: '',
+            telefono: '',
+            correo: '',
+            ocupacion: '',
+            acepto_terminos: false
+          })
+        } else {
+          this.setState({formLoading: false, formError: true})
+        }
+      } catch (error) {
+        console.log(error)
+        this.setState({formLoading: false, formError: true})
+      }
     }
   }
 
   render() {
+    const { formLoading, formError } = this.state
     const { comboOcupacion } = this.props
     return (
       <Layout>
@@ -72,7 +143,7 @@ export default class FormularioExperiencia extends Component {
           <Col2Inner>
             <Title2>Inicia ahora</Title2>
             <Form onSubmit={this.handleSubmit}>
-              <LayoutColumn>
+              <LayoutColumn className={this.errorClass(this.state.formErrors.nombre_completo)}>
                 <label>Nombre</label>
                 <input
                   name="nombre_completo"
@@ -81,7 +152,7 @@ export default class FormularioExperiencia extends Component {
                   onChange={this.handleInputChange}
                 />
               </LayoutColumn>
-              <LayoutColumn>
+              <LayoutColumn className={this.errorClass(this.state.formErrors.telefono)}>
                 <label>Teléfono</label>
                 <input
                   name="telefono"
@@ -90,7 +161,7 @@ export default class FormularioExperiencia extends Component {
                   onChange={this.handleInputChange}
                 />
               </LayoutColumn>
-              <LayoutColumn>
+              <LayoutColumn className={this.errorClass(this.state.formErrors.correo)}>
                 <label>Email</label>
                 <input
                   name="correo"
@@ -99,7 +170,7 @@ export default class FormularioExperiencia extends Component {
                   onChange={this.handleInputChange}
                 />
               </LayoutColumn>
-              <LayoutColumn>
+              <LayoutColumn className={this.errorClass(this.state.formErrors.ocupacion)}>
                 <label>Ocupación</label>
                 <select
                   name="ocupacion"
@@ -116,7 +187,7 @@ export default class FormularioExperiencia extends Component {
                   }
                 </select>
               </LayoutColumn>
-              <LayoutColumn className="checkboxLayout">
+              <LayoutColumn className={`checkboxLayout ${this.errorClass(this.state.formErrors.acepto_terminos)}`}>
                 <label>
                   <input
                     name="acepto_terminos"
@@ -127,7 +198,19 @@ export default class FormularioExperiencia extends Component {
                   Acepto los <b> términos y condiciones</b>
                 </label>
               </LayoutColumn>
-              <Button type="submit">Enviar</Button>
+
+              { formError === false && (<Parraph success>Su proyecto se registró correctamente.</Parraph>) }
+
+              { formError === true && (<Parraph error>Se detectó un error al recibir los datos. Inténtelo de nuevo.</Parraph>) }
+
+              { formLoading && (<LdsRing>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+              </LdsRing>) }    
+
+              <Button type="submit" disabled={formLoading}>Enviar</Button>
             </Form>
           </Col2Inner>
         </Col2>
