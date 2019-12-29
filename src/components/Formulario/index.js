@@ -49,7 +49,12 @@ export default class Formulario extends Component {
 
     this.setState({
       [name]: value
-    }, () => { this.validateField(name, value) });
+    }, () => { 
+      const fieldValidationErrors =  this.validateField(name, value)
+      this.setState({
+        formErrors: fieldValidationErrors
+      });   
+    });
   }
 
   validateField(fieldName, value) {
@@ -60,48 +65,54 @@ export default class Formulario extends Component {
     switch(fieldName) {
       case 'correo':
         emailValid = value.match(/^([\w.%+-]+)@([\w-]+\.)+([\w]{2,})$/i);
-        fieldValidationErrors.correo = emailValid ? '' : ' Incorrecto';
+        fieldValidationErrors.correo = emailValid ? false : true;
         break;
       case 'acepto_terminos':
         checkValid = value === true;
-        fieldValidationErrors.acepto_terminos = checkValid ? '': ' Incorrecto';
+        fieldValidationErrors.acepto_terminos = checkValid ? false: true;
         break;
       default:
-        fieldValidationErrors[fieldName] = value.length > 0 ? '' : ' Requerido'
+        fieldValidationErrors[fieldName] = value.length > 0 ? false : true;
         break;
     }
-    this.setState({
-      formErrors: fieldValidationErrors,
-      emailValid: emailValid,
-      checkValid: checkValid
-    }, this.validateForm);
+    return fieldValidationErrors
   }
 
-  validateForm() {
-    this.setState({formValid: this.state.emailValid && this.state.checkValid});
+  validateForm(nombre_completo, telefono, correo, tipo_proyecto, situacion_actual, acepto_terminos) {
+    let fieldValidationErrors = this.state.formErrors;
+    fieldValidationErrors.nombre_completo = this.validateField('nombre_completo', nombre_completo).nombre_completo
+    fieldValidationErrors.telefono = this.validateField('telefono', telefono).telefono
+    fieldValidationErrors.correo = this.validateField('correo', correo).correo
+    fieldValidationErrors.tipo_proyecto = this.validateField('tipo_proyecto', tipo_proyecto).tipo_proyecto
+    fieldValidationErrors.situacion_actual = this.validateField('situacion_actual', situacion_actual).situacion_actual
+    fieldValidationErrors.acepto_terminos = this.validateField('acepto_terminos', acepto_terminos).acepto_terminos
+    this.setState({ fieldValidationErrors: fieldValidationErrors })
+    return Object.values(fieldValidationErrors).indexOf(true) === -1
   }
 
   errorClass(error) {
-    return (error.length === 0 ? '' : 'has-error');
+    return (!error ? '' : 'has-error');
   }
 
   async handleSubmit(event) {
     event.preventDefault();
-    const { nombre_completo, telefono, correo, tipo_proyecto, situacion_actual } = this.state;
-    const { rutaFormFamilia } = this.props;
-    const dataRequest = {
-      nombre_completo,
-      telefono,
-      correo,
-      tipo_proyecto,
-      situacion_actual
-    }
-    console.log(dataRequest)
-    try {
-      const data = await axios.post(rutaFormFamilia, dataRequest);
-      console.log(data);
-    } catch (error) {
-      console.log(error)
+    const { nombre_completo, telefono, correo, tipo_proyecto, situacion_actual, acepto_terminos } = this.state;
+    const statusForm = this.validateForm(nombre_completo, telefono, correo, tipo_proyecto, situacion_actual, acepto_terminos); 
+    if (statusForm) {
+      const { rutaFormFamilia } = this.props;
+      const dataRequest = {
+        nombre_completo,
+        telefono,
+        correo,
+        tipo_proyecto,
+        situacion_actual
+      }
+      try {
+        const data = await axios.post(rutaFormFamilia, dataRequest);
+        console.log(data);
+      } catch (error) {
+        console.log(error)
+      }
     }
   }
 
@@ -194,7 +205,7 @@ export default class Formulario extends Component {
                   Acepto los <b> términos y condiciones</b>
                 </label>
               </LayoutColumn>
-              <Button type="submit" disabled={!this.state.formValid}>Enviar</Button>
+              <Button type="submit">Enviar</Button>
             </Form>
           </Col2Inner>
         </Col2>
