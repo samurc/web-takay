@@ -13,7 +13,9 @@ import {
   Form,
   LayoutRow,
   LayoutColumn,
-  Button
+  Button,
+  Parraph,
+  LdsRing
 } from './styles';
 
 export default class Formulario extends Component {
@@ -34,9 +36,8 @@ export default class Formulario extends Component {
         situacion_actual: '',
         acepto_terminos: ''
       },
-      emailValid: false,
-      checkValid: false,
-      formValid: false
+      formError: null,
+      formLoading: false
     };
     this.handleInputChange = this.handleInputChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -59,8 +60,8 @@ export default class Formulario extends Component {
 
   validateField(fieldName, value) {
     let fieldValidationErrors = this.state.formErrors;
-    let emailValid = this.state.emailValid;
-    let checkValid = this.state.checkValid;
+    let emailValid = false;
+    let checkValid = false;
 
     switch(fieldName) {
       case 'correo':
@@ -108,15 +109,32 @@ export default class Formulario extends Component {
         situacion_actual
       }
       try {
+        this.setState({formLoading: true, formError: null})
         const data = await axios.post(rutaFormFamilia, dataRequest);
         console.log(data);
+        if (data.status === 200) {
+          this.setState({
+            formLoading: false,
+            formError: false,
+            nombre_completo: '',
+            telefono: '',
+            correo: '',
+            tipo_proyecto: '',
+            situacion_actual: '',
+            acepto_terminos: false
+          })
+        } else {
+          this.setState({formLoading: false, formError: true})
+        }
       } catch (error) {
-        console.log(error)
+        console.log(error);
+        this.setState({formLoading: false, formError: true})
       }
     }
   }
 
   render() {
+    const { formLoading, formError } = this.state
     const { comboProyecto, comboSituacion } = this.props
     return (
       <Layout>
@@ -205,7 +223,19 @@ export default class Formulario extends Component {
                   Acepto los <b> términos y condiciones</b>
                 </label>
               </LayoutColumn>
-              <Button type="submit">Enviar</Button>
+
+              { formError === false && (<Parraph success>Su proyecto se registró correctamente.</Parraph>) }
+
+              { formError === true && (<Parraph error>Se detectó un error al recibir los datos. Inténtelo de nuevo.</Parraph>) }
+
+              { formLoading && (<LdsRing>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+              </LdsRing>) }
+
+              <Button type="submit" disabled={formLoading}>Enviar</Button>
             </Form>
           </Col2Inner>
         </Col2>

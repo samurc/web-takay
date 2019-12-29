@@ -148,3 +148,50 @@ export const Button = styled.button`
     opacity: 0.9;
   }
 `;
+
+export const Parraph = styled.p`
+  ${props => props.error && css`color: #ff0000;`}
+  ${props => props.success && css`color: #48B02C;`}
+  margin-top: 5px;
+  margin-bottom: 5px;
+  font-size: 1.4rem;
+  font-weight: bold;
+`
+
+export const LdsRing = styled.div`
+  display: block;
+  position: relative;
+  width: 50px;
+  height: 50px;
+  margin-left: auto;
+  margin-right: auto;
+  div {
+    box-sizing: border-box;
+    display: block;
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    margin: 8px;
+    border: 8px solid #ccc;
+    border-radius: 50%;
+    animation: lds-ring 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+    border-color: #ccc transparent transparent transparent;
+  }
+  div:nth-child(1) {
+    animation-delay: -0.45s;
+  }
+  div:nth-child(2) {
+    animation-delay: -0.3s;
+  }
+  div:nth-child(3) {
+    animation-delay: -0.15s;
+  }
+  @keyframes lds-ring {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+`
