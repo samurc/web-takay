@@ -34,6 +34,13 @@ export const LayoutRow = styled.div`
   padding: 4rem 20rem 2rem 20rem;
   display: flex;
   justify-content: space-between;
+  ${props =>
+    props.theme == 'yellow' &&
+    css`
+      div.contact a {
+        color: #ffffff;
+      }
+    `};
   @media only screen and (max-width: 992px) {
     flex-direction: column;
     padding: 5rem 0;

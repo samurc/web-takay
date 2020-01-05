@@ -14,6 +14,7 @@ import HomePage from './pages/HomePage';
 import AboutPage from './pages/AboutPage';
 import ExpertPage from './pages/ExpertPage';
 import FamilyPage from './pages/FamilyPage';
+import LibroPage from './pages/LibroPage';
 import NotFoundPage from './pages/NotFoundPage';
 
 const loadingCircle = "<div class='circular indeterminate multicolor'><svg class='circle' viewBox='0 0 60 60'><circle class='path' cx='30' cy='30' r='25'></circle></svg></div>";
@@ -46,6 +47,7 @@ class App extends Component {
               <Route exact path='/familia' component={FamilyPage} />
               <Route exact path='/experto' component={ExpertPage} />
               <Route exact path='/nosotros' component={AboutPage} />
+              <Route exact path='/libro-de-reclamaciones' component={LibroPage} />
             </div>
             <Footer locationName={locationName} link={link} textosPie={textosPie} />
           </div>
