@@ -19,7 +19,7 @@ export default class Page extends Component {
       descripcion: '',
       tipo_incidente: 'QUEJA',
       detalle_incidente: '',
-      detalle_incidente_2: '',
+      pedido_cliente: '',
       respuesta_reclamo: 'Respuesta Física',
       formErrors: {
         nombre_completo: '',
@@ -33,7 +33,7 @@ export default class Page extends Component {
         monto_reclamado: '',
         descripcion: '',
         detalle_incidente: '',
-        detalle_incidente_2: ''
+        pedido_cliente: ''
       },
       formError: null,
       formLoading: false
@@ -76,7 +76,7 @@ export default class Page extends Component {
   validateForm(nombre_completo, telefono, correo, direccion, dni, padre_madre,
       fecha_incidente, lugar_incidente, tipo_bien, monto_reclamado, descripcion,
       tipo_incidente,
-      detalle_incidente, detalle_incidente_2, respuesta_reclamo) {
+      detalle_incidente, pedido_cliente, respuesta_reclamo) {
     let fieldValidationErrors = this.state.formErrors;
     fieldValidationErrors.nombre_completo = this.validateField('nombre_completo', nombre_completo).nombre_completo
     fieldValidationErrors.telefono = this.validateField('telefono', telefono).telefono
@@ -91,7 +91,7 @@ export default class Page extends Component {
     fieldValidationErrors.descripcion = this.validateField('descripcion', descripcion).descripcion
     fieldValidationErrors.tipo_incidente = this.validateField('tipo_incidente', tipo_incidente).tipo_incidente
     fieldValidationErrors.detalle_incidente = this.validateField('detalle_incidente', detalle_incidente).detalle_incidente
-    fieldValidationErrors.detalle_incidente_2 = this.validateField('detalle_incidente_2', detalle_incidente_2).detalle_incidente_2
+    fieldValidationErrors.pedido_cliente = this.validateField('pedido_cliente', pedido_cliente).pedido_cliente
     fieldValidationErrors.respuesta_reclamo = this.validateField('respuesta_reclamo', respuesta_reclamo).respuesta_reclamo
     
     this.setState({ fieldValidationErrors: fieldValidationErrors })
@@ -105,19 +105,19 @@ export default class Page extends Component {
   async handleSubmit(event) {
     event.preventDefault();
     const { nombre_completo, telefono, correo, direccion, dni, padre_madre, fecha_incidente, lugar_incidente, tipo_bien, monto_reclamado, descripcion, tipo_incidente,
-      detalle_incidente, detalle_incidente_2, respuesta_reclamo } = this.state;
+      detalle_incidente, pedido_cliente, respuesta_reclamo } = this.state;
 
     const statusForm = this.validateForm(nombre_completo, telefono, correo,
       direccion, dni, padre_madre, fecha_incidente, lugar_incidente,
       tipo_bien, monto_reclamado, descripcion, tipo_incidente,
-      detalle_incidente, detalle_incidente_2, respuesta_reclamo);
+      detalle_incidente, pedido_cliente, respuesta_reclamo);
     if (statusForm) {
       const { rutaFormFamilia = 'https://takaydev.wordlatin.com/post_reclamaciones.php' } = this.props;
       const dataRequest = {
         nombre_completo, telefono, correo, direccion, dni, padre_madre,
         fecha_incidente, lugar_incidente, tipo_bien, monto_reclamado,
         descripcion, tipo_incidente,
-        detalle_incidente, detalle_incidente_2, respuesta_reclamo
+        detalle_incidente, pedido_cliente, respuesta_reclamo
       }
       try {
         this.setState({formLoading: true, formError: null})
@@ -141,7 +141,7 @@ export default class Page extends Component {
             descripcion: '',
             tipo_incidente: 'QUEJA',
             detalle_incidente: '',
-            detalle_incidente_2: '',
+            pedido_cliente: '',
             respuesta_reclamo: 'Respuesta Física'
           })
         } else {
@@ -191,9 +191,9 @@ export default class Page extends Component {
         <Col2>
           <Col2Inner>
             <Form onSubmit={this.handleSubmit}>
-              <h2>IDENTIFICACIÓN DEL CONSUMIDOR RECLAMANTE</h2>
+              <h2 className="first">IDENTIFICACIÓN DEL CONSUMIDOR RECLAMANTE</h2>
               <LayoutColumn className={this.errorClass(this.state.formErrors.nombre_completo)}>
-                <label>Nombre completo</label>
+                <label>Nombre Completo</label>
                 <input
                   name="nombre_completo"
                   type="text"
@@ -322,9 +322,9 @@ export default class Page extends Component {
                 <textarea rows={6} cols={6} name="detalle_incidente" value={this.state.detalle_incidente} onChange={this.handleInputChange}></textarea>
               </LayoutColumn>
 
-              <LayoutColumn className={this.errorClass(this.state.formErrors.detalle_incidente_2)}>
-                <label>Detalle del Incidente</label>
-                <textarea rows={6} cols={6} name="detalle_incidente_2" value={this.state.detalle_incidente_2} onChange={this.handleInputChange}></textarea>
+              <LayoutColumn className={this.errorClass(this.state.formErrors.pedido_cliente)}>
+                <label>Pedido del Cliente</label>
+                <textarea rows={6} cols={6} name="pedido_cliente" value={this.state.pedido_cliente} onChange={this.handleInputChange}></textarea>
               </LayoutColumn>
 
               <LayoutColumn className={this.errorClass(this.state.formErrors.respuesta_reclamo)}>

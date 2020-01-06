@@ -6,14 +6,16 @@ export const Grid = styled.div`
   margin-top: 90px;
   margin-bottom: 40px;
   @media only screen and (max-width: 992px) {
-    &:before {
-      content: none;
-    }
+    margin-top: 60px;
   }
 `;
 
 export const Box = styled.div`
   display: flex;
+  @media only screen and (max-width: 992px) {
+    padding: 2rem;
+    flex-direction: column;
+  }
 `
 
 export const Title = styled.h1`
@@ -23,6 +25,11 @@ export const Title = styled.h1`
   text-transform: uppercase;
   text-align: center;
   margin-bottom: 9rem;
+  @media only screen and (max-width: 992px) {
+    font-size: 30px;
+    line-height: 29px;
+    margin-bottom: 4rem;
+  }
 `
 
 export const Col1 = styled.div`
@@ -33,11 +40,23 @@ export const Col1Inner = styled.div`
   max-width:  390px;
   text-align: justify;
   h2 {
-    margin-top: 2rem;
+    margin-top: 4rem;
     margin-bottom: 2rem;
   }
   p {
+    font-size: 1.5rem;
+    line-height: 2rem;
     margin-bottom: 2rem;
+  }
+  @media only screen and (max-width: 992px) {
+    h2 {
+      font-size: 22px;
+      margin-top: 2rem;
+      margin-bottom: 2rem;
+    }
+    p {
+      font-size: 1.2rem;
+    }
   }
 `
 
@@ -52,10 +71,18 @@ export const Col2Inner = styled.div`
     font-weight: 900;
     margin-bottom: 20px;
     margin-top: 20px;
+    &.first {
+      margin-top: 0;
+    }
   }
   p {
     font-size: 13px;
     line-height: 20px;
+  }
+  @media only screen and (max-width: 992px) {
+    h2 {
+      font-size: 13px;
+    }
   }
 `
 
