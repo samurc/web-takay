@@ -100,7 +100,7 @@ export const LayoutColumn = styled.div`
     }
   }
   &.has-error {
-    label {
+    label, a {
       color: #ff0000;
     }
     input, select {

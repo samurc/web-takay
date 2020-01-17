@@ -26,12 +26,14 @@ export default class FormularioExperiencia extends Component {
       correo: '',
       ocupacion: '',
       acepto_terminos: false,
+      acepto_politica: false,
       formErrors: {
         nombre_completo: '',
         telefono: '',
         correo: '',
         ocupacion: '',
-        acepto_terminos: ''
+        acepto_terminos: '',
+        acepto_politica: ''
       },
       formError: null,
       formLoading: false
@@ -69,6 +71,10 @@ export default class FormularioExperiencia extends Component {
         checkValid = value === true;
         fieldValidationErrors.acepto_terminos = checkValid ? false: true;
         break;
+      case 'acepto_politica':
+        checkValid = value === true;
+        fieldValidationErrors.acepto_politica = checkValid ? false: true;
+        break;
       default:
         fieldValidationErrors[fieldName] = value.length > 0 ? false : true;
         break;
@@ -76,13 +82,14 @@ export default class FormularioExperiencia extends Component {
     return fieldValidationErrors
   }
 
-  validateForm(nombre_completo, telefono, correo, ocupacion, acepto_terminos) {
+  validateForm(nombre_completo, telefono, correo, ocupacion, acepto_terminos, acepto_politica) {
     let fieldValidationErrors = this.state.formErrors;
     fieldValidationErrors.nombre_completo = this.validateField('nombre_completo', nombre_completo).nombre_completo
     fieldValidationErrors.telefono = this.validateField('telefono', telefono).telefono
     fieldValidationErrors.correo = this.validateField('correo', correo).correo
     fieldValidationErrors.ocupacion = this.validateField('ocupacion', ocupacion).ocupacion
     fieldValidationErrors.acepto_terminos = this.validateField('acepto_terminos', acepto_terminos).acepto_terminos
+    fieldValidationErrors.acepto_politica = this.validateField('acepto_politica', acepto_politica).acepto_politica
     this.setState({ fieldValidationErrors: fieldValidationErrors })
     return Object.values(fieldValidationErrors).indexOf(true) === -1
   }
@@ -93,8 +100,8 @@ export default class FormularioExperiencia extends Component {
 
   async handleSubmit(event) {
     event.preventDefault();
-    const { nombre_completo, telefono, correo, ocupacion, acepto_terminos } = this.state;
-    const statusForm = this.validateForm(nombre_completo, telefono, correo, ocupacion, acepto_terminos);
+    const { nombre_completo, telefono, correo, ocupacion, acepto_terminos, acepto_politica } = this.state;
+    const statusForm = this.validateForm(nombre_completo, telefono, correo, ocupacion, acepto_terminos, acepto_politica);
     if (statusForm) {
       const { rutaFormExperto } = this.props;
       const dataRequest = {
@@ -116,7 +123,8 @@ export default class FormularioExperiencia extends Component {
             telefono: '',
             correo: '',
             ocupacion: '',
-            acepto_terminos: false
+            acepto_terminos: false,
+            acepto_politica: false
           })
         } else {
           this.setState({formLoading: false, formError: true})
@@ -131,6 +139,7 @@ export default class FormularioExperiencia extends Component {
   render() {
     const { formLoading, formError } = this.state
     const { comboOcupacion, pdf } = this.props
+    const pdf1 = pdf[0] || {};
     const pdf4 = pdf[3] || {};
 
     return (
@@ -197,7 +206,18 @@ export default class FormularioExperiencia extends Component {
                     checked={this.state.acepto_terminos}
                     onChange={this.handleInputChange}
                   />
-                  <a target="_blank" href={pdf4.imagen}>Acepto los <b> términos y condiciones</b></a>
+                  <a target="_blank" href={pdf1.imagen}>Acepto los <b> términos y condiciones</b></a>
+                </label>
+              </LayoutColumn>
+              <LayoutColumn className={`checkboxLayout ${this.errorClass(this.state.formErrors.acepto_politica)}`}>
+                <label>
+                  <input
+                    name="acepto_politica"
+                    type="checkbox"
+                    checked={this.state.acepto_politica}
+                    onChange={this.handleInputChange}
+                  />
+                  <a target="_blank" href={pdf4.imagen}>{pdf4.titulo}</a>
                 </label>
               </LayoutColumn>
 
