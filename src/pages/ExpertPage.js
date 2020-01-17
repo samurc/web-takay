@@ -68,7 +68,7 @@ const ExpertPage = props => {
       </div>
       <div id="verformulario" className="block">
         <div className="grid">
-          <FormularioExperiencia rutaFormExperto={props.rutaFormExperto} comboOcupacion={props.comboOcupacion} />
+          <FormularioExperiencia rutaFormExperto={props.rutaFormExperto} comboOcupacion={props.comboOcupacion} pdf={props.pdf}/>
         </div>
       </div>
       <div className="block">
@@ -92,7 +92,8 @@ const mapStateToProps = state => {
     sliderExperto: state.metadata.sliderExperto,
     textosExperto: state.metadata.textosExperto,
     comboOcupacion: state.metadata.comboOcupacion,
-    rutaFormExperto: state.metadata.rutaFormExperto
+    rutaFormExperto: state.metadata.rutaFormExperto,
+    pdf: state.metadata.pdf
   };
 };
 

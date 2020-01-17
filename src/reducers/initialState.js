@@ -25,7 +25,8 @@ const initialState = {
     rutaFormFamilia: null,
     rutaFormExperto: null,
     rutaFormNosotros: null,
-    rutaFormReclamaciones: null
+    rutaFormReclamaciones: null,
+    pdf: []
   }
 };
 

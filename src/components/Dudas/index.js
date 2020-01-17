@@ -1,7 +1,8 @@
 import React from 'react';
 import { Fullbleed, Button } from './styles';
 
-const Dudas = () => {
+const Dudas = ({pdf}) => {
+  const pdf2 = pdf[1] || {};
   return (
     <Fullbleed>
       <div id="full-media">
@@ -9,7 +10,7 @@ const Dudas = () => {
           <div className="info-article">
             <h2>Si tienes más dudas de cómo funciona puedes revisar aquí</h2>
             <Button>
-              <a href={'#'}>Preguntas frecuentes</a>
+              <a href={pdf2.imagen} target="_blank">{pdf2.titulo}</a>
             </Button>
           </div>
         </div>

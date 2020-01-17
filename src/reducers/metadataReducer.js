@@ -36,7 +36,8 @@ export default function metadataReducer(state = initialState.metadata, action) {
         rutaFormFamilia: null,
         rutaFormExperto: null,
         rutaFormNosotros: null,
-        rutaFormReclamaciones: null
+        rutaFormReclamaciones: null,
+        pdf: []
       }
     case FETCH_DATA_SUCCESS:
       const seccion = action.payload.seccion
@@ -84,7 +85,8 @@ export default function metadataReducer(state = initialState.metadata, action) {
         rutaFormFamilia: action.payload.ruta_form_familia,
         rutaFormExperto: action.payload.ruta_form_experto,
         rutaFormNosotros: action.payload.ruta_form_nosotros,
-        rutaFormReclamaciones: action.payload.ruta_form_libroreclamaciones
+        rutaFormReclamaciones: action.payload.ruta_form_libroreclamaciones,
+        pdf: Object.values(action.payload.pdf)
       }
 
     case FETCH_DATA_FAILURE:
@@ -114,7 +116,8 @@ export default function metadataReducer(state = initialState.metadata, action) {
         rutaFormFamilia: null,
         rutaFormExperto: null,
         rutaFormNosotros: null,
-        rutaFormReclamaciones: null
+        rutaFormReclamaciones: null,
+        pdf: []
       }
 
     default:

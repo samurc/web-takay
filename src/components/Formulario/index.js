@@ -135,7 +135,9 @@ export default class Formulario extends Component {
 
   render() {
     const { formLoading, formError } = this.state
-    const { comboProyecto, comboSituacion } = this.props
+    const { comboProyecto, comboSituacion, pdf } = this.props
+    const pdf3 = pdf[2] || {};
+
     return (
       <Layout>
         <Col1>
@@ -220,7 +222,7 @@ export default class Formulario extends Component {
                     checked={this.state.acepto_terminos}
                     onChange={this.handleInputChange}
                   />
-                  Acepto los <b> términos y condiciones</b>
+                  <a target="_blank" href={pdf3.imagen}>Acepto los <b> términos y condiciones</b></a>
                 </label>
               </LayoutColumn>
 

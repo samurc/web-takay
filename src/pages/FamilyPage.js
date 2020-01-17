@@ -63,7 +63,7 @@ const FamilyPage = props => {
       </div>
       <div id="verformulario" className="block">
         <div className="grid">
-          <Formulario rutaFormFamilia={props.rutaFormFamilia} comboProyecto={props.comboProyecto} comboSituacion={props.comboSituacion} />
+          <Formulario rutaFormFamilia={props.rutaFormFamilia} comboProyecto={props.comboProyecto} comboSituacion={props.comboSituacion} pdf={props.pdf}/>
         </div>
       </div>
       <div className="block">
@@ -78,7 +78,7 @@ const FamilyPage = props => {
       </div>*/}
       <div className="block">
         <div className="grid gridfull">
-          <Dudas />
+          <Dudas pdf={props.pdf} />
         </div>
       </div>
     </div>
@@ -94,7 +94,8 @@ const mapStateToProps = state => {
     textosFamilia: state.metadata.textosFamilia,
     comboProyecto: state.metadata.comboProyecto,
     comboSituacion: state.metadata.comboSituacion,
-    rutaFormFamilia: state.metadata.rutaFormFamilia
+    rutaFormFamilia: state.metadata.rutaFormFamilia,
+    pdf: state.metadata.pdf
   };
 };
 
