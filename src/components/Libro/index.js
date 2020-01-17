@@ -112,7 +112,7 @@ export default class Page extends Component {
       tipo_bien, monto_reclamado, descripcion, tipo_incidente,
       detalle_incidente, pedido_cliente, respuesta_reclamo);
     if (statusForm) {
-      const { rutaFormFamilia = 'https://takaydev.wordlatin.com/post_reclamaciones.php' } = this.props;
+      const { rutaFormReclamaciones } = this.props;
       const dataRequest = {
         nombre_completo, telefono, correo, direccion, dni, padre_madre,
         fecha_incidente, lugar_incidente, tipo_bien, monto_reclamado,
@@ -122,7 +122,7 @@ export default class Page extends Component {
       try {
         this.setState({formLoading: true, formError: null})
         console.log(dataRequest)
-        const data = await axios.post(rutaFormFamilia, dataRequest);
+        const data = await axios.post(rutaFormReclamaciones, dataRequest);
         console.log(data);
         if (data.status === 200) {
           this.setState({
@@ -156,36 +156,16 @@ export default class Page extends Component {
 
   render() {
     const { formLoading, formError } = this.state
+    const { textosReclamaciones } = this.props
+    const textos = textosReclamaciones[0] || {};
+    console.log(textos)
     return (
     <Grid className="grid">
       <Title>Libro de reclamaciones</Title>
       <Box>
         <Col1>
           <Col1Inner>
-            <p>
-              La empresa ASOCIACIÓN CULTURAL DRAMA, 
-              identificada con RUC:99999999999 ubicada en: xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx ; 
-              pone a su disposición nuestro Libro de Reclamaciones, aplicativo de atención de reclamos y solicitudes 
-              en línea conforme a lo establecido en el Código de Protección y Defensa del Consumidor.
-            </p>
-
-            <h2>DEFINICIONES</h2>
-
-            <p>
-              <b>Reclamo:</b> Disconformidad relacionada a los productos o servicios brindados por la Empresa.
-            </p>
-
-            <p>
-              <b>Queja:</b> Malestar o descontento respecto a la atención al público. Disconformidad no relacionada a los productos o servicios brindados por la Empresa.
-            </p>
-
-            <p>
-              <b>Plazo de Atención:</b> La empresa deberá dar respuesta al reclamo en un plazo no mayor a treinta (30) días calendario, pudiendo ampliar el plazo hasta por treinta (30) días más, previa comunicación al cliente.
-            </p>
-
-            <p>
-              Menor de edad: Ingresar los datos del apoderado o representante, y colocar en el mensaje los datos del menor de edad junto a la explicación de su reclamo o pedido.
-            </p>
+            <div dangerouslySetInnerHTML={{ __html: textos.textos }} />
           </Col1Inner>
         </Col1>
         <Col2>

@@ -185,6 +185,11 @@ export const GlobalStyle = createGlobalStyle`
       clear: both;
   }
 
+  .span-tag {
+    font-weight: 900;
+    color: #f15a22;
+  }
+
   /** Header **/
   @media only screen and (min-width: 601px) {
     

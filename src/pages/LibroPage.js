@@ -7,27 +7,30 @@ import Libro from '../components/Libro';
 
 const LibroPage = props => {
   const head = () => {
-    return (
-    <Helmet key={Math.random()}
-        meta={
-        [
-            {
-            "property": "description",
-            "content": `Libro de reclamaciones`
-            },
-            {
-            "property": "og:title",
-            "content": `Libro de reclamaciones`
-            }, {
-            "property": "og:description",
-            "content": `Libro de reclamaciones`
-            }
-        ]
-        }
-    >
-        <title>Libro de reclamaciones</title>
-    </Helmet>
-    );
+    const { libroDeReclamaciones } = props
+    if (libroDeReclamaciones) {
+      return (
+        <Helmet key={Math.random()}
+            meta={
+            [
+              {
+                "property": "description",
+                "content": `${libroDeReclamaciones.meta_descrip}`
+              },
+              {
+                "property": "og:title",
+                "content": `${libroDeReclamaciones.meta_titulo}`
+              }, {
+                "property": "og:description",
+                "content": `${libroDeReclamaciones.meta_descrip}`
+              }
+            ]
+          }
+        >
+            <title>{ libroDeReclamaciones.meta_titulo }</title>
+        </Helmet>
+      );
+    }
   };
 
   useEffect(() => {
@@ -38,10 +41,18 @@ const LibroPage = props => {
     <div>
       {head()}
       <div className="block">
-        <Libro/>
+        <Libro rutaFormReclamaciones={props.rutaFormReclamaciones} textosReclamaciones={props.textosReclamaciones}/>
       </div>
     </div>
   );
 };
 
-export default connect(null, null)(LibroPage)
+const mapStateToProps = state => {
+  return {
+    libroDeReclamaciones: state.metadata.libroDeReclamaciones,
+    rutaFormReclamaciones: state.metadata.rutaFormReclamaciones,
+    textosReclamaciones: state.metadata.textosReclamaciones
+  };
+};
+
+export default connect(mapStateToProps, null)(LibroPage)

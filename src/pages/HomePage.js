@@ -73,10 +73,10 @@ class HomePage extends Component {
           <Fullbleed clickModal={this.clickModal} />
         </div>
         <div className="block">
-          <Info />
+          <Info textos={this.props.infoHome}/>
         </div>
         <div className="block">
-          <Interes textos={this.props.textosHome}/>
+          <Interes textos={this.props.textosHome} infoHome={this.props.infoHome}/>
         </div>
         <div className="block">
           <Iniciativa />
@@ -89,7 +89,8 @@ class HomePage extends Component {
 const mapStateToProps = state => {
   return {
     inicio: state.metadata.inicio,
-    textosHome: state.metadata.textosHome
+    textosHome: state.metadata.textosHome,
+    infoHome: state.metadata.infoHome
   }
 }
 

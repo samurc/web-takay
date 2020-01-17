@@ -41,7 +41,7 @@ const Expertos = props => {
                 <Expert className="expert">
                   <Name1>{d.titulo}</Name1>
                   <Cargo1>Maestra de obra</Cargo1>
-                  <Image src={`http://takaycms.wordlatin.com/upload/img/nuestrosexpertos/${d.imagen}`}></Image>
+                  <Image src={d.imagen}></Image>
                 </Expert>
                 <Detail className="detail">
                   <Name2>{d.titulo}</Name2>
@@ -74,7 +74,7 @@ const Expertos = props => {
                 <Expert className="expert">
                   <Name1>{d.titulo}</Name1>
                   <Cargo1>Maestra de obra</Cargo1>
-                  <Image src={`http://takaycms.wordlatin.com/upload/img/nuestrosexpertos/${d.imagen}`}></Image>
+                  <Image src={d.imagen}></Image>
                 </Expert>
                 <Detail className="detail">
                   <Name2>{d.titulo}</Name2>

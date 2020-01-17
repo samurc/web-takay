@@ -4,13 +4,15 @@ import imgFamily from '../../assets/img/familia.png';
 import imgExperto from '../../assets/img/experto.png';
 import { Link } from 'react-router-dom';
 
-const Info = ({textos}) => {
+const Info = ({textos, infoHome}) => {
   const texto1 = textos[1] || {};
   const texto2 = textos[0] || {};
+
+  const infoHome1 = infoHome[1] || {};
   return (
     <Grid className="grid">
-      <Title>¿Cúal es tu interés?</Title>
-      <Description>Elige la opción con la que más te identifiques</Description>
+      <Title>{infoHome1.titulo}</Title>
+      <Description>{infoHome1.textos}</Description>
       <LayoutRow>
         <Card className="card" to="/familia">
           <img src={texto1.imagen} width={84} height={84} />

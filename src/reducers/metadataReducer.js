@@ -16,15 +16,18 @@ export default function metadataReducer(state = initialState.metadata, action) {
         familia: null,
         experto: null,
         nosotros: null,
+        libroDeReclamaciones: null,
         experienciaFamilia: [],
         experienciaExperto: [],
         sliderFamilia: [],
         sliderExperto: [],
         listaExperto: [],
         textosHome: [],
+        infoHome: [],
         textosFamilia: [],
         textosExperto: [],
         textosNosotros: [],
+        textosReclamaciones: [],
         link: [],
         textosPie: [],
         comboProyecto: [],
@@ -32,7 +35,8 @@ export default function metadataReducer(state = initialState.metadata, action) {
         comboOcupacion: [],
         rutaFormFamilia: null,
         rutaFormExperto: null,
-        rutaFormNosotros: null
+        rutaFormNosotros: null,
+        rutaFormReclamaciones: null
       }
     case FETCH_DATA_SUCCESS:
       const seccion = action.payload.seccion
@@ -47,6 +51,8 @@ export default function metadataReducer(state = initialState.metadata, action) {
       const textosFamilia = action.payload.textos_img.filter(function (item) { return item.pagina == "familia"; });
       const link = Object.values(action.payload.link);
       const textosPie = Object.values(action.payload.textos).filter(function (item) { return item.sec_referencia == "pie"; });
+      const textosReclamaciones = Object.values(action.payload.textos).filter(function (item) { return item.sec_referencia == "libro de reclamaciones"; });
+      const infoHome = Object.values(action.payload.textos).filter(function (item) { return item.sec_referencia == "home"; });
       const comboProyecto = Object.values(action.payload.textos).filter(function (item) { return item.sec_referencia == "combo tipo de proyecto"; });
       const comboSituacion = Object.values(action.payload.textos).filter(function (item) { return item.sec_referencia == "combo situacion actual"; });
       const comboOcupacion = Object.values(action.payload.textos).filter(function (item) { return item.sec_referencia == "combo ocupacion"; });
@@ -58,23 +64,27 @@ export default function metadataReducer(state = initialState.metadata, action) {
         familia: seccion[2],
         experto: seccion[3],
         nosotros: seccion[4],
+        libroDeReclamaciones: seccion[5],
         experienciaFamilia: experienciaFamilia,
         experienciaExperto: experienciaExperto,
         sliderFamilia: sliderFamilia,
         sliderExperto: sliderExperto,
         listaExperto: listaExperto,
         textosHome: textosHome,
+        infoHome: infoHome,
         textosFamilia: textosFamilia,
         textosExperto: textosExperto,
         textosNosotros: textosNosotros,
         link: link,
         textosPie: textosPie,
+        textosReclamaciones: textosReclamaciones,
         comboProyecto: comboProyecto,
         comboSituacion: comboSituacion,
         comboOcupacion: comboOcupacion,
         rutaFormFamilia: action.payload.ruta_form_familia,
         rutaFormExperto: action.payload.ruta_form_experto,
-        rutaFormNosotros: action.payload.ruta_form_nosotros
+        rutaFormNosotros: action.payload.ruta_form_nosotros,
+        rutaFormReclamaciones: action.payload.ruta_form_libroreclamaciones
       }
 
     case FETCH_DATA_FAILURE:
@@ -85,12 +95,14 @@ export default function metadataReducer(state = initialState.metadata, action) {
         familia: null,
         experto: null,
         nosotros: null,
+        libroDeReclamaciones: null,
         experienciaFamilia: [],
         experienciaExperto: [],
         sliderFamilia: [],
         sliderExperto: [],
         listaExperto: [],
         textosHome: [],
+        infoHome: [],
         textosFamilia: [],
         textosExperto: [],
         textosNosotros: [],
@@ -101,7 +113,8 @@ export default function metadataReducer(state = initialState.metadata, action) {
         comboOcupacion: [],
         rutaFormFamilia: null,
         rutaFormExperto: null,
-        rutaFormNosotros: null
+        rutaFormNosotros: null,
+        rutaFormReclamaciones: null
       }
 
     default:

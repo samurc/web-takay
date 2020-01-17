@@ -5,19 +5,27 @@ const initialState = {
     familia: null,
     experto: null,
     nosotros: null,
+    libroDeReclamaciones: null,
     experienciaFamilia: [],
     experienciaExperto: [],
     sliderFamilia: [],
     sliderExperto: [],
     listaExperto: [],
-    link: [],
+    textosHome: [],
+    textosFamilia: [],
+    textosExperto: [],
+    textosNosotros: [],
     textosPie: [],
+    textosReclamaciones: [],
+    infoHome: [],
+    link: [],
     comboProyecto: [],
     comboSituacion: [],
     comboOcupacion: [],
     rutaFormFamilia: null,
     rutaFormExperto: null,
-    rutaFormNosotros: null
+    rutaFormNosotros: null,
+    rutaFormReclamaciones: null
   }
 };
 
