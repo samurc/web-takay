@@ -166,11 +166,17 @@ export const FooterCopyright = styled.div`
   padding: 15px 10px;
   text-align: right;
   font-size: 11px;
+  a {
+    color: #000000;
+  }
   ${props =>
     props.theme == 'yellow' &&
     css`
       border-color: #f7ce48;
       color: #ffffff;
+      a {
+        color: #ffffff;
+      }
     `};
   @media only screen and (max-width: 992px) {
     width: 80%;

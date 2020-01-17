@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { LayoutRow, Item, FooterUI, FooterCopyright, SocialItem } from './styles';
 import imgLogo from '../../assets/img/logo.png';
 import LogoMobile from '../../assets/svg/celular.svg';
@@ -87,7 +88,7 @@ export default ({ locationName, link, textosPie }) => {
         </LayoutRow>
       </div>
       <FooterCopyright theme={theme}>
-        <div className="grid textfila2"> © 2019 Takay - Todos los derechos reservados.</div>
+        <div className="grid textfila2"> © 2019 Takay - Todos los derechos reservados. | <Link to="libro-de-reclamaciones">Libro de reclamaciones</Link></div>
       </FooterCopyright>
     </FooterUI>
   );
