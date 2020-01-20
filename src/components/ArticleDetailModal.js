@@ -1,8 +1,22 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
+const youtubeGetId = url => {
+  var _id = '', _url = url.replace(/(>|<)/gi, '');
+  url = _url.split(/(vi\/|v=|\/v\/|youtu\.be\/|\/embed\/)/);
+  if (url[2] !== undefined) {
+    _id = url[2].split(/[^0-9a-z_\-]/i);
+    _id = _id[0];
+  } else {
+    _id = url;
+  }
+  return _id;
+}
+
 const ArticleDetailModal = props => {
-  const { handler, data } = props;
+  const { handler, link } = props;
+  const link5 = link[4] || {};
+  const ytId = youtubeGetId(link5.link);
   return (
     <>
       <div className="x-modal-video">
@@ -17,7 +31,7 @@ const ArticleDetailModal = props => {
                 <iframe
                   width="100%"
                   height="100%"
-                  src="https://www.youtube.com/embed/rngtdlTOWsU?autoplay=1"
+                  src={`https://www.youtube.com/embed/${ytId}?autoplay=1`}
                   frameBorder="0"
                   allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
                   allowFullScreen

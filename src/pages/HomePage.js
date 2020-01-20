@@ -66,7 +66,7 @@ class HomePage extends Component {
     return (
       <div id="wrap">
         {this.head()}
-        {this.state.modal ? <ArticleDetailModal handler={this.closeModal} /> : null}
+        {this.state.modal ? <ArticleDetailModal handler={this.closeModal} link={this.props.link} /> : null}
         <Flotante pagina="nosotros"/>
         
         <div className="block">
@@ -90,7 +90,8 @@ const mapStateToProps = state => {
   return {
     inicio: state.metadata.inicio,
     textosHome: state.metadata.textosHome,
-    infoHome: state.metadata.infoHome
+    infoHome: state.metadata.infoHome,
+    link: state.metadata.link
   }
 }
 

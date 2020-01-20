@@ -86,13 +86,16 @@ export const LayoutRow = styled.div`
 export const LayoutColumn = styled.div`
   display: flex;
   flex-direction: column;
+  a {
+    color: #000;
+  }
   &.checkboxLayout {
     input {
       margin-right: 10px;
     }
   }
   &.has-error {
-    label {
+    label, a {
       color: #ff0000;
     }
     input, select, textarea {

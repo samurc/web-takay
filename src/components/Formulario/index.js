@@ -29,6 +29,7 @@ export default class Formulario extends Component {
       situacion_actual: '',
       acepto_terminos: false,
       acepto_politica: false,
+      acepto_publicidad: false,
       formErrors: {
         nombre_completo: '',
         telefono: '',
@@ -36,7 +37,8 @@ export default class Formulario extends Component {
         tipo_proyecto: '',
         situacion_actual: '',
         acepto_terminos: '',
-        acepto_politica: ''
+        acepto_politica: '',
+        acepto_publicidad: '',
       },
       formError: null,
       formLoading: false
@@ -78,6 +80,10 @@ export default class Formulario extends Component {
         checkValid = value === true;
         fieldValidationErrors.acepto_politica = checkValid ? false: true;
         break;
+      case 'acepto_publicidad':
+        checkValid = value === true;
+        fieldValidationErrors.acepto_publicidad = checkValid ? false: true;
+        break;
       default:
         fieldValidationErrors[fieldName] = value.length > 0 ? false : true;
         break;
@@ -85,7 +91,7 @@ export default class Formulario extends Component {
     return fieldValidationErrors
   }
 
-  validateForm(nombre_completo, telefono, correo, tipo_proyecto, situacion_actual, acepto_terminos, acepto_politica) {
+  validateForm(nombre_completo, telefono, correo, tipo_proyecto, situacion_actual, acepto_terminos, acepto_politica, acepto_publicidad) {
     let fieldValidationErrors = this.state.formErrors;
     fieldValidationErrors.nombre_completo = this.validateField('nombre_completo', nombre_completo).nombre_completo
     fieldValidationErrors.telefono = this.validateField('telefono', telefono).telefono
@@ -94,6 +100,7 @@ export default class Formulario extends Component {
     fieldValidationErrors.situacion_actual = this.validateField('situacion_actual', situacion_actual).situacion_actual
     fieldValidationErrors.acepto_terminos = this.validateField('acepto_terminos', acepto_terminos).acepto_terminos
     fieldValidationErrors.acepto_politica = this.validateField('acepto_politica', acepto_politica).acepto_politica
+    fieldValidationErrors.acepto_publicidad = this.validateField('acepto_publicidad', acepto_publicidad).acepto_publicidad
     this.setState({ fieldValidationErrors: fieldValidationErrors })
     return Object.values(fieldValidationErrors).indexOf(true) === -1
   }
@@ -104,8 +111,8 @@ export default class Formulario extends Component {
 
   async handleSubmit(event) {
     event.preventDefault();
-    const { nombre_completo, telefono, correo, tipo_proyecto, situacion_actual, acepto_terminos, acepto_politica } = this.state;
-    const statusForm = this.validateForm(nombre_completo, telefono, correo, tipo_proyecto, situacion_actual, acepto_terminos, acepto_politica); 
+    const { nombre_completo, telefono, correo, tipo_proyecto, situacion_actual, acepto_terminos, acepto_politica, acepto_publicidad } = this.state;
+    const statusForm = this.validateForm(nombre_completo, telefono, correo, tipo_proyecto, situacion_actual, acepto_terminos, acepto_politica, acepto_publicidad); 
     if (statusForm) {
       const { rutaFormFamilia } = this.props;
       const dataRequest = {
@@ -113,7 +120,8 @@ export default class Formulario extends Component {
         telefono,
         correo,
         tipo_proyecto,
-        situacion_actual
+        situacion_actual,
+        acepto_publicidad
       }
       try {
         this.setState({formLoading: true, formError: null})
@@ -129,7 +137,8 @@ export default class Formulario extends Component {
             tipo_proyecto: '',
             situacion_actual: '',
             acepto_terminos: false,
-            acepto_politica: false
+            acepto_politica: false,
+            acepto_publicidad: false
           })
         } else {
           this.setState({formLoading: false, formError: true})
@@ -243,6 +252,17 @@ export default class Formulario extends Component {
                     onChange={this.handleInputChange}
                   />
                   <a target="_blank" href={pdf3.imagen}>{pdf3.titulo}</a>
+                </label>
+              </LayoutColumn>
+              <LayoutColumn className={`checkboxLayout ${this.errorClass(this.state.formErrors.acepto_publicidad)}`}>
+                <label>
+                  <input
+                    name="acepto_publicidad"
+                    type="checkbox"
+                    checked={this.state.acepto_publicidad}
+                    onChange={this.handleInputChange}
+                  />
+                  Acepto recibir información publicitaria de Takay
                 </label>
               </LayoutColumn>
 

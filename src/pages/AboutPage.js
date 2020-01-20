@@ -54,7 +54,7 @@ const AboutPage = props => {
         <Bloques textos={props.textosNosotros}/>
       </div>
       <div id="verformulario" className="block">
-        <FormularioContactanos rutaFormNosotros={props.rutaFormNosotros}/>
+        <FormularioContactanos rutaFormNosotros={props.rutaFormNosotros} pdf={props.pdf}/>
       </div>
       <div className="block">
         <Iniciativa />
@@ -67,7 +67,8 @@ const mapStateToProps = state => {
   return {
     nosotros: state.metadata.nosotros,
     textosNosotros: state.metadata.textosNosotros,
-    rutaFormNosotros: state.metadata.rutaFormNosotros
+    rutaFormNosotros: state.metadata.rutaFormNosotros,
+    pdf: state.metadata.pdf
   };
 };
 
