@@ -41,7 +41,7 @@ const LibroPage = props => {
     <div>
       {head()}
       <div className="block">
-        <Libro rutaFormReclamaciones={props.rutaFormReclamaciones} textosReclamaciones={props.textosReclamaciones}/>
+        <Libro rutaFormReclamaciones={props.rutaFormReclamaciones} textosReclamaciones={props.textosReclamaciones} pdf={props.pdf} />
       </div>
     </div>
   );
@@ -51,7 +51,8 @@ const mapStateToProps = state => {
   return {
     libroDeReclamaciones: state.metadata.libroDeReclamaciones,
     rutaFormReclamaciones: state.metadata.rutaFormReclamaciones,
-    textosReclamaciones: state.metadata.textosReclamaciones
+    textosReclamaciones: state.metadata.textosReclamaciones,
+    pdf: state.metadata.pdf
   };
 };
 

@@ -63,8 +63,18 @@ export default class FormularioExperiencia extends Component {
     let fieldValidationErrors = this.state.formErrors;
     let emailValid = false;
     let checkValid = false;
+    let nameValid = false;
+    let phoneValid = false;
 
     switch(fieldName) {
+      case 'nombre_completo':
+        nameValid = value && value.match(/^([a-zA-ZñÑáéíóúÁÉÍÓÚ ]*)$/) && value.length < 101;
+        fieldValidationErrors.nombre_completo = nameValid ? false : true;
+        break;
+      case 'telefono':
+        phoneValid = value && value.match(/^(\d*)$/) && value.length < 21;
+        fieldValidationErrors.telefono = phoneValid ? false : true;
+        break;
       case 'correo':
         emailValid = value.match(/^([\w.%+-]+)@([\w-]+\.)+([\w]{2,})$/i);
         fieldValidationErrors.correo = emailValid ? false : true;
@@ -176,7 +186,7 @@ export default class FormularioExperiencia extends Component {
                 <label>Teléfono</label>
                 <input
                   name="telefono"
-                  type="text"
+                  type="number"
                   value={this.state.telefono}
                   onChange={this.handleInputChange}
                 />

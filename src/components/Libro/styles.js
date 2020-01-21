@@ -93,6 +93,9 @@ export const Form = styled.form`
   label {
     font-size: 1.3rem;
   }
+  a {
+    color: #000;
+  }
   input:not([type='checkbox']),
   select {
     border: 0;
@@ -118,7 +121,7 @@ export const LayoutColumn = styled.div`
     }
   }
   &.has-error {
-    label {
+    label, a {
       color: #ff0000;
     }
     input, select, textarea {
