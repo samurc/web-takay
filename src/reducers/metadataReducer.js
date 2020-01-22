@@ -33,6 +33,7 @@ export default function metadataReducer(state = initialState.metadata, action) {
         comboProyecto: [],
         comboSituacion: [],
         comboOcupacion: [],
+        comboServicio: [],
         rutaFormFamilia: null,
         rutaFormExperto: null,
         rutaFormNosotros: null,
@@ -57,6 +58,7 @@ export default function metadataReducer(state = initialState.metadata, action) {
       const comboProyecto = Object.values(action.payload.combos).filter(function (item) { return item.sec_referencia == "combo tipo de proyecto"; });
       const comboSituacion = Object.values(action.payload.combos).filter(function (item) { return item.sec_referencia == "combo situacion actual"; });
       const comboOcupacion = Object.values(action.payload.combos).filter(function (item) { return item.sec_referencia == "combo ocupacion"; });
+      const comboServicio = Object.values(action.payload.combos).filter(function (item) { return item.sec_referencia == "combo tipo de servicio"; });
 
       return {
         ...state,
@@ -82,6 +84,7 @@ export default function metadataReducer(state = initialState.metadata, action) {
         comboProyecto: comboProyecto,
         comboSituacion: comboSituacion,
         comboOcupacion: comboOcupacion,
+        comboServicio: comboServicio,
         rutaFormFamilia: action.payload.ruta_form_familia,
         rutaFormExperto: action.payload.ruta_form_experto,
         rutaFormNosotros: action.payload.ruta_form_nosotros,
@@ -113,6 +116,7 @@ export default function metadataReducer(state = initialState.metadata, action) {
         comboProyecto: [],
         comboSituacion: [],
         comboOcupacion: [],
+        comboServicio: [],
         rutaFormFamilia: null,
         rutaFormExperto: null,
         rutaFormNosotros: null,

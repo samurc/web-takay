@@ -160,36 +160,9 @@ export default class FormularioContactanos extends Component {
 
   render() {
     const { formLoading, formError } = this.state
-    const { pdf } = this.props
+    const { pdf, comboServicio } = this.props
     const pdf1 = pdf[0] || {};
     const pdf5 = pdf[4] || {};
-
-    const comboServicios = [
-      {
-        id: "10001",
-        titulo: "combo",
-        textos: "Ampliación",
-        sec_referencia: "combo servicio",
-        keyunico: "15771913598912a4f1613",
-        estado: "1"
-      },
-      {
-        id: "10002",
-        titulo: "combo",
-        textos: "Remodelación",
-        sec_referencia: "combo servicio",
-        keyunico: "15771913598912a4f1614",
-        estado: "1"
-      },
-      {
-        id: "10003",
-        titulo: "combo",
-        textos: "Casa nueva",
-        sec_referencia: "combo servicio",
-        keyunico: "15771913598912a4f1615",
-        estado: "1"
-      },
-    ];
 
     return (
       <Layout>
@@ -241,7 +214,7 @@ export default class FormularioContactanos extends Component {
                 >
                   <option value={''}>Seleccione una opción</option>
                   {
-                    comboServicios.map(function (v, idx) {
+                    comboServicio.map(function (v, idx) {
                       return (
                         <option key={v.keyunico} value={v.textos}>{v.textos}</option>  
                       )
