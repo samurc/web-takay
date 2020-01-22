@@ -260,7 +260,7 @@ export default class FormularioContactanos extends Component {
                     checked={this.state.acepto_politica}
                     onChange={this.handleInputChange}
                   />
-                  <a target="_blank" href={pdf5.imagen}>{pdf5.titulo}</a>
+                  <a target="_blank" href={pdf5.imagen}><strong>{pdf5.titulo}</strong></a>
                 </label>
               </LayoutColumn>
 

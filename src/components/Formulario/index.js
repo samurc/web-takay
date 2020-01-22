@@ -281,7 +281,7 @@ export default class Formulario extends Component {
                     checked={this.state.acepto_politica}
                     onChange={this.handleInputChange}
                   />
-                  <a target="_blank" href={pdf3.imagen}>{pdf3.titulo}</a>
+                  <a target="_blank" href={pdf3.imagen}><strong>{pdf3.titulo}</strong></a>
                 </label>
               </LayoutColumn>
               <LayoutColumn className={`checkboxLayout ${this.errorClass(this.state.formErrors.acepto_publicidad)}`}>
