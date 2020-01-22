@@ -54,9 +54,9 @@ export default function metadataReducer(state = initialState.metadata, action) {
       const textosPie = Object.values(action.payload.textos).filter(function (item) { return item.sec_referencia == "pie"; });
       const textosReclamaciones = Object.values(action.payload.textos).filter(function (item) { return item.sec_referencia == "libro de reclamaciones"; });
       const infoHome = Object.values(action.payload.textos).filter(function (item) { return item.sec_referencia == "home"; });
-      const comboProyecto = Object.values(action.payload.textos).filter(function (item) { return item.sec_referencia == "combo tipo de proyecto"; });
-      const comboSituacion = Object.values(action.payload.textos).filter(function (item) { return item.sec_referencia == "combo situacion actual"; });
-      const comboOcupacion = Object.values(action.payload.textos).filter(function (item) { return item.sec_referencia == "combo ocupacion"; });
+      const comboProyecto = Object.values(action.payload.combos).filter(function (item) { return item.sec_referencia == "combo tipo de proyecto"; });
+      const comboSituacion = Object.values(action.payload.combos).filter(function (item) { return item.sec_referencia == "combo situacion actual"; });
+      const comboOcupacion = Object.values(action.payload.combos).filter(function (item) { return item.sec_referencia == "combo ocupacion"; });
 
       return {
         ...state,
