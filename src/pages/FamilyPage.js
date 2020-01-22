@@ -66,11 +66,11 @@ const FamilyPage = props => {
           <Formulario rutaFormFamilia={props.rutaFormFamilia} comboProyecto={props.comboProyecto} comboSituacion={props.comboSituacion} pdf={props.pdf}/>
         </div>
       </div>
-      <div className="block">
+      {/*<div className="block">
         <div className="grid gridfull fondocolorceleste">
           <Expertos lista={props.listaExperto}/>
         </div>
-      </div>
+      </div>*/}
       {/*<div className="block">
         <div className="grid">
           <Carousel lista={props.experienciaFamilia}/>
