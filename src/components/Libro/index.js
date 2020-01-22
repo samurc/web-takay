@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import Modal from '../Modal';
 import axios from 'axios';
 import { Grid, Box, Title, Col1, Col1Inner, Col2, Col2Inner, Form, LayoutColumn, LayoutRow, LayoutRadio, Parraph, LdsRing, Button} from './styles';
 
@@ -6,6 +7,7 @@ export default class Page extends Component {
   constructor(props) {
     super(props);
     this.state = {
+      modal: false,
       nombre_completo: '',
       telefono: '',
       correo: '',
@@ -42,6 +44,16 @@ export default class Page extends Component {
     };
     this.handleInputChange = this.handleInputChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.closeModal = this.closeModal.bind(this)
+    this.clickModal = this.clickModal.bind(this)
+  }
+
+  closeModal () {
+    this.setState({ modal: false })
+  };
+
+  clickModal() {
+    this.setState({ modal: true })
   }
 
   handleInputChange(event) {
@@ -176,6 +188,7 @@ export default class Page extends Component {
           this.setState({
             formLoading: false,
             formError: false,
+            modal: true,
             nombre_completo: '',
             telefono: '',
             correo: '',
@@ -212,6 +225,7 @@ export default class Page extends Component {
     <Grid className="grid">
       <Title>Libro de reclamaciones</Title>
       <Box>
+        {this.state.modal ? <Modal handler={this.closeModal} /> : null}
         <Col1>
           <Col1Inner>
             <div dangerouslySetInnerHTML={{ __html: textos.textos }} />
@@ -387,7 +401,7 @@ export default class Page extends Component {
                 INDECOPI.
               </p>
 
-              { formError === false && (<Parraph success>Su reclamo se registró correctamente.</Parraph>) }
+              {/* formError === false && (<Parraph success>Su reclamo se registró correctamente.</Parraph>) */}
 
               { formError === true && (<Parraph error>Se detectó un error al recibir su reclamo. Inténtelo de nuevo.</Parraph>) }
 

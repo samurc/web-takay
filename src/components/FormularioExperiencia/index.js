@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import Modal from '../Modal';
 import axios from 'axios';
 import {
   Layout,
@@ -21,6 +22,7 @@ export default class FormularioExperiencia extends Component {
   constructor(props) {
     super(props);
     this.state = {
+      modal: false,
       nombre_completo: '',
       telefono: '',
       correo: '',
@@ -42,6 +44,16 @@ export default class FormularioExperiencia extends Component {
     };
     this.handleInputChange = this.handleInputChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.closeModal = this.closeModal.bind(this)
+    this.clickModal = this.clickModal.bind(this)
+  }
+
+  closeModal () {
+    this.setState({ modal: false })
+  };
+
+  clickModal() {
+    this.setState({ modal: true })
   }
 
   handleInputChange(event) {
@@ -143,6 +155,7 @@ export default class FormularioExperiencia extends Component {
           this.setState({
             formLoading: false,
             formError: false,
+            modal: true,
             nombre_completo: '',
             telefono: '',
             correo: '',
@@ -169,6 +182,7 @@ export default class FormularioExperiencia extends Component {
 
     return (
       <Layout>
+        {this.state.modal ? <Modal handler={this.closeModal} /> : null}
         <Col1>
           <Col1Inner>
             <Title1>Hablemos sobre tu experiencia:</Title1>
@@ -257,7 +271,7 @@ export default class FormularioExperiencia extends Component {
                 </label>
               </LayoutColumn>
 
-              { formError === false && (<Parraph success>Tus datos se registraron correctamente.</Parraph>) }
+              {/* formError === false && (<Parraph success>Tus datos se registraron correctamente.</Parraph>) */}
 
               { formError === true && (<Parraph error>Se detectó un error al recibir los datos. Inténtelo de nuevo.</Parraph>) }
 

@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import Modal from '../Modal';
 import axios from 'axios';
 
 import {
@@ -22,6 +23,7 @@ export default class Formulario extends Component {
   constructor(props) {
     super(props);
     this.state = {
+      modal: false,
       nombre_completo: '',
       telefono: '',
       correo: '',
@@ -45,6 +47,16 @@ export default class Formulario extends Component {
     };
     this.handleInputChange = this.handleInputChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.closeModal = this.closeModal.bind(this)
+    this.clickModal = this.clickModal.bind(this)
+  }
+
+  closeModal () {
+    this.setState({ modal: false })
+  };
+
+  clickModal() {
+    this.setState({ modal: true })
   }
 
   handleInputChange(event) {
@@ -147,6 +159,7 @@ export default class Formulario extends Component {
           this.setState({
             formLoading: false,
             formError: false,
+            modal: true,
             nombre_completo: '',
             telefono: '',
             correo: '',
@@ -174,6 +187,7 @@ export default class Formulario extends Component {
 
     return (
       <Layout>
+        {this.state.modal ? <Modal handler={this.closeModal} /> : null}
         <Col1>
           <Col1Inner>
             <Title2 mode="mobile">Inicia ahora</Title2>
@@ -282,7 +296,7 @@ export default class Formulario extends Component {
                 </label>
               </LayoutColumn>
 
-              { formError === false && (<Parraph success>Su proyecto se registró correctamente.</Parraph>) }
+              {/* formError === false && (<Parraph success>Su proyecto se registró correctamente.</Parraph>) */}
 
               { formError === true && (<Parraph error>Se detectó un error al recibir los datos. Inténtelo de nuevo.</Parraph>) }
 

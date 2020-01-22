@@ -185,16 +185,50 @@ export const GlobalStyle = createGlobalStyle`
       clear: both;
   }
 
+  .x-popup-close {
+    cursor: pointer;
+    position: absolute;
+    top: 16px;
+    right 16px;
+    font-size: 2rem;
+    text-shadow: 0px 0px 2px rgba(0,0,0,0.3);
+    text-decoration: none;
+  }
+  .x-popup-wrapper {
+    margin: auto;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    width: 400px;
+    height: 300px;
+    z-index: 1;
+  }
+  .x-popup {
+    width: 100%;
+    height: 100%;
+    background: #ffffff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+    font-size: 15px;
+    line-height: 20px;
+  }
+
   .span-tag {
     font-weight: 900;
     color: #f15a22;
   }
 
-  /** Header **/
-  @media only screen and (min-width: 601px) {
-    
-  }
-  @media only screen and (min-width: 993px) {
-    
+  @media only screen and (max-width: 992px) {
+    .x-popup-wrapper {
+      width: 100%;
+      .x-popup {
+        font-size: 12px;
+        line-height: 15px;
+      }
+    }
   }
 `;
