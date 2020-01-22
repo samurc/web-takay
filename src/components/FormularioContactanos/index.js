@@ -47,8 +47,14 @@ export default class FormularioContactanos extends Component {
 
   handleInputChange(event) {
     const target = event.target;
-    const value = target.type === 'checkbox' ? target.checked : target.value;
+    let value = target.type === 'checkbox' ? target.checked : target.value;
     const name = target.name;
+
+    if (name == 'nombre_completo') {
+      if (!(value.match(/^([a-zA-ZñÑáéíóúÁÉÍÓÚ ]*)$/) && value.length < 101)){ return; }
+    } else if (name == 'telefono') {
+      if (!(value.length < 21)){ return; }
+    }
 
     this.setState({
       [name]: value
