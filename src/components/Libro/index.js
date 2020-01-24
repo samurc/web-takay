@@ -16,14 +16,13 @@ export default class Page extends Component {
       padre_madre: '',
       fecha_incidente: '',
       lugar_incidente: '',
-      tipo_bien: 'PRODUCTO',
+      tipo_bien: '',
       monto_reclamado: '',
       descripcion: '',
-      tipo_incidente: 'RECLAMO',
+      tipo_incidente: '',
       detalle_incidente: '',
       pedido_cliente: '',
-      respuesta_reclamo: 'Correo Electrónico',
-      acepto_terminos: false,
+      respuesta_reclamo: '',
       formErrors: {
         nombre_completo: '',
         telefono: '',
@@ -36,8 +35,7 @@ export default class Page extends Component {
         monto_reclamado: '',
         descripcion: '',
         detalle_incidente: '',
-        pedido_cliente: '',
-        acepto_terminos: ''
+        pedido_cliente: ''
       },
       formError: null,
       formLoading: false
@@ -121,10 +119,6 @@ export default class Page extends Component {
         mountValid = value && value.length < 21;
         fieldValidationErrors.monto_reclamado = mountValid ? false : true;
         break;
-      case 'acepto_terminos':
-        checkValid = value === true;
-        fieldValidationErrors.acepto_terminos = checkValid ? false: true;
-        break;
       default:
         fieldValidationErrors[fieldName] = value.length > 0 ? false : true;
         break;
@@ -135,7 +129,7 @@ export default class Page extends Component {
   validateForm(nombre_completo, telefono, correo, direccion, dni, padre_madre,
       fecha_incidente, lugar_incidente, tipo_bien, monto_reclamado, descripcion,
       tipo_incidente,
-      detalle_incidente, pedido_cliente, respuesta_reclamo, acepto_terminos) {
+      detalle_incidente, pedido_cliente, respuesta_reclamo) {
     let fieldValidationErrors = this.state.formErrors;
     fieldValidationErrors.nombre_completo = this.validateField('nombre_completo', nombre_completo).nombre_completo
     fieldValidationErrors.telefono = this.validateField('telefono', telefono).telefono
@@ -152,7 +146,6 @@ export default class Page extends Component {
     fieldValidationErrors.detalle_incidente = this.validateField('detalle_incidente', detalle_incidente).detalle_incidente
     fieldValidationErrors.pedido_cliente = this.validateField('pedido_cliente', pedido_cliente).pedido_cliente
     fieldValidationErrors.respuesta_reclamo = this.validateField('respuesta_reclamo', respuesta_reclamo).respuesta_reclamo
-    fieldValidationErrors.acepto_terminos = this.validateField('acepto_terminos', acepto_terminos).acepto_terminos
     
     this.setState({ fieldValidationErrors: fieldValidationErrors })
     return Object.values(fieldValidationErrors).indexOf(true) === -1
@@ -165,12 +158,12 @@ export default class Page extends Component {
   async handleSubmit(event) {
     event.preventDefault();
     const { nombre_completo, telefono, correo, direccion, dni, padre_madre, fecha_incidente, lugar_incidente, tipo_bien, monto_reclamado, descripcion, tipo_incidente,
-      detalle_incidente, pedido_cliente, respuesta_reclamo, acepto_terminos } = this.state;
+      detalle_incidente, pedido_cliente, respuesta_reclamo } = this.state;
 
     const statusForm = this.validateForm(nombre_completo, telefono, correo,
       direccion, dni, padre_madre, fecha_incidente, lugar_incidente,
       tipo_bien, monto_reclamado, descripcion, tipo_incidente,
-      detalle_incidente, pedido_cliente, respuesta_reclamo, acepto_terminos);
+      detalle_incidente, pedido_cliente, respuesta_reclamo);
     if (statusForm) {
       const { rutaFormReclamaciones } = this.props;
       const dataRequest = {
@@ -197,14 +190,13 @@ export default class Page extends Component {
             padre_madre: '',
             fecha_incidente: '',
             lugar_incidente: '',
-            tipo_bien: 'SERVICIO',
+            tipo_bien: '',
             monto_reclamado: '',
             descripcion: '',
-            tipo_incidente: 'QUEJA',
+            tipo_incidente: '',
             detalle_incidente: '',
             pedido_cliente: '',
-            respuesta_reclamo: 'Respuesta Física',
-            acepto_terminos: false
+            respuesta_reclamo: ''
           })
         } else {
           this.setState({formLoading: false, formError: true})
@@ -225,7 +217,7 @@ export default class Page extends Component {
     <Grid className="grid">
       <Title>Libro de reclamaciones</Title>
       <Box>
-        {this.state.modal ? <Modal handler={this.closeModal} /> : null}
+        {this.state.modal ? <Modal handler={this.closeModal} texto="Reclamo registrado. En breve recibirás un correo con la información ingresada."/> : null}
         <Col1>
           <Col1Inner>
             <div dangerouslySetInnerHTML={{ __html: textos.textos }} />
@@ -382,18 +374,6 @@ export default class Page extends Component {
                     <input id="rad_6" type="radio" name="respuesta_reclamo" value="Respuesta Física" checked={this.state.respuesta_reclamo==='Respuesta Física'} onChange={this.handleInputChange}/>
                   </LayoutRadio>
                 </LayoutRow>
-              </LayoutColumn>
-
-              <LayoutColumn className={`checkboxLayout ${this.errorClass(this.state.formErrors.acepto_terminos)}`}>
-                <label>
-                  <input
-                    name="acepto_terminos"
-                    type="checkbox"
-                    checked={this.state.acepto_terminos}
-                    onChange={this.handleInputChange}
-                  />
-                  <a target="_blank" href={pdf1.imagen}>Acepto los <b> términos y condiciones</b></a>
-                </label>
               </LayoutColumn>
 
               <p>

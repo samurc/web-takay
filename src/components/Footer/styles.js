@@ -112,6 +112,9 @@ export const Item = styled.div`
         margin-right: 15px;
       }
     }
+    a {
+      color: #000000;
+    }
   }
   @media only screen and (max-width: 992px) {
     &.about {

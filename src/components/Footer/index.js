@@ -87,7 +87,8 @@ export default ({ locationName, link, textosPie }) => {
           <Item className="location">
             <h3>¿Dónde estamos?</h3>
             <p>
-              <img src={logoLocation} width={16} height={26} /> {textosPie2.textos}
+              <img src={logoLocation} width={16} height={26} />
+              <a href={textosPie2.textos} target="_blank">{textosPie2.titulo}</a>
             </p>
           </Item>
         </LayoutRow>

@@ -31,6 +31,7 @@ export default class FormularioContactanos extends Component {
       informacion_adicional: '',
       acepto_terminos: false,
       acepto_politica: false,
+      acepto_publicidad: false,
       formErrors: {
         nombre_completo: '',
         telefono: '',
@@ -38,7 +39,8 @@ export default class FormularioContactanos extends Component {
         tipo_servicio: '',
         informacion_adicional: '',
         acepto_terminos: '',
-        acepto_politica: ''
+        acepto_politica: '',
+        acepto_publicidad: ''
       },
       formError: null,
       formLoading: false
@@ -106,6 +108,11 @@ export default class FormularioContactanos extends Component {
         checkValid = value === true;
         fieldValidationErrors.acepto_politica = checkValid ? false: true;
         break;
+      case 'acepto_publicidad':
+        checkValid = value === true;
+        fieldValidationErrors.acepto_publicidad = false;
+        //fieldValidationErrors.acepto_publicidad = checkValid ? false: true;
+        break;
       default:
         fieldValidationErrors[fieldName] = value.length > 0 ? false : true;
         break;
@@ -113,7 +120,7 @@ export default class FormularioContactanos extends Component {
     return fieldValidationErrors
   }
 
-  validateForm(nombre_completo, telefono, correo, tipo_servicio, informacion_adicional, acepto_terminos, acepto_politica) {
+  validateForm(nombre_completo, telefono, correo, tipo_servicio, informacion_adicional, acepto_terminos, acepto_politica, acepto_publicidad) {
     let fieldValidationErrors = this.state.formErrors;
     fieldValidationErrors.nombre_completo = this.validateField('nombre_completo', nombre_completo).nombre_completo
     fieldValidationErrors.telefono = this.validateField('telefono', telefono).telefono
@@ -122,7 +129,9 @@ export default class FormularioContactanos extends Component {
     fieldValidationErrors.informacion_adicional = this.validateField('informacion_adicional', informacion_adicional).informacion_adicional
     fieldValidationErrors.acepto_terminos = this.validateField('acepto_terminos', acepto_terminos).acepto_terminos
     fieldValidationErrors.acepto_politica = this.validateField('acepto_politica', acepto_politica).acepto_politica
+    fieldValidationErrors.acepto_publicidad = this.validateField('acepto_publicidad', acepto_publicidad).acepto_publicidad
     this.setState({ fieldValidationErrors: fieldValidationErrors })
+    console.log(fieldValidationErrors)
     return Object.values(fieldValidationErrors).indexOf(true) === -1
   }
 
@@ -132,8 +141,8 @@ export default class FormularioContactanos extends Component {
 
   async handleSubmit(event) {
     event.preventDefault();
-    const { nombre_completo, telefono, correo, tipo_servicio, informacion_adicional, acepto_terminos, acepto_politica } = this.state;
-    const statusForm = this.validateForm(nombre_completo, telefono, correo, tipo_servicio, informacion_adicional, acepto_terminos, acepto_politica);
+    const { nombre_completo, telefono, correo, tipo_servicio, informacion_adicional, acepto_terminos, acepto_politica, acepto_publicidad } = this.state;
+    const statusForm = this.validateForm(nombre_completo, telefono, correo, tipo_servicio, informacion_adicional, acepto_terminos, acepto_politica, acepto_publicidad);
     if (statusForm) {
       const { rutaFormNosotros } = this.props;
       const dataRequest = {
@@ -141,7 +150,8 @@ export default class FormularioContactanos extends Component {
         telefono,
         correo,
         tipo_servicio,
-        informacion_adicional
+        informacion_adicional,
+        acepto_publicidad
       }
       console.log(dataRequest)
       try {
@@ -159,7 +169,8 @@ export default class FormularioContactanos extends Component {
             tipo_servicio: '',
             informacion_adicional: '',
             acepto_terminos: false,
-            acepto_politica: false
+            acepto_politica: false,
+            acepto_publicidad: false
           })
         } else {
           this.setState({formLoading: false, formError: true})
@@ -179,7 +190,7 @@ export default class FormularioContactanos extends Component {
 
     return (
       <Layout>
-        {this.state.modal ? <Modal handler={this.closeModal} /> : null}
+        {this.state.modal ? <Modal handler={this.closeModal} texto="Hemos recibido tu información correctamente. A la brevedad nos contactaremos contigo." /> : null}
         <Col1>
           <Col1Inner>
             <Title2 mode="mobile">Contáctanos</Title2>
@@ -261,6 +272,17 @@ export default class FormularioContactanos extends Component {
                     onChange={this.handleInputChange}
                   />
                   <a target="_blank" href={pdf5.imagen}>Acepto <strong>{pdf5.titulo}</strong></a>
+                </label>
+              </LayoutColumn>
+              <LayoutColumn className={`checkboxLayout`}>
+                <label>
+                  <input
+                    name="acepto_publicidad"
+                    type="checkbox"
+                    checked={this.state.acepto_publicidad}
+                    onChange={this.handleInputChange}
+                  />
+                  <a target="_blank" href={pdf5.imagen}>Acepto recibir información publicitaria de Takay</a>
                 </label>
               </LayoutColumn>
 
