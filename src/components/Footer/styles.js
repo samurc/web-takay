@@ -89,6 +89,18 @@ export const Item = styled.div`
     .social {
       display: flex;
     }
+    .cellphones{
+      display: flex;
+      img {
+        margin-right: 15px;
+      }
+    }
+    .cellist {
+      display: flex;
+      a:last-child {
+        margin-left: 5px;
+      }
+    }
   }
   &.location {
     max-width: 200px;

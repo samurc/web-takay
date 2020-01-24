@@ -27,6 +27,7 @@ export default ({ locationName, link, textosPie }) => {
   const link2 = link[1] || {};
   const link3 = link[2] || {};
   const link4 = link[3] || {};
+  const link6 = link[6] || {};
 
   const textosPie1 = textosPie[0] || {};
   const textosPie2 = textosPie[1] || {};
@@ -64,9 +65,13 @@ export default ({ locationName, link, textosPie }) => {
           </Item>
           <Item className="contact">
             <h3>Contáctanos</h3>
-            <a href={link1.link}>
-              <img src={logoMobile} width={16} height={26} className="iconimage"/> {link1.titulo}
-            </a>
+            <div className="cellphones">
+              <img src={logoMobile} width={16} height={26} className="iconimage"/>
+              <div className="cellist">
+                <a href={link1.link}>{link1.titulo}</a>
+                { link6.link && <a href={link6.link}>{link6.titulo}</a> }  
+              </div>
+            </div>
             <a href={link3.link}>
               <img src={logoPhone} width={16} height={26} className="iconimage"/> {link3.titulo}
             </a>

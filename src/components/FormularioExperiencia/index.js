@@ -107,7 +107,8 @@ export default class FormularioExperiencia extends Component {
         break;
       case 'acepto_publicidad':
         checkValid = value === true;
-        fieldValidationErrors.acepto_publicidad = checkValid ? false : true;
+        fieldValidationErrors.acepto_publicidad = false;
+        // fieldValidationErrors.acepto_publicidad = checkValid ? false : true;
         break;
       default:
         fieldValidationErrors[fieldName] = value.length > 0 ? false : true;
@@ -245,7 +246,7 @@ export default class FormularioExperiencia extends Component {
                     checked={this.state.acepto_terminos}
                     onChange={this.handleInputChange}
                   />
-                  <a target="_blank" href={pdf1.imagen}>Acepto los <b> términos y condiciones</b></a>
+                  <a target="_blank" href={pdf1.imagen}>Acepto los <b>{pdf1.titulo}</b></a>
                 </label>
               </LayoutColumn>
               <LayoutColumn className={`checkboxLayout ${this.errorClass(this.state.formErrors.acepto_politica)}`}>
@@ -256,10 +257,10 @@ export default class FormularioExperiencia extends Component {
                     checked={this.state.acepto_politica}
                     onChange={this.handleInputChange}
                   />
-                  <a target="_blank" href={pdf4.imagen}><strong>{pdf4.titulo}</strong></a>
+                  <a target="_blank" href={pdf4.imagen}>Acepto <strong>{pdf4.titulo}</strong></a>
                 </label>
               </LayoutColumn>
-              <LayoutColumn className={`checkboxLayout ${this.errorClass(this.state.formErrors.acepto_publicidad)}`}>
+              <LayoutColumn className={`checkboxLayout`}>
                 <label>
                   <input
                     name="acepto_publicidad"
@@ -267,7 +268,7 @@ export default class FormularioExperiencia extends Component {
                     checked={this.state.acepto_publicidad}
                     onChange={this.handleInputChange}
                   />
-                  Acepto recibir información publicitaria de Takay
+                  <a target="_blank" href={pdf4.imagen}>Acepto recibir información publicitaria de Takay</a>
                 </label>
               </LayoutColumn>
 

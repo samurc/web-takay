@@ -249,7 +249,7 @@ export default class FormularioContactanos extends Component {
                     checked={this.state.acepto_terminos}
                     onChange={this.handleInputChange}
                   />
-                  <a target="_blank" href={pdf1.imagen}>Acepto los <b> términos y condiciones</b></a>
+                  <a target="_blank" href={pdf1.imagen}>Acepto los <b> {pdf1.titulo}</b></a>
                 </label>
               </LayoutColumn>
               <LayoutColumn className={`checkboxLayout ${this.errorClass(this.state.formErrors.acepto_politica)}`}>
@@ -260,7 +260,7 @@ export default class FormularioContactanos extends Component {
                     checked={this.state.acepto_politica}
                     onChange={this.handleInputChange}
                   />
-                  <a target="_blank" href={pdf5.imagen}><strong>{pdf5.titulo}</strong></a>
+                  <a target="_blank" href={pdf5.imagen}>Acepto <strong>{pdf5.titulo}</strong></a>
                 </label>
               </LayoutColumn>
 
