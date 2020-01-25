@@ -18,6 +18,9 @@ export const FooterUI = styled.footer`
       .location {
         color: #ffffff;
       }
+      .location a {
+        color: #ffffff !important;
+      }
     `};
   @media only screen and (max-width: 992px) {
     ${props =>
