@@ -187,6 +187,17 @@ export const FooterCopyright = styled.div`
   a {
     color: #000000;
   }
+  .textfila2 {
+    display: flex;
+    justify-content: flex-end;
+  }
+  .openBook {
+    display: flex;
+    img {
+      margin-left: 5px;
+      margin-right: 5px;
+    }
+  }
   ${props =>
     props.theme == 'yellow' &&
     css`
@@ -200,6 +211,15 @@ export const FooterCopyright = styled.div`
     width: 80%;
     margin: 0 auto;
     font-size: 6px;
+    .textfila2 {
+      font-size: 7px;
+    }
+    .openBook {
+      img {
+        width: 10px;
+        height: 10px;
+      }
+    }
   }
 `;
 

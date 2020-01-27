@@ -13,6 +13,7 @@ import LogoPhoneB from '../../assets/svg/phoneb.svg';
 import LogoLocationB from '../../assets/svg/locationb.svg';
 import LogoLinkedinB from '../../assets/svg/inb.svg';
 import LogoMailB from '../../assets/svg/mailb.svg';
+import OpenBook from '../../assets/img/open-book.png';
 
 export default ({ locationName, link, textosPie }) => {
   let theme;
@@ -94,7 +95,7 @@ export default ({ locationName, link, textosPie }) => {
         </LayoutRow>
       </div>
       <FooterCopyright theme={theme}>
-        <div className="grid textfila2"> © 2019 Takay - Todos los derechos reservados. | <Link to="libro-de-reclamaciones">Libro de reclamaciones</Link></div>
+        <div className="grid textfila2"> © 2019 Takay - Todos los derechos reservados. | <Link className="openBook" to="libro-de-reclamaciones"><img src={OpenBook} width={15} height={15}/> Libro de reclamaciones</Link></div>
       </FooterCopyright>
     </FooterUI>
   );
