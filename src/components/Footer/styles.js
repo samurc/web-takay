@@ -101,7 +101,11 @@ export const Item = styled.div`
     .cellist {
       display: flex;
       a:last-child {
-        margin-left: 5px;
+        &::before {
+          content: '|';
+          padding-left: 5px;
+          padding-right: 5px;
+        }
       }
     }
   }

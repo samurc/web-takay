@@ -8,6 +8,7 @@ export default class Page extends Component {
     super(props);
     this.state = {
       modal: false,
+      reclamo_id: '',
       nombre_completo: '',
       telefono: '',
       correo: '',
@@ -178,12 +179,13 @@ export default class Page extends Component {
         this.setState({formLoading: true, formError: null})
         console.log(dataRequest)
         const data = await axios.post(rutaFormReclamaciones, dataRequest);
-        console.log(data);
+
         if (data.status === 200) {
           this.setState({
             formLoading: false,
             formError: false,
             modal: true,
+            reclamo_id: data.data,
             nombre_completo: '',
             telefono: '',
             correo: '',
@@ -211,7 +213,7 @@ export default class Page extends Component {
   }
 
   render() {
-    const { formLoading, formError } = this.state
+    const { formLoading, formError, modal, reclamo_id } = this.state
     const { textosReclamaciones, pdf } = this.props
     const pdf1 = pdf[0] || {};
     const textos = textosReclamaciones[0] || {};
@@ -219,7 +221,7 @@ export default class Page extends Component {
     <Grid className="grid">
       <Title>Libro de reclamaciones</Title>
       <Box>
-        {this.state.modal ? <Modal handler={this.closeModal} texto="Reclamo registrado. En breve recibirás un correo con la información ingresada."/> : null}
+        {modal ? <Modal handler={this.closeModal} texto={`Reclamo (Nro-${reclamo_id}) registrado. En breve recibirás un correo con la información ingresada.`}/> : null}
         <Col1>
           <Col1Inner>
             <div dangerouslySetInnerHTML={{ __html: textos.textos }} />
