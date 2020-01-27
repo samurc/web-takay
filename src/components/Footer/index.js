@@ -27,7 +27,7 @@ export default ({ locationName, link, textosPie }) => {
   const link2 = link[1] || {};
   const link3 = link[2] || {};
   const link4 = link[3] || {};
-  const link6 = link[6] || {};
+  const link6 = link[5] || {};
 
   const textosPie1 = textosPie[0] || {};
   const textosPie2 = textosPie[1] || {};
