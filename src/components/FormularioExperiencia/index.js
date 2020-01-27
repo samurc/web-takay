@@ -64,7 +64,7 @@ export default class FormularioExperiencia extends Component {
     if (name == 'nombre_completo') {
       if (!(value.match(/^([a-zA-ZñÑáéíóúÁÉÍÓÚ ]*)$/) && value.length < 101)){ return; }
     } else if (name == 'telefono') {
-      if (!(value.length < 21)){ return; }
+      if (!(value.match(/^(\d*)$/) && value.length < 13)){ return; }
     }
 
     this.setState({
@@ -90,7 +90,7 @@ export default class FormularioExperiencia extends Component {
         fieldValidationErrors.nombre_completo = nameValid ? false : true;
         break;
       case 'telefono':
-        phoneValid = value && value.match(/^(\d*)$/) && value.length < 21;
+        phoneValid = value && value.match(/^(\d*)$/) && value.length < 13;
         fieldValidationErrors.telefono = phoneValid ? false : true;
         break;
       case 'correo':
@@ -207,7 +207,7 @@ export default class FormularioExperiencia extends Component {
                 <label>Teléfono</label>
                 <input
                   name="telefono"
-                  type="number"
+                  type="text"
                   value={this.state.telefono}
                   onChange={this.handleInputChange}
                 />

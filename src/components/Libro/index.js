@@ -62,12 +62,14 @@ export default class Page extends Component {
     if (name == 'nombre_completo') {
       if (!(value.match(/^([a-zA-ZñÑáéíóúÁÉÍÓÚ ]*)$/) && value.length < 101)){ return; }
     } else if (name == 'telefono') {
-      if (!(value.length < 21)){ return; }
+      if (!(value.match(/^(\d*)$/) && value.length < 13)){ return; }
+    } else if (name == 'monto_reclamado') {
+      if (!(value.match(/^(\d*\.?\d*)$/) && value.length < 13)){ return; }
     } else if (name == 'direccion' || name == 'lugar_incidente') { 
       if (!(value.length < 151)){ return; }
-     } else if (name == 'dni' || name == 'telefono' || name == 'monto_reclamado') {
-      if (!(value.length < 21)){ return; }
-     }
+    } else if (name == 'dni') {
+      if (!(value.length < 13)){ return; }
+    }
 
     this.setState({
       [name]: value
@@ -104,11 +106,11 @@ export default class Page extends Component {
         fieldValidationErrors.correo = emailValid ? false : true;
         break;
       case 'dni':
-        dniValid = value && value.length < 21;
+        dniValid = value && value.length < 13;
         fieldValidationErrors.dni = dniValid ? false : true;
         break;
       case 'telefono':
-        phoneValid = value && value.match(/^(\d*)$/) && value.length < 21;
+        phoneValid = value && value.match(/^(\d*)$/) && value.length < 13;
         fieldValidationErrors.telefono = phoneValid ? false : true;
         break;
       case 'lugar_incidente':
@@ -116,7 +118,7 @@ export default class Page extends Component {
         fieldValidationErrors.lugar_incidente = lugarValid ? false : true;
         break;
       case 'monto_reclamado':
-        mountValid = value && value.length < 21;
+        mountValid = value && value.length < 13;
         fieldValidationErrors.monto_reclamado = mountValid ? false : true;
         break;
       default:
@@ -271,7 +273,7 @@ export default class Page extends Component {
                 <label>Teléfono</label>
                 <input
                   name="telefono"
-                  type="number"
+                  type="text"
                   value={this.state.telefono}
                   onChange={this.handleInputChange}
                 />
@@ -327,7 +329,7 @@ export default class Page extends Component {
                 <label>Monto Reclamado</label>
                 <input
                   name="monto_reclamado"
-                  type="number"
+                  type="text"
                   value={this.state.monto_reclamado}
                   onChange={this.handleInputChange}
                 />
