@@ -3,12 +3,13 @@ import { FullbleedVideo, PlayVideo, Text } from './styles';
 
 import VideoPNG from '../../assets/img/VIDEO-HOME.png';
 
-const Fullbleed = ({ clickModal }) => {
+const Fullbleed = ({ clickModal, imagenes }) => {
+  const img2 = imagenes ? imagenes['2'] : {};
   return (
     <FullbleedVideo
       onClick={clickModal}
       style={{
-        backgroundImage: `url(${VideoPNG})`
+        backgroundImage: `url(${img2.imagen})`
       }}
     >
       <div id="full-media">

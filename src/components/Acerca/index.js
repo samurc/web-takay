@@ -3,11 +3,12 @@ import { AcercaUI, Content, H3, H1 } from './styles';
 
 import Logotakay from '../../assets/img/logo_takay.png';
 
-const Acerca = () => {
+const Acerca = ({imagenes}) => {
+  const img4 = imagenes ? imagenes['4'] : {};
   return (
     <AcercaUI
       style={{
-        backgroundImage: `url(https://p-gruporpp-media.s3.amazonaws.com/2019/12/09/874107portadapng.png)`
+        backgroundImage: `url(${img4.imagen})`
       }}
     >
       <div id="full-media">

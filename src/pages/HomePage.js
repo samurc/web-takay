@@ -70,7 +70,7 @@ class HomePage extends Component {
         <Flotante pagina="nosotros"/>
         
         <div className="block">
-          <Fullbleed clickModal={this.clickModal} />
+          <Fullbleed clickModal={this.clickModal} imagenes={this.props.imagenes}/>
         </div>
         <div className="block">
           <Info textos={this.props.infoHome}/>
@@ -79,7 +79,7 @@ class HomePage extends Component {
           <Interes textos={this.props.textosHome} infoHome={this.props.infoHome}/>
         </div>
         <div className="block">
-          <Iniciativa />
+          <Iniciativa imagenes={this.props.imagenes}/>
         </div>
       </div>
     );
@@ -91,7 +91,8 @@ const mapStateToProps = state => {
     inicio: state.metadata.inicio,
     textosHome: state.metadata.textosHome,
     infoHome: state.metadata.infoHome,
-    link: state.metadata.link
+    link: state.metadata.link,
+    imagenes: state.metadata.imagenes
   }
 }
 

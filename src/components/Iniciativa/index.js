@@ -3,11 +3,12 @@ import { Fullbleed } from './styles';
 import imgRespaldo from '../../assets/img/respaldo.png';
 import imgPacasmayo from '../../assets/img/pacasmayo.png';
 
-const Iniciativa = () => {
+const Iniciativa = ({imagenes}) => {
+  const img3 = imagenes ? imagenes['3'] : {};  
   return (
     <Fullbleed
       style={{
-        backgroundImage: `url(${imgRespaldo})`
+        backgroundImage: `url(${img3.imagen})`
       }}
     >
       <div id="full-media">

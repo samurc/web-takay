@@ -48,7 +48,7 @@ const AboutPage = props => {
       {head()}
       <Flotante pagina="nosotros"/>
       <div className="block">
-        <Acerca />
+        <Acerca imagenes={props.imagenes}/>
       </div>
       <div className="block">
         <Bloques textos={props.textosNosotros}/>
@@ -57,7 +57,7 @@ const AboutPage = props => {
         <FormularioContactanos rutaFormNosotros={props.rutaFormNosotros} pdf={props.pdf} comboServicio={props.comboServicio}/>
       </div>
       <div className="block">
-        <Iniciativa />
+        <Iniciativa imagenes={props.imagenes}/>
       </div>
     </div>
   );
@@ -69,7 +69,8 @@ const mapStateToProps = state => {
     textosNosotros: state.metadata.textosNosotros,
     rutaFormNosotros: state.metadata.rutaFormNosotros,
     comboServicio: state.metadata.comboServicio,
-    pdf: state.metadata.pdf
+    pdf: state.metadata.pdf,
+    imagenes: state.metadata.imagenes
   };
 };
 
