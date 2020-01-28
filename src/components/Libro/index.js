@@ -139,6 +139,9 @@ export default class Page extends Component {
         mountValid = value && value.length < 13;
         fieldValidationErrors.monto_reclamado = mountValid ? false : true;
         break;
+      case 'fecha_incidente':
+        fieldValidationErrors.fecha_incidente = value ? false : true;
+        break;
       default:
         fieldValidationErrors[fieldName] = value.length > 0 ? false : true;
         break;
