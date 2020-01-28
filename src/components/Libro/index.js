@@ -191,7 +191,7 @@ export default class Page extends Component {
       const { rutaFormReclamaciones } = this.props;
       const dataRequest = {
         nombre_completo, telefono, correo, direccion, dni, padre_madre,
-        fecha_incidente, lugar_incidente, tipo_bien, monto_reclamado,
+        fecha_incidente: fecha_incidente.toISOString().slice(0,10), lugar_incidente, tipo_bien, monto_reclamado,
         descripcion, tipo_incidente,
         detalle_incidente, pedido_cliente, respuesta_reclamo
       }
