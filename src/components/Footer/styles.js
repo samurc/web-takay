@@ -72,7 +72,8 @@ export const Item = styled.div`
       margin-bottom: 4rem;
     }
     > p {
-      word-break: break-all;
+      word-break: break-word;
+      text-align: justify;
       font-size: 15px;
       line-height: 17.5px;
     }
@@ -95,6 +96,7 @@ export const Item = styled.div`
     .cellphones{
       display: flex;
       img {
+        flex-shrink: 0;
         margin-right: 15px;
       }
     }
