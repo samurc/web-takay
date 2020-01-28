@@ -129,6 +129,41 @@ export const LayoutColumn = styled.div`
       background: rgba(255, 0, 0, 0.22) !important;
     }
   }
+  .react-datepicker-wrapper input {
+    width: 100%;
+  }
+  .react-datepicker {
+    font-size: 1em;
+  }
+  .react-datepicker__header {
+    padding-top: 0.8em;
+  }
+  .react-datepicker__month {
+    margin: 0.4em 1em;
+  }
+  .react-datepicker__day-name, .react-datepicker__day {
+    width: 1.9em;
+    line-height: 1.9em;
+    margin: 0.166em;
+    text-transform: uppercase;
+  }
+  .react-datepicker__current-month {
+    font-size: 1em;
+    text-transform: uppercase;
+  }
+  .react-datepicker__navigation {
+    top: 1em;
+    line-height: 1.7em;
+    border: 0.45em solid transparent;
+  }
+  .react-datepicker__navigation--previous {
+    border-right-color: #ccc;
+    left: 1em;
+  }
+  .react-datepicker__navigation--next {
+    border-left-color: #ccc;
+    right: 1em;
+  }
   @media only screen and (max-width: 992px) {
     &.checkboxLayout {
       margin-top: 4rem;

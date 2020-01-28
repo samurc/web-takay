@@ -1,7 +1,12 @@
 import React, { Component } from 'react';
+import DatePicker, { registerLocale } from "react-datepicker";
+import es from 'date-fns/locale/es';
+import "react-datepicker/dist/react-datepicker.css";
 import Modal from '../Modal';
 import axios from 'axios';
 import { Grid, Box, Title, Col1, Col1Inner, Col2, Col2Inner, Form, LayoutColumn, LayoutRow, LayoutRadio, Parraph, LdsRing, Button} from './styles';
+
+registerLocale("es", es);
 
 export default class Page extends Component {
   constructor(props) {
@@ -45,6 +50,8 @@ export default class Page extends Component {
     this.handleSubmit = this.handleSubmit.bind(this);
     this.closeModal = this.closeModal.bind(this)
     this.clickModal = this.clickModal.bind(this)
+    this.handleDateChangeRaw = this.handleDateChangeRaw.bind(this)
+    this.handleChange = this.handleChange.bind(this)
   }
 
   closeModal () {
@@ -53,6 +60,16 @@ export default class Page extends Component {
 
   clickModal() {
     this.setState({ modal: true })
+  }
+
+  handleChange(date){
+    this.setState({
+      fecha_incidente: date
+    })
+  }
+
+  handleDateChangeRaw(e){
+    e.preventDefault()
   }
 
   handleInputChange(event) {
@@ -295,12 +312,20 @@ export default class Page extends Component {
 
               <LayoutColumn className={this.errorClass(this.state.formErrors.fecha_incidente)}>
                 <label>Fecha del incidente</label>
-                <input
+                <DatePicker
+                  locale="es"
+                  dateFormat="dd/MM/yyyy"
+                  selected={this.state.fecha_incidente}
+                  onChange={this.handleChange}
+                  onChangeRaw={this.handleDateChangeRaw}
+                  required
+                />
+                {/*<input
                   name="fecha_incidente"
                   type="date"
                   value={this.state.fecha_incidente}
                   onChange={this.handleInputChange}
-                />
+                />*/}
               </LayoutColumn>
 
               <LayoutColumn className={this.errorClass(this.state.formErrors.lugar_incidente)}>
