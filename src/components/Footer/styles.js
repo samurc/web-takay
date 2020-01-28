@@ -102,7 +102,7 @@ export const Item = styled.div`
     }
     .cellist {
       display: flex;
-      a:last-child {
+      a:last-child, span:last-child {
         &::before {
           content: '|';
           padding-left: 5px;
