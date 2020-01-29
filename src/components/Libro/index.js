@@ -179,7 +179,7 @@ export default class Page extends Component {
   validateForm(nombre_completo, telefono, correo, direccion, dni, padre_madre,
       fecha_incidente, lugar_incidente, tipo_bien, monto_reclamado, descripcion,
       tipo_incidente,
-      detalle_incidente, pedido_cliente, respuesta_reclamo, tipo_moneda) {
+      detalle_incidente, pedido_cliente, respuesta_reclamo, tipo_moneda, nombre_completo_apoderado, dni_apoderado) {
     let fieldValidationErrors = this.state.formErrors;
     fieldValidationErrors.nombre_completo = this.validateField('nombre_completo', nombre_completo).nombre_completo
     fieldValidationErrors.telefono = this.validateField('telefono', telefono).telefono
@@ -197,6 +197,8 @@ export default class Page extends Component {
     fieldValidationErrors.pedido_cliente = this.validateField('pedido_cliente', pedido_cliente).pedido_cliente
     fieldValidationErrors.respuesta_reclamo = this.validateField('respuesta_reclamo', respuesta_reclamo).respuesta_reclamo
     fieldValidationErrors.tipo_moneda = this.validateField('tipo_moneda', tipo_moneda).tipo_moneda
+    fieldValidationErrors.nombre_completo_apoderado = this.validateField('nombre_completo_apoderado', nombre_completo_apoderado).nombre_completo_apoderado;
+    fieldValidationErrors.dni_apoderado = this.validateField('dni_apoderado', dni_apoderado).dni_apoderado;
     
     this.setState({ fieldValidationErrors: fieldValidationErrors })
     return Object.values(fieldValidationErrors).indexOf(true) === -1
@@ -209,19 +211,19 @@ export default class Page extends Component {
   async handleSubmit(event) {
     event.preventDefault();
     const { nombre_completo, telefono, correo, direccion, dni, padre_madre, fecha_incidente, lugar_incidente, tipo_bien, monto_reclamado, descripcion, tipo_incidente,
-      detalle_incidente, pedido_cliente, respuesta_reclamo, tipo_moneda } = this.state;
+      detalle_incidente, pedido_cliente, respuesta_reclamo, tipo_moneda, nombre_completo_apoderado, dni_apoderado } = this.state;
 
     const statusForm = this.validateForm(nombre_completo, telefono, correo,
       direccion, dni, padre_madre, fecha_incidente, lugar_incidente,
       tipo_bien, monto_reclamado, descripcion, tipo_incidente,
-      detalle_incidente, pedido_cliente, respuesta_reclamo, tipo_moneda);
+      detalle_incidente, pedido_cliente, respuesta_reclamo, tipo_moneda, nombre_completo_apoderado, dni_apoderado);
     if (statusForm) {
       const { rutaFormReclamaciones } = this.props;
       const dataRequest = {
         nombre_completo, telefono, correo, direccion, dni, padre_madre,
         fecha_incidente: fecha_incidente.toISOString().slice(0,10), lugar_incidente, tipo_bien, monto_reclamado,
         descripcion, tipo_incidente,
-        detalle_incidente, pedido_cliente, respuesta_reclamo, tipo_moneda
+        detalle_incidente, pedido_cliente, respuesta_reclamo, tipo_moneda, nombre_completo_apoderado, dni_apoderado
       }
       try {
         this.setState({formLoading: true, formError: null})
@@ -249,7 +251,9 @@ export default class Page extends Component {
             tipo_incidente: '',
             detalle_incidente: '',
             pedido_cliente: '',
-            respuesta_reclamo: ''
+            respuesta_reclamo: '',
+            nombre_completo_apoderado,
+            dni_apoderado: ''
           })
         } else {
           this.setState({formLoading: false, formError: true})
