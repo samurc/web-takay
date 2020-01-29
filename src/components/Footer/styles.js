@@ -265,3 +265,11 @@ export const SocialItem = styled.a`
       background: #f7ce48;
     `};
 `;
+
+export const MapContainer = styled.div`
+  @media only screen and (max-width: 992px) {
+    iframe {
+      width: 100%;
+    }
+  }  
+`;

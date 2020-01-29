@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { LayoutRow, Item, FooterUI, FooterCopyright, SocialItem } from './styles';
+import { LayoutRow, Item, FooterUI, FooterCopyright, SocialItem, MapContainer } from './styles';
 import imgLogo from '../../assets/img/logo.png';
 import LogoMobile from '../../assets/svg/celular.svg';
 import LogoPhone from '../../assets/svg/phone.svg';
@@ -29,6 +29,7 @@ export default ({ locationName, link, textosPie }) => {
   const link3 = link[2] || {};
   const link4 = link[3] || {};
   const link6 = link[5] || {};
+  const link7 = link[6] || {};
 
   const textosPie1 = textosPie[0] || {};
   const textosPie2 = textosPie[1] || {};
@@ -114,6 +115,8 @@ export default ({ locationName, link, textosPie }) => {
                 {textosPie2.titulo}
               </a>
             </p>
+            <MapContainer dangerouslySetInnerHTML={{ __html: link7.link }} />
+            
           </Item>
         </LayoutRow>
       </div>
