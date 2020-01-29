@@ -201,8 +201,8 @@ export const GlobalStyle = createGlobalStyle`
     left: 0;
     bottom: 0;
     right: 0;
-    width: 942px;
-    height: 566px;
+    width: 500px;
+    height: 300px;
     z-index: 1;
 
   }
