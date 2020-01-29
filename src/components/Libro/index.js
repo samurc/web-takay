@@ -19,7 +19,9 @@ export default class Page extends Component {
       correo: '',
       direccion: '',
       dni: '',
-      padre_madre: '',
+      padre_madre: false,
+      nombre_completo_apoderado: '',
+      dni_apoderado: '',
       fecha_incidente: '',
       lugar_incidente: '',
       tipo_bien: '',
@@ -88,6 +90,10 @@ export default class Page extends Component {
       if (!(value.length < 151)){ return; }
     } else if (name == 'dni') {
       if (!(value.length < 13)){ return; }
+    } else if (name == 'nombre_completo_apoderado') {
+      if (!(value.match(/^([a-zA-ZñÑáéíóúÁÉÍÓÚ ]*)$/) && value.length < 101)){ return; }
+    } else if (name == 'dni_apoderado') {
+      if (!(value.length < 13)){ return; }
     }
 
     this.setState({
@@ -105,16 +111,27 @@ export default class Page extends Component {
     let emailValid = false;
     let checkValid = false;
     let stringValid = false;
+    let stringApoderadoValid = false;
     let addressValid = false;
     let dniValid = false;
+    let dniApoderadoValid = false;
     let phoneValid = false;
     let lugarValid = false;
     let mountValid = false;
 
-    switch(fieldName) {
+    switch (fieldName) {
       case 'nombre_completo':
         stringValid = value && value.match(/^([a-zA-ZñÑáéíóúÁÉÍÓÚ ]*)$/) && value.length < 101;
         fieldValidationErrors.nombre_completo = stringValid ? false : true;
+        break;
+      case 'nombre_completo_apoderado':
+        stringApoderadoValid =
+          !this.state.padre_madre ||
+          (this.state.padre_madre &&
+            value &&
+            value.match(/^([a-zA-ZñÑáéíóúÁÉÍÓÚ ]*)$/) &&
+            value.length < 101);
+        fieldValidationErrors.nombre_completo_apoderado = stringApoderadoValid ? false : true;
         break;
       case 'direccion':
         addressValid = value && value.length < 151;
@@ -127,6 +144,11 @@ export default class Page extends Component {
       case 'dni':
         dniValid = value && value.length < 13;
         fieldValidationErrors.dni = dniValid ? false : true;
+        break;
+      case 'dni_apoderado':
+        dniApoderadoValid =
+          !this.state.padre_madre || (this.state.padre_madre && value && value.length < 13);
+        fieldValidationErrors.dni_apoderado = dniApoderadoValid ? false : true;
         break;
       case 'telefono':
         phoneValid = value && value.match(/^(\d*)$/) && value.length < 13;
@@ -142,6 +164,10 @@ export default class Page extends Component {
         break;
       case 'fecha_incidente':
         fieldValidationErrors.fecha_incidente = value ? false : true;
+        break;
+      case 'padre_madre':
+        checkValid = true;
+        fieldValidationErrors.padre_madre = checkValid ? false : true;
         break;
       default:
         fieldValidationErrors[fieldName] = value.length > 0 ? false : true;
@@ -213,7 +239,7 @@ export default class Page extends Component {
             correo: '',
             direccion: '',
             dni: '',
-            padre_madre: '',
+            padre_madre: false,
             fecha_incidente: '',
             lugar_incidente: '',
             tipo_bien: '',
@@ -309,15 +335,42 @@ export default class Page extends Component {
                   />
                 </LayoutColumn>
 
-                <LayoutColumn className={this.errorClass(this.state.formErrors.padre_madre)}>
-                  <label>Padre o Madre</label>
-                  <input
-                    name="padre_madre"
-                    type="text"
-                    value={this.state.padre_madre}
-                    onChange={this.handleInputChange}
-                  />
+                <LayoutColumn className={`checkboxLayout`}>
+                  <label>
+                    <input
+                      name="padre_madre"
+                      type="checkbox"
+                      checked={this.state.padre_madre}
+                      onChange={this.handleInputChange}
+                    />
+                    Soy menor de edad
+                  </label>
                 </LayoutColumn>
+
+                {this.state.padre_madre && (
+                  <>
+                    <LayoutColumn
+                      className={this.errorClass(this.state.formErrors.nombre_completo_apoderado)}
+                    >
+                      <label>Nombre completo de apoderado</label>
+                      <input
+                        name="nombre_completo_apoderado"
+                        type="text"
+                        value={this.state.nombre_completo_apoderado}
+                        onChange={this.handleInputChange}
+                      />
+                    </LayoutColumn>
+                    <LayoutColumn className={this.errorClass(this.state.formErrors.dni_apoderado)}>
+                      <label>DNI de apoderado</label>
+                      <input
+                        name="dni_apoderado"
+                        type="text"
+                        value={this.state.dni_apoderado}
+                        onChange={this.handleInputChange}
+                      />
+                    </LayoutColumn>
+                  </>
+                )}
 
                 <h2>IDENTIFICACIÓN DEL BIEN CONTRATADO</h2>
 
