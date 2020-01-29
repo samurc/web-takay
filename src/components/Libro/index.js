@@ -277,7 +277,8 @@ export default class Page extends Component {
           {modal ? (
             <Modal
               handler={this.closeModal}
-              texto={`Reclamo (Nro-${reclamo_id}) registrado. En breve recibirás un correo con la información ingresada.`}
+              titulo={`Reclamo (Nro-${reclamo_id}) registrado.`}
+              texto={`En breve recibirás un correo con la información ingresada.`}
             />
           ) : null}
           <Col1>

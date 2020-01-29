@@ -188,7 +188,7 @@ export default class Formulario extends Component {
 
     return (
       <Layout>
-        {this.state.modal ? <Modal handler={this.closeModal} texto="Gracias por contactarnos, nos estaremos comunicando contigo." /> : null}
+        {this.state.modal ? <Modal handler={this.closeModal} titulo="Gracias por contactarnos," texto="nos estaremos comunicando contigo." /> : null}
         <Col1>
           <Col1Inner>
             <Title2 mode="mobile">Inicia ahora</Title2>

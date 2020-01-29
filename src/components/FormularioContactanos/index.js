@@ -190,7 +190,7 @@ export default class FormularioContactanos extends Component {
 
     return (
       <Layout>
-        {this.state.modal ? <Modal handler={this.closeModal} texto="Hemos recibido tu información correctamente. A la brevedad nos contactaremos contigo." /> : null}
+        {this.state.modal ? <Modal handler={this.closeModal} titulo="Hemos recibido tu información correctamente." texto="A la brevedad nos contactaremos contigo." /> : null}
         <Col1>
           <Col1Inner>
             <Title2 mode="mobile">Contáctanos</Title2>

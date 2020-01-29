@@ -183,7 +183,7 @@ export default class FormularioExperiencia extends Component {
 
     return (
       <Layout>
-        {this.state.modal ? <Modal handler={this.closeModal} texto="Gracias por contactarnos, nos estaremos comunicando contigo." /> : null}
+        {this.state.modal ? <Modal handler={this.closeModal} titulo="Gracias por contactarnos," texto="nos estaremos comunicando contigo." /> : null}
         <Col1>
           <Col1Inner>
             <Title1>Hablemos sobre tu experiencia:</Title1>

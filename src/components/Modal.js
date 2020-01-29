@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const Modal = ({handler, texto}) => {
+const Modal = ({ handler, titulo, texto}) => {
 
   return (
     <>
@@ -11,7 +11,8 @@ const Modal = ({handler, texto}) => {
             X
           </a>
           <div className="x-popup">
-            { texto }
+            <h3>{titulo}</h3>
+            <p>{texto}</p>
           </div>
         </div>
         <div className="bg-modal-video x-close" onClick={handler}></div>

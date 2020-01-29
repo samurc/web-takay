@@ -201,20 +201,45 @@ export const GlobalStyle = createGlobalStyle`
     left: 0;
     bottom: 0;
     right: 0;
-    width: 400px;
-    height: 300px;
+    width: 942px;
+    height: 566px;
     z-index: 1;
+
   }
   .x-popup {
     width: 100%;
     height: 100%;
     background: #ffffff;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     padding: 2rem;
     font-size: 15px;
     line-height: 20px;
+  }
+  .x-popup:before {
+    content: '';
+    width: 100%;
+    height: 28px;
+    background: #00949e;
+    position: absolute;
+    bottom: 0;
+  }
+  .x-popup h3 {
+    font-size: 25px;
+    line-height: 36px;
+    color: #f15a22;
+    font-weight: 400;
+    text-align: center;
+    text-transform: uppercase;
+  }
+  .x-popup p {
+    margin-top: 10px;
+    font-size: 15px;
+    line-height: 36px;
+    color: #000000;
+    text-align: center;
   }
 
   .span-tag {
