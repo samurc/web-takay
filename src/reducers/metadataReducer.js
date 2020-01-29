@@ -34,13 +34,15 @@ export default function metadataReducer(state = initialState.metadata, action) {
         comboSituacion: [],
         comboOcupacion: [],
         comboServicio: [],
+        comboLibro: [],
+        comboMoneda: [],
         rutaFormFamilia: null,
         rutaFormExperto: null,
         rutaFormNosotros: null,
         rutaFormReclamaciones: null,
         pdf: [],
         imagenes: null
-      }
+      };
     case FETCH_DATA_SUCCESS:
       const seccion = action.payload.seccion
       const experienciaFamilia = action.payload.sliderpie.filter(function (item) { return item.pagina == "familia"; });
@@ -60,6 +62,8 @@ export default function metadataReducer(state = initialState.metadata, action) {
       const comboSituacion = Object.values(action.payload.combos).filter(function (item) { return item.sec_referencia == "combo situacion actual"; });
       const comboOcupacion = Object.values(action.payload.combos).filter(function (item) { return item.sec_referencia == "combo ocupacion"; });
       const comboServicio = Object.values(action.payload.combos).filter(function (item) { return item.sec_referencia == "combo tipo de servicio"; });
+      const comboLibro = Object.values(action.payload.combos).filter(function (item) { return item.sec_referencia == "combo libro de reclamacion"; });
+      const comboMoneda = Object.values(action.payload.combos).filter(function (item) { return item.sec_referencia == "combo moneda"; });
 
       return {
         ...state,
@@ -86,13 +90,15 @@ export default function metadataReducer(state = initialState.metadata, action) {
         comboSituacion: comboSituacion,
         comboOcupacion: comboOcupacion,
         comboServicio: comboServicio,
+        comboLibro: comboLibro,
+        comboMoneda: comboMoneda,
         rutaFormFamilia: action.payload.ruta_form_familia,
         rutaFormExperto: action.payload.ruta_form_experto,
         rutaFormNosotros: action.payload.ruta_form_nosotros,
         rutaFormReclamaciones: action.payload.ruta_form_libroreclamaciones,
         pdf: Object.values(action.payload.pdf),
         imagenes: action.payload.imagenes
-      }
+      };
 
     case FETCH_DATA_FAILURE:
       return {
@@ -119,13 +125,15 @@ export default function metadataReducer(state = initialState.metadata, action) {
         comboSituacion: [],
         comboOcupacion: [],
         comboServicio: [],
+        comboLibro: [],
+        comboMoneda: [],
         rutaFormFamilia: null,
         rutaFormExperto: null,
         rutaFormNosotros: null,
         rutaFormReclamaciones: null,
         pdf: [],
         imagenes: null
-      }
+      };
 
     default:
       return state;

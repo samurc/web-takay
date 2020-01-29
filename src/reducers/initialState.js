@@ -23,6 +23,8 @@ const initialState = {
     comboSituacion: [],
     comboOcupacion: [],
     comboServicio: [],
+    comboLibro: [],
+    comboMoneda: [],
     rutaFormFamilia: null,
     rutaFormExperto: null,
     rutaFormNosotros: null,

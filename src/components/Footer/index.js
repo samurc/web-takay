@@ -60,28 +60,47 @@ export default ({ locationName, link, textosPie }) => {
         <LayoutRow theme={theme}>
           <Item className="about">
             <img src={logoImg} width={85} height={20} />
-            <p>
-              {textosPie1.textos}
-            </p>
+            <p>{textosPie1.textos}</p>
           </Item>
           <Item className="contact">
             <h3>Contáctanos</h3>
             <div className="cellphones">
-              <img src={logoMobile} width={16} height={26} className="iconimage"/>
+              <img src={logoMobile} width={16} height={26} className="iconimage" />
               <div className="cellist">
-                { !link1.link && <a href={link1.link}>{link1.titulo}</a> }
-                { link1.link && <span>{link1.titulo}</span> }
-                { !link6.link && <a href={link6.link}>{link6.titulo}</a> }
-                { link6.link && <span>{link6.titulo}</span> }  
+                {!link1.link && <a href={link1.link}>{link1.titulo}</a>}
+                {link1.link && <span>{link1.titulo}</span>}
+                {!link6.link && <a href={link6.link}>{link6.titulo}</a>}
+                {link6.link && <span>{link6.titulo}</span>}
               </div>
             </div>
-            <a href={link3.link}>
-              <img src={logoPhone} width={16} height={26} className="iconimage"/> {link3.titulo}
-            </a>
+            {link3.link && (
+              <a href={link3.link}>
+                <img src={logoPhone} width={16} height={26} className="iconimage" /> {link3.titulo}
+              </a>
+            )}
+            {!link3.link && (
+              <div className="divPhone">
+                <img src={logoPhone} width={16} height={26} className="iconimage" />
+                {link3.titulo}
+              </div>
+            )}
+
+            {link2.link && (
+              <a href={link2.link}>
+                <i class="material-icons">mail_outline</i> {link2.titulo}
+              </a>
+            )}
+            {!link2.link && (
+              <div className="divPhone">
+                <i class="material-icons">mail_outline</i>
+                {link2.titulo}
+              </div>
+            )}
+
             <div className="social">
-              <SocialItem theme={theme} href={link2.link}>
+              {/*<SocialItem theme={theme} href={link2.link}>
                 <img src={logoMail} width={19} height={16} />
-              </SocialItem>
+            </SocialItem>*/}
               <SocialItem theme={theme} href={link4.link}>
                 <img src={logoLinkedin} width={19} height={16} />
               </SocialItem>
@@ -91,13 +110,21 @@ export default ({ locationName, link, textosPie }) => {
             <h3>¿Dónde estamos?</h3>
             <p>
               <img src={logoLocation} width={16} height={26} />
-              <a href={textosPie2.textos} target="_blank">{textosPie2.titulo}</a>
+              <a href={textosPie2.textos} target="_blank">
+                {textosPie2.titulo}
+              </a>
             </p>
           </Item>
         </LayoutRow>
       </div>
       <FooterCopyright theme={theme}>
-        <div className="grid textfila2"> © 2019 Takay - Todos los derechos reservados. | <Link className="openBook" to="libro-de-reclamaciones"><img src={OpenBook} width={15} height={15}/> Libro de reclamaciones</Link></div>
+        <div className="grid textfila2">
+          {' '}
+          © 2019 Takay - Todos los derechos reservados. |{' '}
+          <Link className="openBook" to="libro-de-reclamaciones">
+            <img src={OpenBook} width={15} height={15} /> Libro de reclamaciones
+          </Link>
+        </div>
       </FooterCopyright>
     </FooterUI>
   );
