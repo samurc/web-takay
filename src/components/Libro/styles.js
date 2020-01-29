@@ -255,7 +255,6 @@ export const LdsRing = styled.div`
 `
 
 export const LayoutMount = styled.div`
-  margin-right: 10px;
   input {
     width: 100%;
   }

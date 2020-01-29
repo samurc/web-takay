@@ -67,10 +67,10 @@ export default ({ locationName, link, textosPie }) => {
             <div className="cellphones">
               <img src={logoMobile} width={16} height={26} className="iconimage" />
               <div className="cellist">
-                {!link1.link && <a href={link1.link}>{link1.titulo}</a>}
-                {link1.link && <span>{link1.titulo}</span>}
-                {!link6.link && <a href={link6.link}>{link6.titulo}</a>}
-                {link6.link && <span>{link6.titulo}</span>}
+                {link1.link && <a href={link1.link}>{link1.titulo}</a>}
+                {!link1.link && <span>{link1.titulo}</span>}
+                {link6.link && <a href={link6.link}>{link6.titulo}</a>}
+                {!link6.link && <span>{link6.titulo}</span>}
               </div>
             </div>
             {link3.link && (
