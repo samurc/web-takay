@@ -89,11 +89,15 @@ export default class Page extends Component {
     } else if (name == 'direccion' || name == 'lugar_incidente') { 
       if (!(value.length < 151)){ return; }
     } else if (name == 'dni') {
-      if (!(value.length < 13)){ return; }
+      if (!(value.match(/^(\d*)$/) && value.length < 13)) { return; }
     } else if (name == 'nombre_completo_apoderado') {
       if (!(value.match(/^([a-zA-ZñÑáéíóúÁÉÍÓÚ ]*)$/) && value.length < 101)){ return; }
     } else if (name == 'dni_apoderado') {
-      if (!(value.length < 13)){ return; }
+      if (!(value.match(/^(\d*)$/) && value.length < 13)) { return; }
+    } else if (name == 'padre_madre') {
+      if (!value){
+        this.setState({nombre_completo_apoderado: '', dni_apoderado: ''})
+      }
     }
 
     this.setState({
@@ -142,12 +146,12 @@ export default class Page extends Component {
         fieldValidationErrors.correo = emailValid ? false : true;
         break;
       case 'dni':
-        dniValid = value && value.length < 13;
+        dniValid = value && value.match(/^(\d*)$/) && value.length < 13;
         fieldValidationErrors.dni = dniValid ? false : true;
         break;
       case 'dni_apoderado':
         dniApoderadoValid =
-          !this.state.padre_madre || (this.state.padre_madre && value && value.length < 13);
+          !this.state.padre_madre || (this.state.padre_madre && value && value.match(/^(\d*)$/) && value.length < 13);
         fieldValidationErrors.dni_apoderado = dniApoderadoValid ? false : true;
         break;
       case 'telefono':
@@ -252,7 +256,7 @@ export default class Page extends Component {
             detalle_incidente: '',
             pedido_cliente: '',
             respuesta_reclamo: '',
-            nombre_completo_apoderado,
+            nombre_completo_apoderado: '',
             dni_apoderado: ''
           })
         } else {
@@ -436,7 +440,7 @@ export default class Page extends Component {
                 </LayoutColumn>
 
                 <LayoutColumn className={this.errorClass(this.state.formErrors.monto_reclamado)}>
-                  <label>Monto Reclamado</label>
+                  <label>Monto Reclamado en S/</label>
                   <input
                     name="monto_reclamado"
                     type="text"
