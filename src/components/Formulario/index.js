@@ -247,7 +247,7 @@ export default class Formulario extends Component {
                 </select>
               </LayoutColumn>
               <LayoutColumn className={this.errorClass(this.state.formErrors.situacion_actual)}>
-                <label>Selecciona la opción que mejora se adapte a tu situación actual</label>
+                <label>Selecciona la opción que mejor se adapte a tu situación actual</label>
                 <select
                   name="situacion_actual"
                   value={this.state.situacion_actual}
