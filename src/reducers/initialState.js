@@ -14,6 +14,7 @@ const initialState = {
     textosHome: [],
     textosFamilia: [],
     textosExperto: [],
+    textosExpertoPie: [],
     textosNosotros: [],
     textosPie: [],
     textosReclamaciones: [],

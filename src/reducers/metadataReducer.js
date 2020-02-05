@@ -26,6 +26,7 @@ export default function metadataReducer(state = initialState.metadata, action) {
         infoHome: [],
         textosFamilia: [],
         textosExperto: [],
+        textosExpertoPie: [],
         textosNosotros: [],
         textosReclamaciones: [],
         link: [],
@@ -53,6 +54,7 @@ export default function metadataReducer(state = initialState.metadata, action) {
       const textosNosotros = action.payload.textos_img.filter(function (item) { return item.pagina == "nosotros"; });
       const textosHome = action.payload.textos_img.filter(function (item) { return item.pagina == "home"; });
       const textosExperto = action.payload.textos_img.filter(function (item) { return item.pagina == "experto"; });
+      const textosExpertoPie = action.payload.textos_img.filter(function (item) { return item.pagina == "experto pie"; });
       const textosFamilia = action.payload.textos_img.filter(function (item) { return item.pagina == "familia"; });
       const link = Object.values(action.payload.link);
       const textosPie = Object.values(action.payload.textos).filter(function (item) { return item.sec_referencia == "pie"; });
@@ -82,6 +84,7 @@ export default function metadataReducer(state = initialState.metadata, action) {
         infoHome: infoHome,
         textosFamilia: textosFamilia,
         textosExperto: textosExperto,
+        textosExpertoPie: textosExpertoPie,
         textosNosotros: textosNosotros,
         link: link,
         textosPie: textosPie,
@@ -118,6 +121,7 @@ export default function metadataReducer(state = initialState.metadata, action) {
         infoHome: [],
         textosFamilia: [],
         textosExperto: [],
+        textosExpertoPie: [],
         textosNosotros: [],
         link: [],
         textosPie: [],
