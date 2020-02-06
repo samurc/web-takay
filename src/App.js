@@ -1,5 +1,6 @@
 import React, { Component, Fragment } from 'react'
 import { bindActionCreators } from 'redux'
+import ReactGA from 'react-ga'
 import * as actions from './actions'
 import { GlobalStyle } from './styles/GlobalStyles';
 import { renderRoutes } from 'react-router-config';
@@ -30,6 +31,8 @@ class App extends Component {
   async componentWillMount() {
     await this.props.actions.fetchData();
     this.setState({ loadingData: true })
+    ReactGA.initialize('UA-157950236-1');
+    ReactGA.pageview(window.location.pathname + window.location.search);
   }
 
   render() {
