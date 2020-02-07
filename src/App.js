@@ -21,49 +21,55 @@ import NotFoundPage from './pages/NotFoundPage';
 const loadingCircle = "<div class='circular indeterminate multicolor'><svg class='circle' viewBox='0 0 60 60'><circle class='path' cx='30' cy='30' r='25'></circle></svg></div>";
 
 class App extends Component {
-  constructor (props) {
-    super(props)
+  constructor(props) {
+    super(props);
     this.state = {
       loadingData: false
-    }
+    };
   }
 
   async componentWillMount() {
     await this.props.actions.fetchData();
-    this.setState({ loadingData: true })
+    this.setState({ loadingData: true });
     ReactGA.initialize('UA-157950236-1');
     ReactGA.pageview(window.location.pathname + window.location.search);
+
+    this.unlisten = this.props.history.listen((location, action) => {
+      ReactGA.pageview(location.pathname + location.search);
+    });
+  }
+
+  componentWillUnmount() {
+    this.unlisten();
   }
 
   render() {
-    const { pathname: locationName } = this.props.location
+    const { pathname: locationName } = this.props.location;
     const { loadingData } = this.state;
     const { link, textosPie } = this.props;
     return (
       <Fragment>
-        { loadingData && (
+        {loadingData && (
           <div>
             <GlobalStyle />
             <Header locationName={locationName} />
             <div>
-              <Route exact path='/' component={HomePage} />
-              <Route exact path='/familia' component={FamilyPage} />
-              <Route exact path='/experto' component={ExpertPage} />
-              <Route exact path='/nosotros' component={AboutPage} />
-              <Route exact path='/libro-de-reclamaciones' component={LibroPage} />
+              <Route exact path="/" component={HomePage} />
+              <Route exact path="/familia" component={FamilyPage} />
+              <Route exact path="/experto" component={ExpertPage} />
+              <Route exact path="/nosotros" component={AboutPage} />
+              <Route exact path="/libro-de-reclamaciones" component={LibroPage} />
             </div>
             <Footer locationName={locationName} link={link} textosPie={textosPie} />
           </div>
-        ) }
-        {
-          !loadingData && (
-            <div
-              dangerouslySetInnerHTML={{
-                __html: loadingCircle
-              }}
-            />
-          )
-        }
+        )}
+        {!loadingData && (
+          <div
+            dangerouslySetInnerHTML={{
+              __html: loadingCircle
+            }}
+          />
+        )}
       </Fragment>
     );
   }
